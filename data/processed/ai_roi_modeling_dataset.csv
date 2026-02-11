@@ -1,0 +1,201 @@
+year,quarter,sector,company_size,revenue_m_eur,ai_use_case,deployment_type,days_diagnostic,days_poc,days_to_deployment,investment_eur,roi,time_saved_hours_month,revenue_increase_percent,human_in_loop
+2024,q1,manufacturing,grande,330.7,customer service bot,analytics,35,115,360,353519,-11.7,0,0.0,1
+2024,q4,logistique,pme,7.8,quality control vision,analytics,10,27,60,14533,10.1,552,0.0,1
+2023,q2,energie,pme,10.4,customer service bot,nlp,9,14,110,25522,105.0,678,0.0,1
+2025,q4,services pro,eti,50.3,process automation,hybrid,37,34,268,33932,-24.2,0,0.0,0
+2022,q3,services pro,pme,10.5,quality control vision,analytics,9,22,93,11285,201.8,390,0.0,1
+2024,q3,telecom,pme,11.7,document processing,hybrid,3,22,69,11107,127.1,716,0.0,1
+2023,q1,logistique,grande,194.3,predictive analytics,automation,79,163,271,221752,70.8,568,0.0,1
+2023,q2,construction,grande,379.2,quality control vision,automation,89,92,533,414145,62.9,369,0.0,1
+2023,q1,services pro,pme,11.3,fraud detection,hybrid,10,33,92,14064,10.5,0,0.0,1
+2023,q3,finance,grande,473.4,process automation,analytics,50,73,519,349851,383.1,208,0.0,1
+2024,q1,sante,grande,197.1,predictive analytics,analytics,81,108,509,689692,218.4,795,0.0,1
+2023,q4,finance,eti,57.2,pricing optimization,analytics,31,64,134,49189,222.0,512,23.8,1
+2023,q1,services pro,eti,47.4,document processing,analytics,36,32,269,115138,135.4,784,0.0,1
+2023,q3,retail,pme,3.8,process automation,nlp,14,35,94,21352,250.9,567,0.0,1
+2025,q1,retail,grande,336.8,document processing,nlp,30,135,322,340792,148.9,275,0.0,1
+2025,q1,construction,grande,95.7,sales automation,analytics,37,122,477,366699,26.5,517,21.8,0
+2025,q3,manufacturing,pme,7.4,customer service bot,nlp,2,43,110,9877,115.9,238,0.0,0
+2024,q3,logistique,eti,18.1,customer service bot,analytics,35,30,137,37960,42.5,155,0.0,1
+2024,q2,manufacturing,eti,32.0,customer service bot,nlp,42,60,200,112903,142.0,467,0.0,1
+2024,q1,energie,grande,483.7,customer service bot,analytics,41,68,297,715058,194.2,38,0.0,1
+2024,q1,retail,pme,14.1,fraud detection,vision,7,43,92,45000,268.9,458,0.0,1
+2023,q2,telecom,eti,73.7,sales automation,vision,38,49,254,64637,175.1,512,13.5,1
+2025,q3,retail,eti,65.8,pricing optimization,hybrid,42,88,269,99974,245.2,193,11.9,0
+2023,q4,finance,eti,39.3,process automation,vision,15,84,208,88589,103.7,277,0.0,1
+2024,q4,retail,pme,3.1,quality control vision,automation,11,35,74,11785,84.9,271,0.0,1
+2023,q3,agroalimentaire,grande,487.1,customer service bot,automation,43,95,538,389971,-7.2,0,0.0,1
+2024,q2,retail,pme,4.6,document processing,vision,6,22,87,13035,76.9,344,0.0,1
+2025,q3,sante,pme,2.1,pricing optimization,automation,12,28,119,14710,-9.3,0,0.0,1
+2025,q3,finance,grande,395.0,predictive analytics,hybrid,65,147,474,310889,253.5,56,0.0,1
+2024,q3,finance,eti,48.8,document processing,automation,27,63,251,60772,19.0,0,0.0,1
+2022,q2,services pro,eti,37.6,sales automation,automation,36,53,213,84376,172.0,514,7.2,1
+2023,q2,finance,pme,10.9,document processing,vision,6,41,88,17708,232.8,158,0.0,1
+2023,q2,finance,eti,23.4,customer service bot,hybrid,19,35,192,46045,218.4,740,0.0,1
+2024,q2,logistique,eti,17.4,fraud detection,analytics,34,83,196,57687,142.6,314,0.0,1
+2023,q4,retail,pme,4.6,quality control vision,vision,8,25,98,39321,113.4,721,0.0,1
+2023,q1,retail,eti,30.4,sales automation,hybrid,12,44,144,229457,138.9,340,29.5,1
+2025,q2,manufacturing,grande,489.5,sales automation,analytics,79,146,414,362799,229.8,571,23.0,1
+2023,q3,manufacturing,grande,101.8,customer service bot,nlp,62,125,324,619281,263.3,601,0.0,1
+2023,q3,agroalimentaire,grande,107.9,fraud detection,vision,80,76,484,383756,69.8,326,0.0,1
+2024,q2,manufacturing,pme,8.8,pricing optimization,automation,5,41,83,45000,125.7,281,4.2,1
+2025,q4,services pro,eti,79.9,process automation,automation,33,76,141,82828,230.1,491,0.0,1
+2024,q1,services pro,eti,61.8,pricing optimization,analytics,33,62,157,52930,7.9,477,15.2,1
+2025,q4,finance,grande,465.9,quality control vision,hybrid,72,78,425,998087,191.5,674,0.0,1
+2024,q4,agroalimentaire,grande,335.3,pricing optimization,automation,74,84,482,664998,124.2,395,27.6,1
+2023,q1,finance,grande,289.3,sales automation,hybrid,84,103,426,393390,-19.5,0,0.0,0
+2022,q2,retail,pme,12.8,predictive analytics,nlp,5,36,91,19482,162.8,719,0.0,1
+2025,q3,logistique,grande,356.7,process automation,automation,43,87,451,402818,114.3,97,0.0,1
+2025,q4,telecom,grande,476.7,sales automation,hybrid,54,98,293,635026,161.5,507,10.1,1
+2025,q1,manufacturing,pme,7.0,sales automation,automation,7,23,116,27809,7.1,0,0.0,1
+2024,q2,manufacturing,pme,14.8,customer service bot,hybrid,4,22,61,19851,36.5,28,0.0,1
+2024,q4,sante,grande,345.9,quality control vision,nlp,84,110,373,644221,86.3,245,0.0,1
+2024,q2,telecom,pme,6.9,fraud detection,hybrid,8,22,92,20254,148.1,294,0.0,1
+2024,q3,telecom,eti,68.2,quality control vision,vision,33,46,208,50311,89.0,649,0.0,1
+2023,q1,telecom,grande,351.6,predictive analytics,nlp,33,140,281,169525,187.3,640,0.0,1
+2024,q3,finance,eti,17.4,pricing optimization,analytics,28,58,252,115642,119.7,536,22.1,1
+2024,q3,manufacturing,grande,445.4,sales automation,analytics,82,123,523,347443,173.9,345,12.6,1
+2023,q2,retail,pme,13.0,customer service bot,hybrid,2,14,119,21058,294.0,89,0.0,1
+2024,q1,sante,grande,495.5,pricing optimization,vision,33,108,496,422057,64.3,485,15.8,1
+2025,q3,manufacturing,eti,68.0,sales automation,hybrid,15,62,208,154430,137.8,651,19.7,1
+2023,q4,finance,pme,10.9,fraud detection,nlp,8,43,66,18393,179.1,592,0.0,1
+2023,q4,energie,pme,11.1,predictive analytics,hybrid,11,35,97,27129,131.4,658,0.0,1
+2023,q2,manufacturing,pme,5.9,process automation,automation,3,25,60,14804,64.7,607,0.0,1
+2025,q4,finance,eti,61.0,sales automation,automation,29,50,213,75525,304.9,401,23.1,1
+2025,q1,manufacturing,pme,2.9,process automation,hybrid,11,20,64,9489,207.7,518,0.0,1
+2024,q4,retail,grande,384.3,customer service bot,hybrid,42,164,463,253602,12.2,0,0.0,1
+2022,q4,services pro,pme,14.6,document processing,automation,2,32,96,8559,251.3,787,0.0,1
+2023,q3,manufacturing,eti,54.0,fraud detection,analytics,33,81,236,151402,0.9,0,0.0,1
+2023,q2,services pro,pme,8.7,process automation,hybrid,3,39,81,28503,161.1,483,0.0,1
+2025,q4,services pro,pme,11.1,sales automation,vision,6,39,64,19235,205.9,590,2.4,1
+2025,q2,retail,pme,5.9,sales automation,vision,11,41,86,9344,277.6,346,6.1,1
+2024,q4,finance,grande,258.7,document processing,vision,52,178,280,446961,35.3,722,0.0,1
+2025,q4,retail,eti,40.0,customer service bot,hybrid,34,37,227,64553,94.1,699,0.0,1
+2024,q2,manufacturing,pme,10.3,process automation,automation,7,40,60,15558,24.8,364,0.0,1
+2022,q1,manufacturing,eti,31.2,predictive analytics,vision,33,40,145,129825,191.4,180,0.0,1
+2024,q4,retail,pme,2.2,process automation,analytics,7,42,78,22317,195.8,540,0.0,1
+2024,q2,finance,pme,11.4,fraud detection,nlp,4,36,69,17097,4.5,0,0.0,1
+2023,q1,retail,eti,52.5,sales automation,vision,13,66,167,92391,181.2,742,13.1,0
+2025,q1,sante,pme,3.1,sales automation,automation,6,33,96,27876,114.3,151,19.3,1
+2025,q2,manufacturing,eti,46.1,quality control vision,hybrid,19,52,179,205778,214.6,765,0.0,1
+2024,q4,finance,pme,14.4,document processing,analytics,6,20,88,21879,97.5,89,0.0,1
+2025,q2,manufacturing,grande,156.1,pricing optimization,vision,40,123,461,499031,163.9,762,18.0,1
+2023,q2,sante,pme,3.9,process automation,hybrid,13,37,93,35603,202.3,617,0.0,1
+2023,q4,manufacturing,pme,13.1,pricing optimization,hybrid,3,14,98,8346,3.8,0,0.0,1
+2022,q4,manufacturing,eti,23.3,predictive analytics,vision,34,64,161,250000,11.6,0,0.0,1
+2023,q4,finance,eti,57.3,sales automation,vision,19,49,220,120319,388.9,156,20.7,1
+2024,q4,services pro,pme,1.5,fraud detection,vision,14,28,82,17505,-25.5,0,0.0,1
+2025,q2,finance,grande,106.5,document processing,automation,43,101,372,463711,74.6,633,0.0,1
+2024,q1,services pro,pme,3.1,customer service bot,hybrid,6,41,112,17154,61.1,562,0.0,1
+2025,q1,construction,eti,46.2,process automation,vision,30,38,254,98112,81.6,201,0.0,1
+2024,q3,logistique,pme,8.3,customer service bot,hybrid,3,33,72,21459,49.8,65,0.0,0
+2025,q3,finance,eti,26.1,quality control vision,automation,36,45,146,181860,371.4,681,0.0,1
+2024,q3,logistique,pme,6.5,document processing,hybrid,7,43,74,12673,162.2,502,0.0,1
+2023,q1,energie,eti,77.4,document processing,automation,11,62,188,83847,58.9,327,0.0,1
+2025,q1,logistique,grande,356.7,process automation,automation,78,69,345,292304,160.5,371,0.0,1
+2025,q1,sante,eti,62.9,process automation,hybrid,8,32,231,79929,237.7,777,0.0,0
+2024,q1,logistique,pme,10.4,fraud detection,nlp,2,16,118,19752,-17.0,0,0.0,1
+2025,q2,agroalimentaire,eti,66.9,document processing,analytics,44,66,207,111252,108.5,357,0.0,1
+2023,q1,services pro,grande,363.9,predictive analytics,automation,68,94,490,405071,241.2,625,0.0,1
+2025,q2,finance,eti,50.1,quality control vision,nlp,11,71,133,46740,128.3,102,0.0,1
+2025,q1,finance,eti,25.4,customer service bot,nlp,7,44,228,66340,291.8,591,0.0,1
+2025,q4,finance,pme,8.6,customer service bot,nlp,12,39,60,26503,2.2,0,0.0,1
+2024,q2,retail,pme,10.9,quality control vision,nlp,10,25,107,33160,28.0,457,0.0,1
+2025,q3,services pro,eti,16.5,predictive analytics,automation,31,38,224,88538,196.9,68,0.0,1
+2023,q1,logistique,eti,42.4,document processing,vision,36,37,181,63631,198.9,280,0.0,1
+2023,q1,finance,grande,470.4,predictive analytics,hybrid,33,162,330,223440,215.9,729,0.0,1
+2023,q4,finance,pme,3.3,pricing optimization,vision,10,43,64,11047,165.4,370,23.3,1
+2022,q2,manufacturing,pme,9.1,quality control vision,vision,6,37,65,21629,94.8,665,0.0,1
+2025,q1,services pro,eti,57.5,customer service bot,hybrid,28,57,265,56737,179.7,428,0.0,1
+2022,q2,energie,eti,50.7,customer service bot,nlp,25,39,261,56685,58.7,68,0.0,1
+2022,q3,logistique,eti,47.3,fraud detection,hybrid,13,49,233,99902,109.8,622,0.0,1
+2025,q1,finance,eti,40.4,predictive analytics,vision,24,53,134,109766,228.5,235,0.0,1
+2025,q2,services pro,pme,3.6,document processing,vision,4,33,81,18247,67.9,264,0.0,1
+2022,q3,agroalimentaire,grande,292.2,fraud detection,automation,55,178,450,383054,51.5,581,0.0,0
+2023,q1,finance,eti,34.3,sales automation,nlp,11,75,268,43758,297.9,108,2.6,1
+2024,q2,manufacturing,grande,394.5,process automation,automation,80,116,534,476106,12.8,0,0.0,1
+2024,q4,energie,pme,13.2,pricing optimization,hybrid,2,23,99,21449,231.0,457,3.3,1
+2024,q3,manufacturing,grande,253.4,pricing optimization,analytics,55,65,469,682910,212.4,647,0.5,0
+2025,q4,telecom,pme,10.1,document processing,hybrid,9,16,74,7013,13.9,0,0.0,0
+2025,q3,retail,pme,2.6,quality control vision,automation,5,27,76,10553,212.2,595,0.0,1
+2022,q4,finance,grande,320.1,quality control vision,vision,84,115,307,377947,109.3,122,0.0,1
+2023,q4,logistique,grande,332.3,pricing optimization,automation,60,136,289,392872,188.5,777,9.9,1
+2023,q4,finance,eti,53.4,quality control vision,automation,7,43,125,146187,10.9,0,0.0,1
+2022,q4,sante,eti,60.6,predictive analytics,analytics,11,46,179,128808,197.9,660,0.0,1
+2023,q3,services pro,pme,2.0,document processing,nlp,5,34,108,28159,214.8,270,0.0,1
+2024,q3,manufacturing,eti,53.6,customer service bot,nlp,12,36,143,165403,162.4,85,0.0,1
+2023,q1,sante,grande,386.3,process automation,vision,53,162,379,711958,158.0,371,0.0,1
+2025,q4,logistique,pme,6.5,process automation,vision,7,30,90,14706,116.5,25,0.0,1
+2022,q4,logistique,eti,54.4,customer service bot,vision,29,63,135,105418,90.1,741,0.0,1
+2022,q1,manufacturing,pme,5.4,quality control vision,nlp,3,43,78,32360,257.9,140,0.0,1
+2025,q3,services pro,eti,38.2,customer service bot,hybrid,14,33,171,40427,-22.5,0,0.0,1
+2024,q2,retail,eti,55.5,process automation,nlp,24,73,142,110446,89.9,49,0.0,1
+2024,q1,services pro,pme,13.3,document processing,automation,14,29,65,39303,28.1,364,0.0,1
+2024,q1,sante,pme,14.7,customer service bot,vision,12,37,94,16308,-17.2,0,0.0,1
+2024,q2,construction,pme,7.9,quality control vision,analytics,13,30,97,16250,15.1,792,0.0,1
+2022,q3,construction,pme,11.5,process automation,hybrid,11,18,105,32616,-9.6,0,0.0,1
+2025,q1,retail,pme,10.9,quality control vision,hybrid,3,40,100,20010,91.9,540,0.0,1
+2023,q4,energie,pme,7.0,predictive analytics,hybrid,9,40,92,37750,92.7,452,0.0,1
+2023,q1,manufacturing,eti,67.3,sales automation,vision,12,76,160,104135,133.6,267,0.0,1
+2024,q3,finance,pme,9.4,fraud detection,automation,6,43,64,16537,225.3,349,0.0,1
+2022,q3,agroalimentaire,eti,47.1,process automation,vision,31,72,120,144404,84.6,567,0.0,1
+2024,q2,finance,eti,21.8,sales automation,vision,39,58,136,73659,145.9,589,19.4,1
+2023,q4,logistique,pme,10.3,customer service bot,analytics,6,33,83,13191,9.1,0,0.0,1
+2023,q2,finance,eti,36.9,sales automation,automation,11,54,193,250000,247.9,263,23.2,1
+2022,q1,manufacturing,grande,112.1,pricing optimization,automation,37,91,274,440718,3.2,0,0.0,1
+2024,q4,sante,eti,65.9,process automation,hybrid,22,48,129,80723,49.3,632,0.0,0
+2022,q1,services pro,grande,166.1,customer service bot,vision,67,167,498,440831,195.3,758,0.0,1
+2022,q2,telecom,eti,19.0,process automation,nlp,7,67,187,86624,101.5,649,0.0,1
+2022,q2,services pro,pme,13.2,fraud detection,vision,13,34,68,18061,1.6,408,0.0,1
+2023,q1,agroalimentaire,eti,43.4,predictive analytics,nlp,44,41,238,105171,96.5,519,0.0,1
+2025,q2,finance,eti,54.2,quality control vision,nlp,36,52,202,45649,355.8,334,0.0,0
+2023,q3,finance,grande,466.2,predictive analytics,automation,32,151,370,509282,401.5,459,0.0,1
+2023,q1,telecom,pme,14.7,pricing optimization,nlp,12,37,73,29788,221.7,459,12.8,1
+2024,q3,energie,pme,14.3,fraud detection,hybrid,7,38,88,22084,-15.2,0,0.0,0
+2025,q3,manufacturing,pme,6.0,customer service bot,hybrid,12,34,69,14584,-3.4,0,0.0,1
+2024,q4,finance,pme,4.6,sales automation,hybrid,5,21,60,33084,411.6,657,5.4,1
+2025,q4,sante,grande,400.2,sales automation,hybrid,38,105,381,320686,15.0,760,19.0,1
+2024,q3,services pro,eti,39.0,process automation,nlp,33,72,189,146405,154.3,281,0.0,0
+2024,q3,energie,eti,43.3,fraud detection,automation,18,58,196,62428,112.0,96,0.0,1
+2024,q4,manufacturing,eti,18.4,process automation,hybrid,34,81,146,30000,257.0,641,0.0,1
+2025,q3,services pro,eti,55.8,document processing,vision,14,31,178,51244,196.0,212,0.0,1
+2024,q3,finance,pme,2.3,pricing optimization,vision,14,38,104,25181,-24.3,0,0.0,1
+2024,q3,logistique,eti,48.8,pricing optimization,analytics,30,61,231,74367,146.1,741,2.1,1
+2022,q2,telecom,eti,32.4,customer service bot,analytics,21,63,187,125415,245.1,752,0.0,1
+2023,q1,logistique,eti,41.5,process automation,hybrid,29,45,187,51375,155.0,99,0.0,1
+2024,q3,manufacturing,pme,12.4,pricing optimization,vision,7,36,60,39428,235.8,596,0.4,1
+2023,q4,retail,pme,6.3,customer service bot,analytics,4,32,95,20534,230.9,633,0.0,1
+2025,q4,manufacturing,pme,2.4,customer service bot,automation,13,32,92,26992,150.1,570,0.0,1
+2025,q4,manufacturing,eti,42.3,pricing optimization,analytics,29,42,208,175788,125.7,28,12.3,0
+2025,q4,finance,eti,58.2,pricing optimization,analytics,37,71,136,49406,382.1,635,9.2,0
+2023,q2,agroalimentaire,pme,5.2,fraud detection,automation,6,42,64,23495,-22.0,0,0.0,1
+2023,q3,finance,eti,42.9,pricing optimization,hybrid,34,73,197,30132,291.2,494,7.4,1
+2023,q4,manufacturing,pme,9.2,predictive analytics,hybrid,7,37,112,37911,4.8,0,0.0,1
+2025,q1,agroalimentaire,pme,4.3,quality control vision,nlp,13,20,90,6760,122.0,217,0.0,1
+2025,q1,telecom,eti,71.8,process automation,analytics,11,47,199,70935,-26.7,0,0.0,0
+2025,q4,manufacturing,eti,50.5,process automation,hybrid,24,60,268,76969,111.4,312,0.0,1
+2025,q2,finance,pme,4.4,sales automation,automation,6,33,65,18960,104.3,611,0.4,1
+2024,q3,telecom,pme,13.5,quality control vision,nlp,13,37,95,45000,121.4,578,0.0,1
+2023,q3,retail,pme,13.1,sales automation,vision,11,37,93,16568,86.3,516,22.4,1
+2024,q2,manufacturing,grande,171.9,document processing,nlp,69,157,480,590480,47.2,46,0.0,0
+2022,q2,retail,eti,65.9,process automation,analytics,26,74,185,95547,36.1,769,0.0,0
+2022,q4,energie,pme,10.3,predictive analytics,nlp,11,23,67,9996,127.7,591,0.0,1
+2024,q3,finance,eti,75.3,sales automation,nlp,19,61,151,116210,301.0,311,28.3,1
+2024,q1,manufacturing,eti,19.5,sales automation,analytics,35,78,182,61319,9.0,0,0.0,1
+2025,q2,telecom,grande,462.3,document processing,nlp,54,78,424,485317,213.4,85,0.0,1
+2024,q3,sante,grande,290.7,predictive analytics,analytics,74,94,486,417309,-12.6,0,0.0,1
+2025,q1,manufacturing,eti,20.5,predictive analytics,nlp,9,42,154,66491,246.5,253,0.0,1
+2023,q1,finance,pme,5.6,document processing,hybrid,4,41,106,14281,188.0,256,0.0,1
+2025,q1,finance,pme,7.7,pricing optimization,nlp,12,15,85,23601,304.8,675,29.7,0
+2024,q4,manufacturing,pme,10.4,document processing,vision,10,34,67,21644,213.7,714,0.0,1
+2024,q2,manufacturing,eti,56.9,document processing,vision,28,52,219,44562,204.0,743,0.0,0
+2023,q3,services pro,pme,14.2,fraud detection,analytics,6,36,94,13746,264.4,506,0.0,1
+2023,q4,finance,pme,7.7,pricing optimization,hybrid,3,29,115,11269,174.7,140,14.6,1
+2025,q1,services pro,grande,377.4,customer service bot,hybrid,70,151,282,702216,-16.1,0,0.0,0
+2025,q3,agroalimentaire,grande,268.6,process automation,vision,73,73,434,365457,18.7,204,0.0,1
+2023,q2,services pro,grande,213.6,quality control vision,analytics,61,153,333,330885,167.5,267,0.0,1
+2024,q2,agroalimentaire,grande,463.4,document processing,nlp,57,141,416,901652,16.8,0,0.0,1
+2022,q1,manufacturing,grande,180.8,fraud detection,vision,46,100,391,298572,-27.2,0,0.0,1
+2024,q2,retail,eti,70.6,customer service bot,vision,35,47,164,195925,76.4,398,0.0,1
+2022,q3,telecom,grande,262.2,quality control vision,automation,53,102,282,520515,171.0,565,0.0,1
+2022,q3,services pro,grande,416.4,quality control vision,nlp,64,115,302,960490,159.8,463,0.0,1

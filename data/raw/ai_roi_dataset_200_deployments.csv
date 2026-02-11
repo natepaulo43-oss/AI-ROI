@@ -1,0 +1,201 @@
+project_id,year,quarter,sector,company_size,revenue_m_eur,ai_use_case,deployment_type,days_diagnostic,days_poc,days_to_deployment,days_to_positive_roi,investment_eur,annual_gain_eur,roi_percent,time_saved_hours_month,revenue_increase_percent,failure,failure_reason,human_in_loop
+P001,2024,Q1,Manufacturing,Grande,330.7,Customer Service Bot,Analytics,35,115,360,,353519,0,-11.7,0,0.0,1,Budget dépassé,1
+P002,2024,Q4,Logistique,PME,7.8,Quality Control Vision,Analytics,10,27,60,261.0,14533,1469,10.1,552,0.0,0,,1
+P003,2023,Q2,Energie,PME,10.4,Customer Service Bot,NLP,9,14,110,187.0,25522,26807,105.0,678,0.0,0,,1
+P004,2025,Q4,Services Pro,ETI,50.3,Process Automation,Hybrid,37,34,268,,33932,0,-24.2,0,0.0,1,Résistance au changement,0
+P005,2022,Q3,Services Pro,PME,10.5,Quality Control Vision,Analytics,9,22,93,177.0,11285,22776,201.8,390,0.0,0,,1
+P006,2024,Q3,Telecom,PME,11.7,Document Processing,Hybrid,3,22,69,259.0,11107,14115,127.1,716,0.0,0,,1
+P007,2023,Q1,Logistique,Grande,194.3,Predictive Analytics,Automation,79,163,271,551.0,221752,156931,70.8,568,0.0,0,,1
+P008,2023,Q2,Construction,Grande,379.2,Quality Control Vision,Automation,89,92,533,515.0,414145,260373,62.9,369,0.0,0,,1
+P009,2023,Q1,Services Pro,PME,11.3,Fraud Detection,Hybrid,10,33,92,,14064,0,10.5,0,0.0,1,Intégration technique bloquée,1
+P010,2023,Q3,Finance,Grande,473.4,Process Automation,Analytics,50,73,519,685.0,349851,1340411,383.1,208,0.0,0,,1
+P011,2024,Q1,Sante,Grande,197.1,Predictive Analytics,Analytics,81,108,509,675.0,689692,1506101,218.4,795,0.0,0,,1
+P012,2023,Q4,Finance,ETI,57.2,Pricing Optimization,Analytics,31,64,134,248.0,49189,109175,222.0,512,23.8,0,,1
+P013,2023,Q1,Services Pro,ETI,47.4,Document Processing,Analytics,36,32,269,266.0,115138,155924,135.4,784,0.0,0,,1
+P014,2023,Q3,Retail,PME,3.8,Process Automation,NLP,14,35,94,134.0,21352,53579,250.9,567,0.0,0,,1
+P015,2025,Q1,Retail,Grande,336.8,Document Processing,NLP,30,135,322,390.0,340792,507573,148.9,275,0.0,0,,1
+P016,2025,Q1,Construction,Grande,95.7,Sales Automation,Analytics,37,122,477,443.0,366699,97196,26.5,517,21.8,0,,0
+P017,2025,Q3,Manufacturing,PME,7.4,Customer Service Bot,NLP,2,43,110,224.0,9877,11442,115.9,238,0.0,0,,0
+P018,2024,Q3,Logistique,ETI,18.1,Customer Service Bot,Analytics,35,30,137,188.0,37960,16117,42.5,155,0.0,0,,1
+P019,2024,Q2,Manufacturing,ETI,32.0,Customer Service Bot,NLP,42,60,200,306.0,112903,160315,142.0,467,0.0,0,,1
+P020,2024,Q1,Energie,Grande,483.7,Customer Service Bot,Analytics,41,68,297,371.0,715058,1388429,194.2,38,0.0,0,,1
+P021,2024,Q1,Retail,PME,14.1,Fraud Detection,Vision,7,43,92,183.0,45000,121005,268.9,458,0.0,0,,1
+P022,2023,Q2,Telecom,ETI,73.7,Sales Automation,Vision,38,49,254,252.0,64637,113150,175.1,512,13.5,0,,1
+P023,2025,Q3,Retail,ETI,65.8,Pricing Optimization,Hybrid,42,88,269,190.0,99974,245117,245.2,193,11.9,0,,0
+P024,2023,Q4,Finance,ETI,39.3,Process Automation,Vision,15,84,208,244.0,88589,91897,103.7,277,0.0,0,,1
+P025,2024,Q4,Retail,PME,3.1,Quality Control Vision,Automation,11,35,74,180.0,11785,10005,84.9,271,0.0,0,,1
+P026,2023,Q3,Agroalimentaire,Grande,487.1,Customer Service Bot,Automation,43,95,538,,389971,0,-7.2,0,0.0,1,Compétences internes manquantes,1
+P027,2024,Q2,Retail,PME,4.6,Document Processing,Vision,6,22,87,124.0,13035,10023,76.9,344,0.0,0,,1
+P028,2025,Q3,Sante,PME,2.1,Pricing Optimization,Automation,12,28,119,,14710,0,-9.3,0,0.0,1,Qualité données insuffisante,1
+P029,2025,Q3,Finance,Grande,395.0,Predictive Analytics,Hybrid,65,147,474,502.0,310889,788256,253.5,56,0.0,0,,1
+P030,2024,Q3,Finance,ETI,48.8,Document Processing,Automation,27,63,251,,60772,0,19.0,0,0.0,1,Budget dépassé,1
+P031,2022,Q2,Services Pro,ETI,37.6,Sales Automation,Automation,36,53,213,339.0,84376,145166,172.0,514,7.2,0,,1
+P032,2023,Q2,Finance,PME,10.9,Document Processing,Vision,6,41,88,220.0,17708,41224,232.8,158,0.0,0,,1
+P033,2023,Q2,Finance,ETI,23.4,Customer Service Bot,Hybrid,19,35,192,307.0,46045,100575,218.4,740,0.0,0,,1
+P034,2024,Q2,Logistique,ETI,17.4,Fraud Detection,Analytics,34,83,196,278.0,57687,82256,142.6,314,0.0,0,,1
+P035,2023,Q4,Retail,PME,4.6,Quality Control Vision,Vision,8,25,98,191.0,39321,44578,113.4,721,0.0,0,,1
+P036,2023,Q1,Retail,ETI,30.4,Sales Automation,Hybrid,12,44,144,214.0,229457,318808,138.9,340,29.5,0,,1
+P037,2025,Q2,Manufacturing,Grande,489.5,Sales Automation,Analytics,79,146,414,538.0,362799,833681,229.8,571,23.0,0,,1
+P038,2023,Q3,Manufacturing,Grande,101.8,Customer Service Bot,NLP,62,125,324,614.0,619281,1630469,263.3,601,0.0,0,,1
+P039,2023,Q3,Agroalimentaire,Grande,107.9,Fraud Detection,Vision,80,76,484,438.0,383756,267855,69.8,326,0.0,0,,1
+P040,2024,Q2,Manufacturing,PME,8.8,Pricing Optimization,Automation,5,41,83,201.0,45000,56567,125.7,281,4.2,0,,1
+P041,2025,Q4,Services Pro,ETI,79.9,Process Automation,Automation,33,76,141,217.0,82828,190572,230.1,491,0.0,0,,1
+P042,2024,Q1,Services Pro,ETI,61.8,Pricing Optimization,Analytics,33,62,157,243.0,52930,4195,7.9,477,15.2,0,,1
+P043,2025,Q4,Finance,Grande,465.9,Quality Control Vision,Hybrid,72,78,425,586.0,998087,1910998,191.5,674,0.0,0,,1
+P044,2024,Q4,Agroalimentaire,Grande,335.3,Pricing Optimization,Automation,74,84,482,585.0,664998,825852,124.2,395,27.6,0,,1
+P045,2023,Q1,Finance,Grande,289.3,Sales Automation,Hybrid,84,103,426,,393390,0,-19.5,0,0.0,1,Intégration technique bloquée,0
+P046,2022,Q2,Retail,PME,12.8,Predictive Analytics,NLP,5,36,91,200.0,19482,31720,162.8,719,0.0,0,,1
+P047,2025,Q3,Logistique,Grande,356.7,Process Automation,Automation,43,87,451,372.0,402818,460551,114.3,97,0.0,0,,1
+P048,2025,Q4,Telecom,Grande,476.7,Sales Automation,Hybrid,54,98,293,596.0,635026,1025344,161.5,507,10.1,0,,1
+P049,2025,Q1,Manufacturing,PME,7.0,Sales Automation,Automation,7,23,116,,27809,0,7.1,0,0.0,1,Compétences internes manquantes,1
+P050,2024,Q2,Manufacturing,PME,14.8,Customer Service Bot,Hybrid,4,22,61,257.0,19851,7238,36.5,28,0.0,0,,1
+P051,2024,Q4,Sante,Grande,345.9,Quality Control Vision,NLP,84,110,373,554.0,644221,555680,86.3,245,0.0,0,,1
+P052,2024,Q2,Telecom,PME,6.9,Fraud Detection,Hybrid,8,22,92,144.0,20254,30001,148.1,294,0.0,0,,1
+P053,2024,Q3,Telecom,ETI,68.2,Quality Control Vision,Vision,33,46,208,246.0,50311,44783,89.0,649,0.0,0,,1
+P054,2023,Q1,Telecom,Grande,351.6,Predictive Analytics,NLP,33,140,281,579.0,169525,317553,187.3,640,0.0,0,,1
+P055,2024,Q3,Finance,ETI,17.4,Pricing Optimization,Analytics,28,58,252,278.0,115642,138445,119.7,536,22.1,0,,1
+P056,2024,Q3,Manufacturing,Grande,445.4,Sales Automation,Analytics,82,123,523,656.0,347443,604082,173.9,345,12.6,0,,1
+P057,2023,Q2,Retail,PME,13.0,Customer Service Bot,Hybrid,2,14,119,184.0,21058,61908,294.0,89,0.0,0,,1
+P058,2024,Q1,Sante,Grande,495.5,Pricing Optimization,Vision,33,108,496,449.0,422057,271219,64.3,485,15.8,0,,1
+P059,2025,Q3,Manufacturing,ETI,68.0,Sales Automation,Hybrid,15,62,208,287.0,154430,212770,137.8,651,19.7,0,,1
+P060,2023,Q4,Finance,PME,10.9,Fraud Detection,NLP,8,43,66,254.0,18393,32937,179.1,592,0.0,0,,1
+P061,2023,Q4,Energie,PME,11.1,Predictive Analytics,Hybrid,11,35,97,232.0,27129,35653,131.4,658,0.0,0,,1
+P062,2023,Q2,Manufacturing,PME,5.9,Process Automation,Automation,3,25,60,242.0,14804,9575,64.7,607,0.0,0,,1
+P063,2025,Q4,Finance,ETI,61.0,Sales Automation,Automation,29,50,213,188.0,75525,230289,304.9,401,23.1,0,,1
+P064,2025,Q1,Manufacturing,PME,2.9,Process Automation,Hybrid,11,20,64,222.0,9489,19709,207.7,518,0.0,0,,1
+P065,2024,Q4,Retail,Grande,384.3,Customer Service Bot,Hybrid,42,164,463,,253602,0,12.2,0,0.0,1,Intégration technique bloquée,1
+P066,2022,Q4,Services Pro,PME,14.6,Document Processing,Automation,2,32,96,157.0,8559,21509,251.3,787,0.0,0,,1
+P067,2023,Q3,Manufacturing,ETI,54.0,Fraud Detection,Analytics,33,81,236,,151402,0,0.9,0,0.0,1,Compétences internes manquantes,1
+P068,2023,Q2,Services Pro,PME,8.7,Process Automation,Hybrid,3,39,81,168.0,28503,45923,161.1,483,0.0,0,,1
+P069,2025,Q4,Services Pro,PME,11.1,Sales Automation,Vision,6,39,64,254.0,19235,39599,205.9,590,2.4,0,,1
+P070,2025,Q2,Retail,PME,5.9,Sales Automation,Vision,11,41,86,126.0,9344,25940,277.6,346,6.1,0,,1
+P071,2024,Q4,Finance,Grande,258.7,Document Processing,Vision,52,178,280,681.0,446961,157569,35.3,722,0.0,0,,1
+P072,2025,Q4,Retail,ETI,40.0,Customer Service Bot,Hybrid,34,37,227,348.0,64553,60765,94.1,699,0.0,0,,1
+P073,2024,Q2,Manufacturing,PME,10.3,Process Automation,Automation,7,40,60,208.0,15558,3860,24.8,364,0.0,0,,1
+P074,2022,Q1,Manufacturing,ETI,31.2,Predictive Analytics,Vision,33,40,145,186.0,129825,248539,191.4,180,0.0,0,,1
+P075,2024,Q4,Retail,PME,2.2,Process Automation,Analytics,7,42,78,196.0,22317,43702,195.8,540,0.0,0,,1
+P076,2024,Q2,Finance,PME,11.4,Fraud Detection,NLP,4,36,69,,17097,0,4.5,0,0.0,1,Qualité données insuffisante,1
+P077,2023,Q1,Retail,ETI,52.5,Sales Automation,Vision,13,66,167,340.0,92391,167406,181.2,742,13.1,0,,0
+P078,2025,Q1,Sante,PME,3.1,Sales Automation,Automation,6,33,96,204.0,27876,31868,114.3,151,19.3,0,,1
+P079,2025,Q2,Manufacturing,ETI,46.1,Quality Control Vision,Hybrid,19,52,179,287.0,205778,441551,214.6,765,0.0,0,,1
+P080,2024,Q4,Finance,PME,14.4,Document Processing,Analytics,6,20,88,149.0,21879,21341,97.5,89,0.0,0,,1
+P081,2025,Q2,Manufacturing,Grande,156.1,Pricing Optimization,Vision,40,123,461,404.0,499031,817781,163.9,762,18.0,0,,1
+P082,2023,Q2,Sante,PME,3.9,Process Automation,Hybrid,13,37,93,158.0,35603,72012,202.3,617,0.0,0,,1
+P083,2023,Q4,Manufacturing,PME,13.1,Pricing Optimization,Hybrid,3,14,98,,8346,0,3.8,0,0.0,1,ROI insuffisant,1
+P084,2022,Q4,Manufacturing,ETI,23.3,Predictive Analytics,Vision,34,64,161,,250000,0,11.6,0,0.0,1,Qualité données insuffisante,1
+P085,2023,Q4,Finance,ETI,57.3,Sales Automation,Vision,19,49,220,363.0,120319,467896,388.9,156,20.7,0,,1
+P086,2024,Q4,Services Pro,PME,1.5,Fraud Detection,Vision,14,28,82,,17505,0,-25.5,0,0.0,1,Compétences internes manquantes,1
+P087,2025,Q2,Finance,Grande,106.5,Document Processing,Automation,43,101,372,491.0,463711,346056,74.6,633,0.0,0,,1
+P088,2024,Q1,Services Pro,PME,3.1,Customer Service Bot,Hybrid,6,41,112,240.0,17154,10488,61.1,562,0.0,0,,1
+P089,2025,Q1,Construction,ETI,46.2,Process Automation,Vision,30,38,254,333.0,98112,80095,81.6,201,0.0,0,,1
+P090,2024,Q3,Logistique,PME,8.3,Customer Service Bot,Hybrid,3,33,72,212.0,21459,10688,49.8,65,0.0,0,,0
+P091,2025,Q3,Finance,ETI,26.1,Quality Control Vision,Automation,36,45,146,307.0,181860,675394,371.4,681,0.0,0,,1
+P092,2024,Q3,Logistique,PME,6.5,Document Processing,Hybrid,7,43,74,140.0,12673,20554,162.2,502,0.0,0,,1
+P093,2023,Q1,Energie,ETI,77.4,Document Processing,Automation,11,62,188,336.0,83847,49346,58.9,327,0.0,0,,1
+P094,2025,Q1,Logistique,Grande,356.7,Process Automation,Automation,78,69,345,704.0,292304,469223,160.5,371,0.0,0,,1
+P095,2025,Q1,Sante,ETI,62.9,Process Automation,Hybrid,8,32,231,301.0,79929,189990,237.7,777,0.0,0,,0
+P096,2024,Q1,Logistique,PME,10.4,Fraud Detection,NLP,2,16,118,,19752,0,-17.0,0,0.0,1,Compétences internes manquantes,1
+P097,2025,Q2,Agroalimentaire,ETI,66.9,Document Processing,Analytics,44,66,207,318.0,111252,120664,108.5,357,0.0,0,,1
+P098,2023,Q1,Services Pro,Grande,363.9,Predictive Analytics,Automation,68,94,490,679.0,405071,976980,241.2,625,0.0,0,,1
+P099,2025,Q2,Finance,ETI,50.1,Quality Control Vision,NLP,11,71,133,358.0,46740,59951,128.3,102,0.0,0,,1
+P100,2025,Q1,Finance,ETI,25.4,Customer Service Bot,NLP,7,44,228,363.0,66340,193585,291.8,591,0.0,0,,1
+P101,2025,Q4,Finance,PME,8.6,Customer Service Bot,NLP,12,39,60,,26503,0,2.2,0,0.0,1,ROI insuffisant,1
+P102,2024,Q2,Retail,PME,10.9,Quality Control Vision,NLP,10,25,107,133.0,33160,9275,28.0,457,0.0,0,,1
+P103,2025,Q3,Services Pro,ETI,16.5,Predictive Analytics,Automation,31,38,224,317.0,88538,174373,196.9,68,0.0,0,,1
+P104,2023,Q1,Logistique,ETI,42.4,Document Processing,Vision,36,37,181,335.0,63631,126587,198.9,280,0.0,0,,1
+P105,2023,Q1,Finance,Grande,470.4,Predictive Analytics,Hybrid,33,162,330,502.0,223440,482502,215.9,729,0.0,0,,1
+P106,2023,Q4,Finance,PME,3.3,Pricing Optimization,Vision,10,43,64,128.0,11047,18272,165.4,370,23.3,0,,1
+P107,2022,Q2,Manufacturing,PME,9.1,Quality Control Vision,Vision,6,37,65,155.0,21629,20512,94.8,665,0.0,0,,1
+P108,2025,Q1,Services Pro,ETI,57.5,Customer Service Bot,Hybrid,28,57,265,292.0,56737,101983,179.7,428,0.0,0,,1
+P109,2022,Q2,Energie,ETI,50.7,Customer Service Bot,NLP,25,39,261,337.0,56685,33251,58.7,68,0.0,0,,1
+P110,2022,Q3,Logistique,ETI,47.3,Fraud Detection,Hybrid,13,49,233,276.0,99902,109664,109.8,622,0.0,0,,1
+P111,2025,Q1,Finance,ETI,40.4,Predictive Analytics,Vision,24,53,134,261.0,109766,250846,228.5,235,0.0,0,,1
+P112,2025,Q2,Services Pro,PME,3.6,Document Processing,Vision,4,33,81,254.0,18247,12393,67.9,264,0.0,0,,1
+P113,2022,Q3,Agroalimentaire,Grande,292.2,Fraud Detection,Automation,55,178,450,596.0,383054,197423,51.5,581,0.0,0,,0
+P114,2023,Q1,Finance,ETI,34.3,Sales Automation,NLP,11,75,268,346.0,43758,130336,297.9,108,2.6,0,,1
+P115,2024,Q2,Manufacturing,Grande,394.5,Process Automation,Automation,80,116,534,,476106,0,12.8,0,0.0,1,Compétences internes manquantes,1
+P116,2024,Q4,Energie,PME,13.2,Pricing Optimization,Hybrid,2,23,99,260.0,21449,49542,231.0,457,3.3,0,,1
+P117,2024,Q3,Manufacturing,Grande,253.4,Pricing Optimization,Analytics,55,65,469,700.0,682910,1450750,212.4,647,0.5,0,,0
+P118,2025,Q4,Telecom,PME,10.1,Document Processing,Hybrid,9,16,74,,7013,0,13.9,0,0.0,1,Budget dépassé,0
+P119,2025,Q3,Retail,PME,2.6,Quality Control Vision,Automation,5,27,76,238.0,10553,22397,212.2,595,0.0,0,,1
+P120,2022,Q4,Finance,Grande,320.1,Quality Control Vision,Vision,84,115,307,489.0,377947,413216,109.3,122,0.0,0,,1
+P121,2023,Q4,Logistique,Grande,332.3,Pricing Optimization,Automation,60,136,289,457.0,392872,740541,188.5,777,9.9,0,,1
+P122,2023,Q4,Finance,ETI,53.4,Quality Control Vision,Automation,7,43,125,,146187,0,10.9,0,0.0,1,Qualité données insuffisante,1
+P123,2022,Q4,Sante,ETI,60.6,Predictive Analytics,Analytics,11,46,179,258.0,128808,254869,197.9,660,0.0,0,,1
+P124,2023,Q3,Services Pro,PME,2.0,Document Processing,NLP,5,34,108,219.0,28159,60472,214.8,270,0.0,0,,1
+P125,2024,Q3,Manufacturing,ETI,53.6,Customer Service Bot,NLP,12,36,143,211.0,165403,268607,162.4,85,0.0,0,,1
+P126,2023,Q1,Sante,Grande,386.3,Process Automation,Vision,53,162,379,393.0,711958,1125196,158.0,371,0.0,0,,1
+P127,2025,Q4,Logistique,PME,6.5,Process Automation,Vision,7,30,90,144.0,14706,17138,116.5,25,0.0,0,,1
+P128,2022,Q4,Logistique,ETI,54.4,Customer Service Bot,Vision,29,63,135,210.0,105418,94965,90.1,741,0.0,0,,1
+P129,2022,Q1,Manufacturing,PME,5.4,Quality Control Vision,NLP,3,43,78,253.0,32360,83464,257.9,140,0.0,0,,1
+P130,2025,Q3,Services Pro,ETI,38.2,Customer Service Bot,Hybrid,14,33,171,,40427,0,-22.5,0,0.0,1,Intégration technique bloquée,1
+P131,2024,Q2,Retail,ETI,55.5,Process Automation,NLP,24,73,142,337.0,110446,99253,89.9,49,0.0,0,,1
+P132,2024,Q1,Services Pro,PME,13.3,Document Processing,Automation,14,29,65,233.0,39303,11063,28.1,364,0.0,0,,1
+P133,2024,Q1,Sante,PME,14.7,Customer Service Bot,Vision,12,37,94,,16308,0,-17.2,0,0.0,1,Compétences internes manquantes,1
+P134,2024,Q2,Construction,PME,7.9,Quality Control Vision,Analytics,13,30,97,216.0,16250,2446,15.1,792,0.0,0,,1
+P135,2022,Q3,Construction,PME,11.5,Process Automation,Hybrid,11,18,105,,32616,0,-9.6,0,0.0,1,Budget dépassé,1
+P136,2025,Q1,Retail,PME,10.9,Quality Control Vision,Hybrid,3,40,100,136.0,20010,18385,91.9,540,0.0,0,,1
+P137,2023,Q4,Energie,PME,7.0,Predictive Analytics,Hybrid,9,40,92,152.0,37750,34999,92.7,452,0.0,0,,1
+P138,2023,Q1,Manufacturing,ETI,67.3,Sales Automation,Vision,12,76,160,271.0,104135,139100,133.6,267,0.0,0,,1
+P139,2024,Q3,Finance,PME,9.4,Fraud Detection,Automation,6,43,64,259.0,16537,37253,225.3,349,0.0,0,,1
+P140,2022,Q3,Agroalimentaire,ETI,47.1,Process Automation,Vision,31,72,120,210.0,144404,122100,84.6,567,0.0,0,,1
+P141,2024,Q2,Finance,ETI,21.8,Sales Automation,Vision,39,58,136,297.0,73659,107447,145.9,589,19.4,0,,1
+P142,2023,Q4,Logistique,PME,10.3,Customer Service Bot,Analytics,6,33,83,,13191,0,9.1,0,0.0,1,Compétences internes manquantes,1
+P143,2023,Q2,Finance,ETI,36.9,Sales Automation,Automation,11,54,193,254.0,250000,619769,247.9,263,23.2,0,,1
+P144,2022,Q1,Manufacturing,Grande,112.1,Pricing Optimization,Automation,37,91,274,,440718,0,3.2,0,0.0,1,Intégration technique bloquée,1
+P145,2024,Q4,Sante,ETI,65.9,Process Automation,Hybrid,22,48,129,222.0,80723,39812,49.3,632,0.0,0,,0
+P146,2022,Q1,Services Pro,Grande,166.1,Customer Service Bot,Vision,67,167,498,480.0,440831,861030,195.3,758,0.0,0,,1
+P147,2022,Q2,Telecom,ETI,19.0,Process Automation,NLP,7,67,187,204.0,86624,87882,101.5,649,0.0,0,,1
+P148,2022,Q2,Services Pro,PME,13.2,Fraud Detection,Vision,13,34,68,269.0,18061,285,1.6,408,0.0,0,,1
+P149,2023,Q1,Agroalimentaire,ETI,43.4,Predictive Analytics,NLP,44,41,238,347.0,105171,101448,96.5,519,0.0,0,,1
+P150,2025,Q2,Finance,ETI,54.2,Quality Control Vision,NLP,36,52,202,328.0,45649,162421,355.8,334,0.0,0,,0
+P151,2023,Q3,Finance,Grande,466.2,Predictive Analytics,Automation,32,151,370,508.0,509282,2044516,401.5,459,0.0,0,,1
+P152,2023,Q1,Telecom,PME,14.7,Pricing Optimization,NLP,12,37,73,263.0,29788,66027,221.7,459,12.8,0,,1
+P153,2024,Q3,Energie,PME,14.3,Fraud Detection,Hybrid,7,38,88,,22084,0,-15.2,0,0.0,1,Budget dépassé,0
+P154,2025,Q3,Manufacturing,PME,6.0,Customer Service Bot,Hybrid,12,34,69,,14584,0,-3.4,0,0.0,1,Compétences internes manquantes,1
+P155,2024,Q4,Finance,PME,4.6,Sales Automation,Hybrid,5,21,60,229.0,33084,136158,411.6,657,5.4,0,,1
+P156,2025,Q4,Sante,Grande,400.2,Sales Automation,Hybrid,38,105,381,640.0,320686,48254,15.0,760,19.0,0,,1
+P157,2024,Q3,Services Pro,ETI,39.0,Process Automation,NLP,33,72,189,350.0,146405,225904,154.3,281,0.0,0,,0
+P158,2024,Q3,Energie,ETI,43.3,Fraud Detection,Automation,18,58,196,251.0,62428,69890,112.0,96,0.0,0,,1
+P159,2024,Q4,Manufacturing,ETI,18.4,Process Automation,Hybrid,34,81,146,328.0,30000,77110,257.0,641,0.0,0,,1
+P160,2025,Q3,Services Pro,ETI,55.8,Document Processing,Vision,14,31,178,215.0,51244,100419,196.0,212,0.0,0,,1
+P161,2024,Q3,Finance,PME,2.3,Pricing Optimization,Vision,14,38,104,,25181,0,-24.3,0,0.0,1,Résistance au changement,1
+P162,2024,Q3,Logistique,ETI,48.8,Pricing Optimization,Analytics,30,61,231,296.0,74367,108614,146.1,741,2.1,0,,1
+P163,2022,Q2,Telecom,ETI,32.4,Customer Service Bot,Analytics,21,63,187,304.0,125415,307333,245.1,752,0.0,0,,1
+P164,2023,Q1,Logistique,ETI,41.5,Process Automation,Hybrid,29,45,187,357.0,51375,79613,155.0,99,0.0,0,,1
+P165,2024,Q3,Manufacturing,PME,12.4,Pricing Optimization,Vision,7,36,60,208.0,39428,92980,235.8,596,0.4,0,,1
+P166,2023,Q4,Retail,PME,6.3,Customer Service Bot,Analytics,4,32,95,175.0,20534,47413,230.9,633,0.0,0,,1
+P167,2025,Q4,Manufacturing,PME,2.4,Customer Service Bot,Automation,13,32,92,160.0,26992,40523,150.1,570,0.0,0,,1
+P168,2025,Q4,Manufacturing,ETI,42.3,Pricing Optimization,Analytics,29,42,208,255.0,175788,221006,125.7,28,12.3,0,,0
+P169,2025,Q4,Finance,ETI,58.2,Pricing Optimization,Analytics,37,71,136,233.0,49406,188800,382.1,635,9.2,0,,0
+P170,2023,Q2,Agroalimentaire,PME,5.2,Fraud Detection,Automation,6,42,64,,23495,0,-22.0,0,0.0,1,Qualité données insuffisante,1
+P171,2023,Q3,Finance,ETI,42.9,Pricing Optimization,Hybrid,34,73,197,209.0,30132,87754,291.2,494,7.4,0,,1
+P172,2023,Q4,Manufacturing,PME,9.2,Predictive Analytics,Hybrid,7,37,112,,37911,0,4.8,0,0.0,1,ROI insuffisant,1
+P173,2025,Q1,Agroalimentaire,PME,4.3,Quality Control Vision,NLP,13,20,90,182.0,6760,8246,122.0,217,0.0,0,,1
+P174,2025,Q1,Telecom,ETI,71.8,Process Automation,Analytics,11,47,199,,70935,0,-26.7,0,0.0,1,Résistance au changement,0
+P175,2025,Q4,Manufacturing,ETI,50.5,Process Automation,Hybrid,24,60,268,222.0,76969,85709,111.4,312,0.0,0,,1
+P176,2025,Q2,Finance,PME,4.4,Sales Automation,Automation,6,33,65,135.0,18960,19770,104.3,611,0.4,0,,1
+P177,2024,Q3,Telecom,PME,13.5,Quality Control Vision,NLP,13,37,95,218.0,45000,54627,121.4,578,0.0,0,,1
+P178,2023,Q3,Retail,PME,13.1,Sales Automation,Vision,11,37,93,207.0,16568,14290,86.3,516,22.4,0,,1
+P179,2024,Q2,Manufacturing,Grande,171.9,Document Processing,NLP,69,157,480,642.0,590480,278940,47.2,46,0.0,0,,0
+P180,2022,Q2,Retail,ETI,65.9,Process Automation,Analytics,26,74,185,303.0,95547,34516,36.1,769,0.0,0,,0
+P181,2022,Q4,Energie,PME,10.3,Predictive Analytics,NLP,11,23,67,196.0,9996,12766,127.7,591,0.0,0,,1
+P182,2024,Q3,Finance,ETI,75.3,Sales Automation,NLP,19,61,151,364.0,116210,349774,301.0,311,28.3,0,,1
+P183,2024,Q1,Manufacturing,ETI,19.5,Sales Automation,Analytics,35,78,182,,61319,0,9.0,0,0.0,1,Résistance au changement,1
+P184,2025,Q2,Telecom,Grande,462.3,Document Processing,NLP,54,78,424,466.0,485317,1035453,213.4,85,0.0,0,,1
+P185,2024,Q3,Sante,Grande,290.7,Predictive Analytics,Analytics,74,94,486,,417309,0,-12.6,0,0.0,1,Budget dépassé,1
+P186,2025,Q1,Manufacturing,ETI,20.5,Predictive Analytics,NLP,9,42,154,266.0,66491,163913,246.5,253,0.0,0,,1
+P187,2023,Q1,Finance,PME,5.6,Document Processing,Hybrid,4,41,106,131.0,14281,26849,188.0,256,0.0,0,,1
+P188,2025,Q1,Finance,PME,7.7,Pricing Optimization,NLP,12,15,85,188.0,23601,71930,304.8,675,29.7,0,,0
+P189,2024,Q4,Manufacturing,PME,10.4,Document Processing,Vision,10,34,67,239.0,21644,46246,213.7,714,0.0,0,,1
+P190,2024,Q2,Manufacturing,ETI,56.9,Document Processing,Vision,28,52,219,206.0,44562,90920,204.0,743,0.0,0,,0
+P191,2023,Q3,Services Pro,PME,14.2,Fraud Detection,Analytics,6,36,94,170.0,13746,36338,264.4,506,0.0,0,,1
+P192,2023,Q4,Finance,PME,7.7,Pricing Optimization,Hybrid,3,29,115,126.0,11269,19691,174.7,140,14.6,0,,1
+P193,2025,Q1,Services Pro,Grande,377.4,Customer Service Bot,Hybrid,70,151,282,,702216,0,-16.1,0,0.0,1,Budget dépassé,0
+P194,2025,Q3,Agroalimentaire,Grande,268.6,Process Automation,Vision,73,73,434,467.0,365457,68393,18.7,204,0.0,0,,1
+P195,2023,Q2,Services Pro,Grande,213.6,Quality Control Vision,Analytics,61,153,333,490.0,330885,554323,167.5,267,0.0,0,,1
+P196,2024,Q2,Agroalimentaire,Grande,463.4,Document Processing,NLP,57,141,416,,901652,0,16.8,0,0.0,1,Qualité données insuffisante,1
+P197,2022,Q1,Manufacturing,Grande,180.8,Fraud Detection,Vision,46,100,391,,298572,0,-27.2,0,0.0,1,Intégration technique bloquée,1
+P198,2024,Q2,Retail,ETI,70.6,Customer Service Bot,Vision,35,47,164,199.0,195925,149765,76.4,398,0.0,0,,1
+P199,2022,Q3,Telecom,Grande,262.2,Quality Control Vision,Automation,53,102,282,444.0,520515,890303,171.0,565,0.0,0,,1
+P200,2022,Q3,Services Pro,Grande,416.4,Quality Control Vision,NLP,64,115,302,722.0,960490,1534597,159.8,463,0.0,0,,1

@@ -11,59 +11,78 @@ import ResultsPanel from '@/components/tool/ResultsPanel';
 import LoadingState from '@/components/tool/LoadingState';
 import { fetchPrediction, PredictionResponse } from '@/lib/api';
 
-const INDUSTRY_OPTIONS = [
+const SECTOR_OPTIONS = [
   { value: 'Manufacturing', label: 'Manufacturing' },
-  { value: 'Retail', label: 'Retail' },
-  { value: 'Healthcare', label: 'Healthcare' },
   { value: 'Finance', label: 'Finance' },
-  { value: 'Technology', label: 'Technology' },
-  { value: 'Professional Services', label: 'Professional Services' },
-  { value: 'Other', label: 'Other' },
-];
-
-const AI_USAGE_OPTIONS = [
-  { value: 'None', label: 'None' },
-  { value: 'Low', label: 'Low' },
-  { value: 'Moderate', label: 'Moderate' },
-  { value: 'High', label: 'High' },
+  { value: 'Retail', label: 'Retail' },
+  { value: 'Services Pro', label: 'Professional Services' },
+  { value: 'Sante', label: 'Healthcare' },
+  { value: 'Telecom', label: 'Technology/Telecom' },
 ];
 
 const USE_CASE_OPTIONS = [
-  { value: 'Operations', label: 'Operations' },
-  { value: 'Finance', label: 'Finance' },
-  { value: 'Marketing', label: 'Marketing' },
-  { value: 'HR', label: 'Human Resources' },
-  { value: 'Customer Service', label: 'Customer Service' },
-  { value: 'Other', label: 'Other' },
+  { value: 'Customer Service Bot', label: 'Customer Service Automation' },
+  { value: 'Process Automation', label: 'Process Automation' },
+  { value: 'Predictive Analytics', label: 'Predictive Analytics' },
+  { value: 'Sales Automation', label: 'Sales & Marketing Automation' },
+  { value: 'Document Processing', label: 'Document Processing' },
 ];
 
 export default function Tool() {
-  const [firmSize, setFirmSize] = useState<number>(100);
-  const [industry, setIndustry] = useState<string>('');
-  const [operationalMaturity, setOperationalMaturity] = useState<number>(3);
-  const [aiUsageLevel, setAiUsageLevel] = useState<string>('');
-  const [aiInvestment, setAiInvestment] = useState<number>(50000);
-  const [primaryUseCase, setPrimaryUseCase] = useState<string>('');
+  // Essential fields only
+  const [sector, setSector] = useState<string>('');
+  const [revenueUSD, setRevenueUSD] = useState<number>(0);
+  const [aiUseCase, setAiUseCase] = useState<string>('');
+  const [investmentUSD, setInvestmentUSD] = useState<number>(0);
+  const [deploymentMonths, setDeploymentMonths] = useState<number>(0);
+
+  // Optional - for better predictions
+  const [timeSaved, setTimeSaved] = useState<number>(0);
+  const [revenueIncrease, setRevenueIncrease] = useState<number>(0);
+
+  // Hidden defaults (set automatically based on SME profile)
+  const year = 2024;
+  const quarter = 'q2';
+  const companySize = 'pme'; // Default to SME
+  const deploymentType = 'hybrid'; // Most common
+  const humanInLoop = true;
 
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [result, setResult] = useState<PredictionResponse | null>(null);
+  const [error, setError] = useState<string | null>(null);
 
   const handleSubmit = async () => {
     setIsLoading(true);
     setResult(null);
+    setError(null);
 
     try {
+      // Calculate derived fields from deployment months
+      const totalDays = deploymentMonths * 30;
+      const daysDiagnostic = Math.round(totalDays * 0.15); // 15% diagnostic
+      const daysPoc = Math.round(totalDays * 0.30); // 30% POC
+      const daysToDeployment = totalDays;
+
       const prediction = await fetchPrediction({
-        firm_size: firmSize,
-        industry,
-        operational_maturity: operationalMaturity,
-        ai_usage_level: aiUsageLevel,
-        ai_investment: aiInvestment,
-        primary_use_case: primaryUseCase,
+        year,
+        quarter,
+        sector,
+        company_size: companySize,
+        revenue_m_usd: revenueUSD / 1000000, // Convert raw USD to millions
+        ai_use_case: aiUseCase,
+        deployment_type: deploymentType,
+        days_diagnostic: daysDiagnostic,
+        days_poc: daysPoc,
+        days_to_deployment: daysToDeployment,
+        investment_usd: investmentUSD, // Already in raw USD
+        time_saved_hours_month: timeSaved,
+        revenue_increase_percent: revenueIncrease,
+        human_in_loop: humanInLoop,
       });
       setResult(prediction);
     } catch (error) {
       console.error('Prediction failed:', error);
+      setError(error instanceof Error ? error.message : 'Prediction failed. Please try again.');
     } finally {
       setIsLoading(false);
     }
@@ -74,15 +93,15 @@ export default function Tool() {
       {/* Page header with asymmetric layout */}
       <div className="mb-20">
         <div className="text-[0.65rem] uppercase tracking-[0.2em] text-[#8a7a68] mb-6">
-          Prediction Tool
+          AI ROI Calculator
         </div>
         <h1 className="text-[4rem] font-light text-[#f5f1ed] leading-[0.95] tracking-tight mb-4">
-          Calculate
+          Predict Your
           <br />
-          ROI
+          AI Returns
         </h1>
         <p className="text-sm text-[#e8dfd5] font-light max-w-md">
-          Input your firm characteristics and AI adoption parameters
+          Get an AI-powered ROI prediction in under 2 minutes. Just 5 simple questions.
         </p>
       </div>
 
@@ -91,50 +110,57 @@ export default function Tool() {
         {/* Left column: Input form (5 columns) */}
         <div className="col-span-5">
           <InputPanel onSubmit={handleSubmit} isLoading={isLoading}>
-            <FormSection title="Firm Characteristics">
-              <NumberInput
-                label="Number of Employees"
-                value={firmSize}
-                onChange={setFirmSize}
-                min={1}
-                max={10000}
-                placeholder="150"
-              />
+            <FormSection title="Your Business">
               <Dropdown
                 label="Industry"
-                value={industry}
-                onChange={setIndustry}
-                options={INDUSTRY_OPTIONS}
+                value={sector}
+                onChange={setSector}
+                options={SECTOR_OPTIONS}
               />
-              <Slider
-                label="Operational Maturity"
-                value={operationalMaturity}
-                onChange={setOperationalMaturity}
-                min={1}
-                max={5}
+              <NumberInput
+                label="Annual Revenue"
+                value={revenueUSD}
+                onChange={setRevenueUSD}
+                step={1000}
+                placeholder="5000000"
               />
             </FormSection>
 
-            <FormSection title="AI Adoption">
+            <FormSection title="AI Project">
               <Dropdown
-                label="Current AI Usage Level"
-                value={aiUsageLevel}
-                onChange={setAiUsageLevel}
-                options={AI_USAGE_OPTIONS}
+                label="What will AI help with?"
+                value={aiUseCase}
+                onChange={setAiUseCase}
+                options={USE_CASE_OPTIONS}
               />
               <NumberInput
-                label="AI Investment (USD)"
-                value={aiInvestment}
-                onChange={setAiInvestment}
-                min={0}
+                label="Investment Budget"
+                value={investmentUSD}
+                onChange={setInvestmentUSD}
                 step={1000}
                 placeholder="50000"
               />
-              <Dropdown
-                label="Primary Use Case"
-                value={primaryUseCase}
-                onChange={setPrimaryUseCase}
-                options={USE_CASE_OPTIONS}
+              <NumberInput
+                label="Expected Timeline (Months)"
+                value={deploymentMonths}
+                onChange={setDeploymentMonths}
+                placeholder="6"
+              />
+            </FormSection>
+
+            <FormSection title="Early Results (Optional - Improves Accuracy)">
+              <NumberInput
+                label="Time Saved (Hours/Month)"
+                value={timeSaved}
+                onChange={setTimeSaved}
+                placeholder="0"
+              />
+              <NumberInput
+                label="Revenue Increase (%)"
+                value={revenueIncrease}
+                onChange={setRevenueIncrease}
+                step={0.5}
+                placeholder="0"
               />
             </FormSection>
           </InputPanel>
@@ -142,6 +168,14 @@ export default function Tool() {
 
         {/* Right column: Results (6 columns, offset) */}
         <div className="col-span-6 col-start-7">
+          {error && (
+            <div className="bg-red-900/20 border border-red-500/30 rounded-[2rem] p-8 mb-6">
+              <p className="text-red-400 text-sm">{error}</p>
+              <p className="text-red-300/60 text-xs mt-2">
+                Make sure the backend API is running at http://localhost:8000
+              </p>
+            </div>
+          )}
           {isLoading && <LoadingState />}
           {!isLoading && result && (
             <ResultsPanel
@@ -150,7 +184,7 @@ export default function Tool() {
               interpretation={result.interpretation}
             />
           )}
-          {!isLoading && !result && (
+          {!isLoading && !result && !error && (
             <div className="bg-gradient-to-br from-[#4a3f35] to-[#3d342a] rounded-[2rem] aspect-square flex items-center justify-center">
               <p className="text-[0.7rem] uppercase tracking-[0.15em] text-[#b8a894]">
                 Results will appear here

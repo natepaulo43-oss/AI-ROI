@@ -1,0 +1,31 @@
+Company_ID,Industry,AI_Adoption_Rate (%),AI_Tech_Used,Investment_in_AI (USD Million),Productivity_Index (0-100),Cost_Efficiency (%),Inventory_Turnover,Supply_Chain_Downtime (hrs/year),Carbon_Emissions_Reduction (%),Customer_Satisfaction_Score (1-10),ROI_on_AI (%)
+C001,Manufacturing,85,"ML, Robotics",15,90,18,12,20,15,8.5,22
+C002,Retail,70,Predictive Analytics,8,75,14,8,35,10,7.8,18
+C003,Logistics,90,"Robotics, IoT",20,92,20,15,12,20,9.2,25
+C004,Manufacturing,60,"ML, NLP",10,70,12,9,40,8,7.5,15
+C005,Retail,50,Predictive Analytics,6,65,10,7,50,5,7,12
+C006,Logistics,80,"Robotics, IoT, ML",18,88,16,14,18,18,8.8,20
+C007,Manufacturing,75,"ML, Predictive Analytics",12,85,15,11,25,12,8,19
+C008,Retail,40,NLP,5,60,8,6,55,4,6.8,10
+C009,Manufacturing,65,"ML, Robotics",13,78,13,10,30,11,7.9,16
+C010,Logistics,85,"Robotics, IoT, Predictive",17,89,17,13,15,16,8.7,21
+C011,Retail,55,"Predictive Analytics, NLP",7,68,11,7,45,6,7.2,13
+C012,Manufacturing,80,"ML, Robotics",16,87,16,12,22,14,8.3,20
+C013,Logistics,70,"Robotics, IoT",14,82,14,11,28,13,8.1,17
+C014,Retail,45,NLP,5,62,9,6,52,5,6.9,11
+C015,Manufacturing,75,"ML, Predictive Analytics",13,84,15,11,26,12,7.8,18
+C016,Logistics,88,"Robotics, IoT",19,91,19,14,14,17,9,23
+C017,Retail,52,"Predictive Analytics, NLP",6,66,10,7,48,6,7.1,12
+C018,Manufacturing,68,"ML, Robotics",14,80,14,10,29,12,7.9,16
+C019,Logistics,82,"Robotics, IoT, ML",18,87,16,13,17,15,8.5,21
+C020,Retail,48,NLP,5,61,8,6,53,5,6.7,10
+C021,Manufacturing,77,"ML, Predictive Analytics",14,86,15,12,24,13,8,19
+C022,Logistics,87,"Robotics, IoT",19,90,18,14,16,16,8.8,22
+C023,Retail,54,"Predictive Analytics, NLP",6,67,10,7,46,7,7.3,13
+C024,Manufacturing,66,"ML, Robotics",13,79,13,10,31,11,7.7,16
+C025,Logistics,83,"Robotics, IoT, Predictive",17,88,17,13,18,14,8.4,20
+C026,Retail,42,NLP,5,59,7,5,56,4,6.5,9
+C027,Manufacturing,72,"ML, Predictive Analytics",13,83,14,11,27,12,7.9,17
+C028,Logistics,89,"Robotics, IoT",20,91,19,15,13,18,9.1,24
+C029,Retail,50,Predictive Analytics,6,64,9,6,49,6,7,12
+C030,Manufacturing,74,"ML, Robotics",14,85,15,11,23,13,8.1,19
