@@ -44,6 +44,13 @@ class DataIntegrationPipeline:
             try:
                 df = pd.read_csv(csv_file)
                 dataset_name = csv_file.stem
+                
+                # Skip web_research_ai_roi.csv if it's empty (only header)
+                if dataset_name == 'web_research_ai_roi' and len(df) == 0:
+                    print(f"\n📁 File: {csv_file.name}")
+                    print(f"   ⏭️  Skipped (empty - awaiting manual data collection)")
+                    continue
+                
                 self.datasets[dataset_name] = df
                 
                 print(f"\n📁 File: {csv_file.name}")
@@ -72,6 +79,7 @@ class DataIntegrationPipeline:
         print("=" * 80)
         
         # Identify the ROI dataset (contains roi_percent or similar)
+        # Prioritize web_research_ai_roi if it has data
         roi_dataset_name = None
         for name, df in self.datasets.items():
             cols_lower = [col.lower() for col in df.columns]
@@ -80,7 +88,9 @@ class DataIntegrationPipeline:
                 roi_col = [col for col in df.columns if 'roi' in col.lower() and 'days' not in col.lower()][0]
                 print(f"\n✅ ROI Dataset identified: {name}")
                 print(f"   Target column: {roi_col}")
-                break
+                # If we find web_research_ai_roi with data, use it; otherwise continue
+                if name == 'web_research_ai_roi':
+                    break
         
         if not roi_dataset_name:
             print("\n❌ No ROI outcome variable found in any dataset!")
