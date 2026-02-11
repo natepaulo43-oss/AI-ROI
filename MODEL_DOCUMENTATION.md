@@ -1,6 +1,6 @@
 # AI ROI Prediction Model - Documentation
 
-## 📊 Model Overview
+## Model Overview
 
 **Model Type:** Practical ROI Predictor (with early deployment signals)  
 **Algorithm:** Gradient Boosting Regressor  
@@ -10,7 +10,7 @@
 
 ---
 
-## 🎯 Model Purpose
+## Model Purpose
 
 Predicts ROI percentage for AI deployments using:
 - Pre-adoption characteristics (sector, company size, investment, etc.)
@@ -20,9 +20,9 @@ Predicts ROI percentage for AI deployments using:
 
 ---
 
-## 📥 Required Input Features
+## Required Input Features
 
-### **Numeric Features (17)**
+### Numeric Features (17)
 
 | Feature | Description | Example | Source |
 |---------|-------------|---------|--------|
@@ -57,7 +57,7 @@ Predicts ROI percentage for AI deployments using:
 
 ---
 
-## 📤 Output
+## Output
 
 **Target Variable:** `roi` (ROI percentage)
 - **Range:** -27.2% to 411.6%
@@ -66,9 +66,9 @@ Predicts ROI percentage for AI deployments using:
 
 ---
 
-## 🔑 Key Insights
+## Key Insights
 
-### **Feature Importance (Top 10)**
+### Feature Importance (Top 10)
 
 1. **time_saved_hours_month** (26.64%) - Most important predictor
 2. **has_time_savings** (15.51%) - Binary flag for time savings
