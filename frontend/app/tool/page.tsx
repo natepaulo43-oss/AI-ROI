@@ -28,11 +28,25 @@ const USE_CASE_OPTIONS = [
   { value: 'Document Processing', label: 'Document Processing' },
 ];
 
+const COMPANY_SIZE_OPTIONS = [
+  { value: 'pme', label: 'Small/Medium (< €50M revenue)' },
+  { value: 'eti', label: 'Mid-sized (€50M - €1.5B)' },
+  { value: 'grande', label: 'Large Enterprise (> €1.5B)' },
+];
+
+const DEPLOYMENT_TYPE_OPTIONS = [
+  { value: 'hybrid', label: 'Hybrid (Cloud + On-premise)' },
+  { value: 'analytics', label: 'Analytics/Data Platform' },
+  { value: 'nlp', label: 'NLP/Language Model' },
+];
+
 export default function Tool() {
-  // Essential fields only
+  // Essential fields
   const [sector, setSector] = useState<string>('');
+  const [companySize, setCompanySize] = useState<string>('');
   const [revenueUSD, setRevenueUSD] = useState<number>(0);
   const [aiUseCase, setAiUseCase] = useState<string>('');
+  const [deploymentType, setDeploymentType] = useState<string>('');
   const [investmentUSD, setInvestmentUSD] = useState<number>(0);
   const [deploymentMonths, setDeploymentMonths] = useState<number>(0);
 
@@ -40,11 +54,9 @@ export default function Tool() {
   const [timeSaved, setTimeSaved] = useState<number>(0);
   const [revenueIncrease, setRevenueIncrease] = useState<number>(0);
 
-  // Hidden defaults (set automatically based on SME profile)
+  // Hidden defaults
   const year = 2024;
   const quarter = 'q2';
-  const companySize = 'pme'; // Default to SME
-  const deploymentType = 'hybrid'; // Most common
   const humanInLoop = true;
 
   const [isLoading, setIsLoading] = useState<boolean>(false);
@@ -101,7 +113,7 @@ export default function Tool() {
           AI Returns
         </h1>
         <p className="text-sm text-[#e8dfd5] font-light max-w-md">
-          Get an AI-powered ROI prediction in under 2 minutes. Just 5 simple questions.
+          Get an AI-powered ROI prediction in under 2 minutes. Answer a few questions about your business and AI project.
         </p>
       </div>
 
@@ -116,6 +128,12 @@ export default function Tool() {
                 value={sector}
                 onChange={setSector}
                 options={SECTOR_OPTIONS}
+              />
+              <Dropdown
+                label="Company Size"
+                value={companySize}
+                onChange={setCompanySize}
+                options={COMPANY_SIZE_OPTIONS}
               />
               <NumberInput
                 label="Annual Revenue"
@@ -132,6 +150,12 @@ export default function Tool() {
                 value={aiUseCase}
                 onChange={setAiUseCase}
                 options={USE_CASE_OPTIONS}
+              />
+              <Dropdown
+                label="Deployment Type"
+                value={deploymentType}
+                onChange={setDeploymentType}
+                options={DEPLOYMENT_TYPE_OPTIONS}
               />
               <NumberInput
                 label="Investment Budget"
