@@ -1,0 +1,8 @@
+year,quarter,sector,company_size,revenue_m_eur,ai_use_case,deployment_type,days_diagnostic,days_poc,days_to_deployment,investment_eur,roi,time_saved_hours_month,revenue_increase_percent,human_in_loop
+2024,q1,finance,grande,1500,customer service bot,nlp,90,180,540,13333333,200.0,800,0.0,1
+2024,q2,retail,grande,130000,customer service bot,nlp,90,180,540,60000000,150.0,0,0.0,1
+2024,q3,education,eti,1000,process automation,automation,28,50,163,400000,150.0,0,0.0,1
+2024,q2,retail,grande,560000,supply chain optimization,predictive analytics,60,105,340,2000000,150.0,0,0.0,1
+2024,q1,media,grande,30000,personalization engine,analytics,60,105,340,2000000,150.0,0,0.0,1
+2024,q2,finance,grande,120000,process automation,hybrid,60,105,340,2000000,150.0,0,20.0,1
+2024,q3,finance,grande,30000,fraud detection,analytics,60,105,340,2000000,150.0,0,0.0,1
