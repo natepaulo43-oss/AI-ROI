@@ -14,10 +14,16 @@ def main():
     print("IMPROVED ROI MODEL TRAINING PIPELINE")
     print("=" * 80)
     
-    data_path = os.path.join('data', 'processed', 'ai_roi_modeling_dataset.csv')
+    data_path = os.path.join('data', 'processed', 'ai_roi_training_dataset_cleaned.csv')
     print(f"\n1. Loading dataset from: {data_path}")
+    print(f"   Using CLEANED dataset (timeline issues fixed, validated)")
     df = pd.read_csv(data_path)
     print(f"   Dataset shape: {df.shape}")
+
+    # Validate data quality
+    assert (df['days_diagnostic'] + df['days_poc'] <= df['days_to_deployment']).all(), \
+        "Timeline inconsistency detected!"
+    print(f"   [OK] Data quality validation passed")
     
     print("\n2. Preparing target variable")
     y = df['roi'].copy()
@@ -159,12 +165,12 @@ def main():
     # Save conservative model
     conservative_path = os.path.join(model_dir, 'roi_model_conservative.pkl')
     joblib.dump(model_conservative, conservative_path)
-    print(f"   ✓ Conservative model saved: {conservative_path}")
+    print(f"   [OK] Conservative model saved: {conservative_path}")
     
     # Save practical model (as default)
     practical_path = os.path.join(model_dir, 'roi_model.pkl')
     joblib.dump(model_practical, practical_path)
-    print(f"   ✓ Practical model saved: {practical_path}")
+    print(f"   [OK] Practical model saved: {practical_path}")
     
     print("\n9. Feature importance (Practical model - top 15)")
     feature_names_practical = numeric_features_practical + list(
@@ -181,24 +187,24 @@ def main():
     print("\n" + "=" * 80)
     print("TRAINING COMPLETE")
     print("=" * 80)
-    print("\n📊 SUMMARY:")
+    print("\n SUMMARY:")
     print(f"   Conservative Model (pre-adoption only): R²={r2_c:.4f}")
     print(f"   Practical Model (with early signals):  R²={r2_p:.4f}")
-    print("\n💡 INTERPRETATION:")
+    print("\n INTERPRETATION:")
     if r2_c < 0.15:
-        print("   ⚠️  Pre-adoption features have limited predictive power (<15% R²)")
-        print("   → ROI is highly dependent on execution and post-deployment factors")
+        print("   [WARNING]  Pre-adoption features have limited predictive power (<15% R²)")
+        print("   -> ROI is highly dependent on execution and post-deployment factors")
     if r2_p > 0.5:
-        print("   ✅ Practical model achieves good performance (>50% R²)")
-        print("   → Early deployment signals are strong ROI predictors")
+        print("   [OK] Practical model achieves good performance (>50% R²)")
+        print("   -> Early deployment signals are strong ROI predictors")
     elif r2_p > 0.3:
-        print("   ⚠️  Practical model has moderate performance (30-50% R²)")
-        print("   → Some predictability, but ROI remains partially stochastic")
+        print("   [WARNING]  Practical model has moderate performance (30-50% R²)")
+        print("   -> Some predictability, but ROI remains partially stochastic")
     else:
-        print("   ❌ Even with early signals, ROI prediction is challenging")
-        print("   → Consider classification approach or accept high uncertainty")
+        print("   [ERROR] Even with early signals, ROI prediction is challenging")
+        print("   -> Consider classification approach or accept high uncertainty")
     
-    print("\n🎯 RECOMMENDATION:")
+    print("\n RECOMMENDATION:")
     print("   Use PRACTICAL model for production (includes early deployment signals)")
     print("   Use CONSERVATIVE model for pre-deployment estimates (with high uncertainty)")
 

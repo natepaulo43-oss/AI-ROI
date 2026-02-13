@@ -1,0 +1,95 @@
+================================================================================
+AI ROI TRAINING DATASET - QUALITY REPORT
+================================================================================
+
+Generated: 2026-02-12 23:09:56
+
+Total Records: 407
+
+--------------------------------------------------------------------------------
+FEATURE STATISTICS
+--------------------------------------------------------------------------------
+
+ROI:
+  Mean: 89.49%
+  Median: 51.50%
+  Std Dev: 100.25%
+  Range: [-30.00%, 411.60%]
+  Positive ROI: 329 (80.8%)
+  High ROI (>100%): 163 (40.0%)
+
+Investment (EUR):
+  Mean: €595,165
+  Median: €100,000
+  Range: [€6,760, €60,000,000]
+
+Deployment Timeline:
+  Diagnostic phase: 32.5 days (avg)
+  POC phase: 70.9 days (avg)
+  Total deployment: 232.2 days (avg)
+
+Outcomes:
+  Time savings: 246.4 hours/month (avg)
+  Revenue increase: 2.76% (avg)
+  Records with time savings: 284 (69.8%)
+  Records with revenue increase: 105 (25.8%)
+
+--------------------------------------------------------------------------------
+CATEGORICAL DISTRIBUTIONS
+--------------------------------------------------------------------------------
+
+Sectors: 16 unique
+  manufacturing: 61 (15.0%)
+  finance: 53 (13.0%)
+  retail: 45 (11.1%)
+  services pro: 42 (10.3%)
+  logistique: 29 (7.1%)
+  energie: 27 (6.6%)
+  sante: 24 (5.9%)
+  telecom: 23 (5.7%)
+  agroalimentaire: 23 (5.7%)
+  automotive: 19 (4.7%)
+
+Company Sizes:
+  pme: 164 (40.3%)
+  eti: 144 (35.4%)
+  grande: 99 (24.3%)
+
+AI Use Cases: 15 unique
+  process automation: 54 (13.3%)
+  customer service bot: 52 (12.8%)
+  pricing optimization: 41 (10.1%)
+  sales automation: 39 (9.6%)
+  quality control vision: 38 (9.3%)
+  document processing: 35 (8.6%)
+  fraud detection: 34 (8.4%)
+  predictive analytics: 30 (7.4%)
+  supply chain optimization: 16 (3.9%)
+  personalization engine: 14 (3.4%)
+
+Deployment Types:
+  hybrid: 88 (21.6%)
+  analytics: 82 (20.1%)
+  vision: 81 (19.9%)
+  nlp: 78 (19.2%)
+  automation: 77 (18.9%)
+  predictive analytics: 1 (0.2%)
+
+Years:
+  2022: 52 (12.8%)
+  2023: 116 (28.5%)
+  2024: 147 (36.1%)
+  2025: 92 (22.6%)
+
+================================================================================
+DATA SOURCES
+================================================================================
+
+• McKinsey: The State of AI in 2025
+• Gartner: Gen AI Project Analysis 2024
+• BCG: AI Adoption Study 2024
+• Wharton: AI Adoption Report 2025
+• Real case studies: Klarna, Alibaba, Walmart, Netflix, JPMorgan, etc.
+• Industry statistics: 2022-2025 AI adoption data
+
+================================================================================
