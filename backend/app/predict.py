@@ -1,8 +1,8 @@
 import pandas as pd
 import numpy as np
-from .schemas import PredictionInput, PredictionOutput
+from .schemas import PredictionInput, PredictionOutput, MonthlyForecast
 
-def make_prediction(model, input_data: PredictionInput) -> PredictionOutput:
+def make_prediction(models, input_data: PredictionInput) -> PredictionOutput:
     """
     Make ROI prediction using the trained model.
     Converts input data to the format expected by the model pipeline.
@@ -52,26 +52,92 @@ def make_prediction(model, input_data: PredictionInput) -> PredictionOutput:
     input_df['has_revenue_increase'] = (input_df['revenue_increase_percent'] > 0).astype(int)
     input_df['has_time_savings'] = (input_df['time_saved_hours_month'] > 0).astype(int)
     
-    # Select features in the same order as training
-    numeric_features = [
+    # Additional features for classifier
+    input_df['revenue_investment_ratio'] = input_df['revenue_m_eur'] / (input_df['investment_eur'] / 1_000_000 + 1)
+    input_df['time_efficiency'] = input_df['time_saved_hours_month'] / (input_df['total_prep_time'] + 1)
+    input_df['revenue_time_interaction'] = input_df['revenue_increase_percent'] * input_df['time_saved_hours_month']
+    
+    # Select features for classifier (matches roi_api.py)
+    classifier_features = [
+        'log_investment', 'log_revenue', 'investment_per_day',
+        'total_prep_time', 'deployment_speed', 'time_saved_hours_month',
+        'revenue_increase_percent', 'is_large_company', 'human_in_loop', 'year',
+        'revenue_investment_ratio', 'time_efficiency', 'revenue_time_interaction',
+        'sector', 'company_size', 'ai_use_case', 'deployment_type', 'quarter'
+    ]
+    
+    X_classifier = input_df[classifier_features]
+    
+    # Select features for regression (original features)
+    regression_features = [
         'log_investment', 'log_revenue', 'investment_ratio',
         'investment_per_day', 'diagnostic_efficiency', 'poc_efficiency',
         'total_prep_time', 'deployment_speed', 'size_investment_interaction',
         'is_large_company', 'is_hybrid_deployment', 'human_in_loop', 'year',
         'time_saved_hours_month', 'revenue_increase_percent',
-        'has_revenue_increase', 'has_time_savings'
+        'has_revenue_increase', 'has_time_savings',
+        'sector', 'company_size', 'ai_use_case', 'deployment_type', 'quarter'
     ]
-    categorical_features = ['sector', 'company_size', 'ai_use_case', 'deployment_type', 'quarter']
     
-    X = input_df[numeric_features + categorical_features]
+    X_regression = input_df[regression_features]
     
-    # Make prediction
-    prediction = model.predict(X)
-    predicted_roi = float(prediction[0])
+    # Get classification prediction and probabilities
+    classifier = models['classifier']
+    regression = models['regression']
     
-    # Create output with metadata
+    prediction_binary = classifier.predict(X_classifier)[0]  # 0 = Not-High, 1 = High
+    probabilities = classifier.predict_proba(X_classifier)[0]  # [prob_not_high, prob_high]
+    
+    # Get continuous ROI prediction from regression model
+    predicted_roi = float(regression.predict(X_regression)[0])
+    
+    # Calculate confidence intervals (using MAE of 62.67% from model documentation)
+    mae = 62.67
+    roi_lower = predicted_roi - mae
+    roi_upper = predicted_roi + mae
+    
+    # Generate monthly forecast (12 months) with gradual ramp-up
+    forecast_months = []
+    for month in range(1, 13):
+        # Ramp-up curve: starts at 30% of predicted, reaches 100% by month 6, then stabilizes
+        if month <= 6:
+            ramp_factor = 0.3 + (0.7 * (month / 6))
+        else:
+            ramp_factor = 1.0 + (0.1 * np.random.normal(0, 0.1))  # Small variation after stabilization
+        
+        month_roi = predicted_roi * ramp_factor
+        month_lower = roi_lower * ramp_factor
+        month_upper = roi_upper * ramp_factor
+        
+        forecast_months.append(MonthlyForecast(
+            month=month,
+            roi=round(month_roi, 2),
+            lower=round(month_lower, 2),
+            upper=round(month_upper, 2)
+        ))
+    
+    prob_not_high = float(probabilities[0])
+    prob_high = float(probabilities[1])
+    confidence = max(prob_high, prob_not_high)
+    
+    # Interpret prediction
+    if prediction_binary == 1:
+        prediction_label = "High"
+        interpretation = f"High ROI Expected (≥145.5%). Confidence: {prob_high*100:.1f}%"
+    else:
+        prediction_label = "Not-High"
+        interpretation = f"Not-High ROI Expected (<145.5%). Confidence: {prob_not_high*100:.1f}%"
+    
+    # Create complete output
     return PredictionOutput(
+        prediction=prediction_label,
+        probability_high=prob_high,
+        probability_not_high=prob_not_high,
+        confidence=confidence,
+        threshold=145.5,
+        interpretation=interpretation,
         predicted_roi=round(predicted_roi, 2),
-        model_version="v2.0_practical",
-        confidence_note="Moderate confidence (R²=0.42). Average error ±63%. Best used with early deployment signals."
+        roi_lower_bound=round(roi_lower, 2),
+        roi_upper_bound=round(roi_upper, 2),
+        forecast_months=forecast_months
     )
