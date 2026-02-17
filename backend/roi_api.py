@@ -9,8 +9,8 @@ app = FastAPI(title="ROI Prediction API")
 
 classifier_model = None
 regression_model = None
-CLASSIFIER_PATH = os.path.join('backend', 'models', 'roi_classifier_best.pkl')
-REGRESSION_PATH = os.path.join('backend', 'models', 'roi_model.pkl')
+CLASSIFIER_PATH = os.path.join('models', 'roi_classifier_best.pkl')
+REGRESSION_PATH = os.path.join('models', 'roi_model.pkl')
 
 @app.on_event("startup")
 async def load_model():

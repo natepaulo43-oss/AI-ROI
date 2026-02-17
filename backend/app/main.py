@@ -18,19 +18,19 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-# Load model on startup
-model = None
+# Load models on startup
+models = None
 
 @app.on_event("startup")
 async def startup_event():
-    """Load the model when the API starts"""
-    global model
+    """Load the models when the API starts"""
+    global models
     try:
-        model = load_model()
-        print("✅ Model loaded successfully on startup")
+        models = load_model()
+        print("✅ Models loaded successfully on startup")
     except Exception as e:
-        print(f"⚠️ Warning: Could not load model on startup: {e}")
-        print("Model will be loaded on first prediction request")
+        print(f"⚠️ Warning: Could not load models on startup: {e}")
+        print("Models will be loaded on first prediction request")
 
 @app.get("/")
 def read_root():
@@ -39,7 +39,7 @@ def read_root():
         "message": "AI ROI Prediction API",
         "version": "2.0",
         "status": "running",
-        "model_loaded": model is not None
+        "models_loaded": models is not None
     }
 
 @app.get("/health")
@@ -47,8 +47,9 @@ def health_check():
     """Detailed health check"""
     return {
         "status": "healthy",
-        "model_loaded": model is not None,
-        "model_version": "v2.0_practical"
+        "classifier_loaded": models is not None and 'classifier' in models,
+        "regression_loaded": models is not None and 'regression' in models,
+        "model_version": "v2.0_complete"
     }
 
 @app.post("/predict", response_model=PredictionOutput)
@@ -62,23 +63,27 @@ async def predict_roi(input_data: PredictionInput):
     - Investment amount
     - Optional: Early deployment signals (time savings, revenue increase)
     
-    Returns predicted ROI percentage with confidence note.
+    Returns complete prediction with:
+    - Binary classification (High vs Not-High ROI)
+    - Probability scores and confidence
+    - Continuous ROI prediction with confidence intervals
+    - 12-month forecast with ramp-up trajectory
     """
-    global model
+    global models
     
-    # Load model if not already loaded
-    if model is None:
+    # Load models if not already loaded
+    if models is None:
         try:
-            model = load_model()
+            models = load_model()
         except Exception as e:
             raise HTTPException(
                 status_code=500,
-                detail=f"Failed to load model: {str(e)}"
+                detail=f"Failed to load models: {str(e)}"
             )
     
     # Make prediction
     try:
-        result = make_prediction(model, input_data)
+        result = make_prediction(models, input_data)
         return result
     except Exception as e:
         raise HTTPException(

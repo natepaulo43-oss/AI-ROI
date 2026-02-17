@@ -158,7 +158,7 @@ export default function Tool() {
           AI Returns
         </h1>
         <p className="text-sm text-[#e8dfd5] font-light max-w-md leading-relaxed">
-          Get a data-driven ROI prediction based on 500+ real AI implementations. Fill in your project details below—most companies have this information readily available.
+          Get a data-driven ROI prediction based on 500+ real AI implementations. Fill in your project details below.
         </p>
       </div>
 

@@ -39,14 +39,6 @@ export default function ResultsPanel({
           <div className="flex flex-col justify-center space-y-4">
             <div>
               <div className="text-[0.6rem] uppercase tracking-[0.15em] text-[#b8a894] mb-1">
-                Confidence Level
-              </div>
-              <div className="text-2xl font-light text-[#f5f1ed]">
-                {(confidence * 100).toFixed(1)}%
-              </div>
-            </div>
-            <div>
-              <div className="text-[0.6rem] uppercase tracking-[0.15em] text-[#b8a894] mb-1">
                 Classification
               </div>
               <div className="text-2xl font-light text-[#f5f1ed]">

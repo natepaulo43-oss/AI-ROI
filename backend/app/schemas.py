@@ -52,17 +52,41 @@ class PredictionInput(BaseModel):
             }
         }
 
+class MonthlyForecast(BaseModel):
+    """Monthly ROI forecast data point"""
+    month: int = Field(..., description="Month number (1-12)")
+    roi: float = Field(..., description="Predicted ROI for this month")
+    lower: float = Field(..., description="Lower confidence bound")
+    upper: float = Field(..., description="Upper confidence bound")
+
 class PredictionOutput(BaseModel):
-    """Output schema for ROI prediction"""
+    """Output schema for ROI prediction - complete response with classification and forecast"""
+    prediction: str = Field(..., description="Classification: 'High' or 'Not-High'")
+    probability_high: float = Field(..., description="Probability of High ROI (0-1)")
+    probability_not_high: float = Field(..., description="Probability of Not-High ROI (0-1)")
+    confidence: float = Field(..., description="Confidence score (0-1)")
+    threshold: float = Field(..., description="ROI threshold for High classification (145.5%)")
+    interpretation: str = Field(..., description="Human-readable interpretation")
     predicted_roi: float = Field(..., description="Predicted ROI percentage")
-    model_version: str = Field(..., description="Model version used")
-    confidence_note: str = Field(..., description="Confidence level note")
+    roi_lower_bound: float = Field(..., description="Lower confidence interval")
+    roi_upper_bound: float = Field(..., description="Upper confidence interval")
+    forecast_months: list[MonthlyForecast] = Field(..., description="12-month ROI forecast")
     
     class Config:
         schema_extra = {
             "example": {
-                "predicted_roi": 132.5,
-                "model_version": "v2.0_practical",
-                "confidence_note": "Moderate confidence (R²=0.42). Average error ±63%."
+                "prediction": "High",
+                "probability_high": 0.72,
+                "probability_not_high": 0.28,
+                "confidence": 0.72,
+                "threshold": 145.5,
+                "interpretation": "High ROI Expected (≥145.5%). Confidence: 72.0%",
+                "predicted_roi": 178.5,
+                "roi_lower_bound": 115.83,
+                "roi_upper_bound": 241.17,
+                "forecast_months": [
+                    {"month": 1, "roi": 53.55, "lower": 34.75, "upper": 72.35},
+                    {"month": 12, "roi": 178.5, "lower": 115.83, "upper": 241.17}
+                ]
             }
         }
