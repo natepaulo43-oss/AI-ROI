@@ -14,9 +14,9 @@ def main():
     print("IMPROVED ROI MODEL TRAINING PIPELINE")
     print("=" * 80)
     
-    data_path = os.path.join('data', 'processed', 'ai_roi_training_dataset_cleaned.csv')
+    data_path = os.path.join('data', 'processed', 'ai_roi_full_combined_cleaned.csv')
     print(f"\n1. Loading dataset from: {data_path}")
-    print(f"   Using CLEANED dataset (timeline issues fixed, validated)")
+    print(f"   Using NEW COMBINED CLEANED dataset")
     df = pd.read_csv(data_path)
     print(f"   Dataset shape: {df.shape}")
 
