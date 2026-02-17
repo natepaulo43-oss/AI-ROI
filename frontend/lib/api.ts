@@ -30,11 +30,13 @@ export interface PredictionRequest {
 }
 
 export interface PredictionResponse {
-  predicted_roi: number;
-  direction: 'positive' | 'neutral' | 'negative';
+  prediction: string; // "High" or "Not-High"
+  probability_high: number; // 0-1
+  probability_not_high: number; // 0-1
+  confidence: number; // 0-1
+  threshold: number; // 145.5%
   interpretation: string;
-  model_version: string;
-  confidence_note: string;
+  direction: 'high' | 'not-high';
   timestamp: string;
 }
 
@@ -57,9 +59,12 @@ interface BackendRequest {
 }
 
 interface BackendResponse {
-  predicted_roi: number;
-  model_version: string;
-  confidence_note: string;
+  prediction: string; // "High" or "Not-High"
+  probability_high: number;
+  probability_not_high: number;
+  confidence: number;
+  threshold: number;
+  interpretation: string;
 }
 
 export async function fetchPrediction(data: PredictionRequest): Promise<PredictionResponse> {
@@ -96,22 +101,19 @@ export async function fetchPrediction(data: PredictionRequest): Promise<Predicti
     }
 
     const backendResponse: BackendResponse = await response.json();
-    const predicted_roi = backendResponse.predicted_roi;
 
-    // Determine direction based on ROI
-    const direction: 'positive' | 'neutral' | 'negative' = 
-      predicted_roi > 100 ? 'positive' :
-      predicted_roi > 0 ? 'neutral' : 'negative';
-
-    // Generate interpretation
-    const interpretation = generateInterpretation(predicted_roi, direction, data);
+    // Map backend response to frontend format
+    const direction: 'high' | 'not-high' = 
+      backendResponse.prediction === 'High' ? 'high' : 'not-high';
 
     return {
-      predicted_roi,
+      prediction: backendResponse.prediction,
+      probability_high: backendResponse.probability_high,
+      probability_not_high: backendResponse.probability_not_high,
+      confidence: backendResponse.confidence,
+      threshold: backendResponse.threshold,
+      interpretation: backendResponse.interpretation,
       direction,
-      interpretation,
-      model_version: backendResponse.model_version,
-      confidence_note: backendResponse.confidence_note,
       timestamp: new Date().toISOString(),
     };
   } catch (error) {
@@ -124,19 +126,5 @@ export async function fetchPrediction(data: PredictionRequest): Promise<Predicti
   }
 }
 
-function generateInterpretation(
-  roi: number, 
-  direction: 'positive' | 'neutral' | 'negative',
-  data: PredictionRequest
-): string {
-  const roiFormatted = roi.toFixed(1);
-  const hasEarlySignals = data.time_saved_hours_month > 0 || data.revenue_increase_percent > 0;
-  
-  if (direction === 'positive') {
-    return `Based on your deployment characteristics, the ML model predicts a strong ROI of ${roiFormatted}%. This suggests that your AI investment is likely to generate significant returns. ${hasEarlySignals ? 'Your early deployment signals (time savings and revenue impact) support this positive outlook.' : 'Consider tracking early deployment metrics to validate this prediction.'}`;
-  } else if (direction === 'neutral') {
-    return `Based on your deployment characteristics, the ML model predicts a moderate ROI of ${roiFormatted}%. This suggests your AI investment may break even or generate modest returns. ${hasEarlySignals ? 'Monitor your early deployment metrics closely to optimize outcomes.' : 'Focus on capturing time savings and revenue impact early to improve ROI.'}`;
-  } else {
-    return `Based on your deployment characteristics, the ML model predicts a challenging ROI of ${roiFormatted}%. This suggests potential difficulties in achieving positive returns. ${hasEarlySignals ? 'Despite some early signals, consider reassessing deployment strategy and timeline.' : 'Focus on quick wins and measurable outcomes to improve trajectory. Consider extending diagnostic and POC phases.'}`;
-  }
-}
+// Legacy function - no longer used, interpretation comes from backend
+// Kept for backward compatibility if needed
