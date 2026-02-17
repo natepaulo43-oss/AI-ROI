@@ -12,32 +12,56 @@ import LoadingState from '@/components/tool/LoadingState';
 import { fetchPrediction, PredictionResponse } from '@/lib/api';
 
 const SECTOR_OPTIONS = [
-  { value: 'Manufacturing', label: 'Manufacturing' },
-  { value: 'Finance', label: 'Finance' },
-  { value: 'Retail', label: 'Retail' },
-  { value: 'Services Pro', label: 'Professional Services' },
-  { value: 'Sante', label: 'Healthcare' },
-  { value: 'Telecom', label: 'Technology/Telecom' },
+  { value: 'agroalimentaire', label: 'Agriculture & Food' },
+  { value: 'automotive', label: 'Automotive' },
+  { value: 'construction', label: 'Construction' },
+  { value: 'education', label: 'Education' },
+  { value: 'energie', label: 'Energy & Utilities' },
+  { value: 'finance', label: 'Finance & Banking' },
+  { value: 'insurance', label: 'Insurance' },
+  { value: 'logistique', label: 'Logistics & Supply Chain' },
+  { value: 'manufacturing', label: 'Manufacturing' },
+  { value: 'media', label: 'Media & Entertainment' },
+  { value: 'pharma', label: 'Pharmaceutical' },
+  { value: 'retail', label: 'Retail & E-commerce' },
+  { value: 'sante', label: 'Healthcare' },
+  { value: 'services pro', label: 'Professional Services' },
+  { value: 'technology', label: 'Technology' },
+  { value: 'telecom', label: 'Telecommunications' },
 ];
 
 const USE_CASE_OPTIONS = [
-  { value: 'Customer Service Bot', label: 'Customer Service Automation' },
-  { value: 'Process Automation', label: 'Process Automation' },
-  { value: 'Predictive Analytics', label: 'Predictive Analytics' },
-  { value: 'Sales Automation', label: 'Sales & Marketing Automation' },
-  { value: 'Document Processing', label: 'Document Processing' },
+  { value: 'customer service bot', label: 'Customer Service & Chatbots', group: 'Customer Experience' },
+  { value: 'personalization engine', label: 'Personalization Engine', group: 'Customer Experience' },
+  { value: 'sentiment analysis', label: 'Sentiment Analysis', group: 'Customer Experience' },
+  
+  { value: 'process automation', label: 'Process Automation (RPA)', group: 'Operations' },
+  { value: 'quality control vision', label: 'Quality Control & Vision', group: 'Operations' },
+  { value: 'document processing', label: 'Document Processing & OCR', group: 'Operations' },
+  { value: 'inventory management', label: 'Inventory Management', group: 'Operations' },
+  { value: 'supply chain optimization', label: 'Supply Chain Optimization', group: 'Operations' },
+  
+  { value: 'predictive analytics', label: 'Predictive Analytics', group: 'Analytics & Intelligence' },
+  { value: 'demand forecasting', label: 'Demand Forecasting', group: 'Analytics & Intelligence' },
+  { value: 'risk assessment', label: 'Risk Assessment', group: 'Analytics & Intelligence' },
+  { value: 'fraud detection', label: 'Fraud Detection & Prevention', group: 'Analytics & Intelligence' },
+  
+  { value: 'sales automation', label: 'Sales & Marketing Automation', group: 'Revenue & Growth' },
+  { value: 'pricing optimization', label: 'Pricing Optimization', group: 'Revenue & Growth' },
 ];
 
 const COMPANY_SIZE_OPTIONS = [
-  { value: 'pme', label: 'Small/Medium (< €50M revenue)' },
-  { value: 'eti', label: 'Mid-sized (€50M - €1.5B)' },
-  { value: 'grande', label: 'Large Enterprise (> €1.5B)' },
+  { value: 'pme', label: 'Small/Medium (<250 employees)' },
+  { value: 'eti', label: 'Mid-sized (250-5,000 employees)' },
+  { value: 'grande', label: 'Large Enterprise (>5,000 employees)' },
 ];
 
 const DEPLOYMENT_TYPE_OPTIONS = [
+  { value: 'analytics', label: 'Analytics / Data Platform' },
+  { value: 'automation', label: 'Automation / RPA' },
   { value: 'hybrid', label: 'Hybrid (Cloud + On-premise)' },
-  { value: 'analytics', label: 'Analytics/Data Platform' },
-  { value: 'nlp', label: 'NLP/Language Model' },
+  { value: 'nlp', label: 'NLP / Language Model' },
+  { value: 'vision', label: 'Computer Vision' },
 ];
 
 export default function Tool() {
@@ -64,6 +88,27 @@ export default function Tool() {
   const [error, setError] = useState<string | null>(null);
 
   const handleSubmit = async () => {
+    // Validate required fields
+    if (!sector || !companySize || !aiUseCase || !deploymentType) {
+      setError('Please fill in all required fields (Industry, Company Size, Use Case, and Technology Type)');
+      return;
+    }
+
+    if (revenueUSD <= 0) {
+      setError('Please enter a valid annual revenue greater than $0');
+      return;
+    }
+
+    if (investmentUSD <= 0) {
+      setError('Please enter a valid investment budget greater than $0');
+      return;
+    }
+
+    if (deploymentMonths <= 0) {
+      setError('Please enter a valid timeline (at least 1 month)');
+      return;
+    }
+
     setIsLoading(true);
     setResult(null);
     setError(null);
@@ -112,8 +157,8 @@ export default function Tool() {
           <br />
           AI Returns
         </h1>
-        <p className="text-sm text-[#e8dfd5] font-light max-w-md">
-          Get an AI-powered ROI prediction in under 2 minutes. Answer a few questions about your business and AI project.
+        <p className="text-sm text-[#e8dfd5] font-light max-w-md leading-relaxed">
+          Get a data-driven ROI prediction based on 500+ real AI implementations. Fill in your project details below—most companies have this information readily available.
         </p>
       </div>
 
@@ -124,7 +169,7 @@ export default function Tool() {
           <InputPanel onSubmit={handleSubmit} isLoading={isLoading}>
             <FormSection title="Your Business">
               <Dropdown
-                label="Industry"
+                label="Industry Sector"
                 value={sector}
                 onChange={setSector}
                 options={SECTOR_OPTIONS}
@@ -136,55 +181,57 @@ export default function Tool() {
                 options={COMPANY_SIZE_OPTIONS}
               />
               <NumberInput
-                label="Annual Revenue"
+                label="Annual Revenue (USD)"
                 value={revenueUSD}
                 onChange={setRevenueUSD}
-                step={1000}
-                placeholder="5000000"
+                step={100000}
+                placeholder="e.g., 5000000 ($5M)"
               />
             </FormSection>
 
-            <FormSection title="AI Project">
+            <FormSection title="AI Project Details">
               <Dropdown
-                label="What will AI help with?"
+                label="Primary AI Use Case"
                 value={aiUseCase}
                 onChange={setAiUseCase}
                 options={USE_CASE_OPTIONS}
               />
               <Dropdown
-                label="Deployment Type"
+                label="Technology Type"
                 value={deploymentType}
                 onChange={setDeploymentType}
                 options={DEPLOYMENT_TYPE_OPTIONS}
               />
               <NumberInput
-                label="Investment Budget"
+                label="Total Investment Budget (USD)"
                 value={investmentUSD}
                 onChange={setInvestmentUSD}
-                step={1000}
-                placeholder="50000"
+                step={10000}
+                placeholder="e.g., 250000 ($250K)"
               />
               <NumberInput
                 label="Expected Timeline (Months)"
                 value={deploymentMonths}
                 onChange={setDeploymentMonths}
-                placeholder="6"
+                step={1}
+                placeholder="e.g., 6-12 months"
               />
             </FormSection>
 
-            <FormSection title="Early Results (Optional - Improves Accuracy)">
+            <FormSection title="Expected Benefits (Optional - Improves Accuracy)">
               <NumberInput
                 label="Time Saved (Hours/Month)"
                 value={timeSaved}
                 onChange={setTimeSaved}
-                placeholder="0"
+                step={10}
+                placeholder="e.g., 200 hours/month"
               />
               <NumberInput
                 label="Revenue Increase (%)"
                 value={revenueIncrease}
                 onChange={setRevenueIncrease}
-                step={0.5}
-                placeholder="0"
+                step={1}
+                placeholder="e.g., 5% increase"
               />
             </FormSection>
           </InputPanel>
