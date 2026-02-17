@@ -85,7 +85,7 @@ export default function ROIForecastChart({
       <ResponsiveContainer width="100%" height={320}>
         <AreaChart
           data={forecastData}
-          margin={{ top: 10, right: 10, left: 0, bottom: 0 }}
+          margin={{ top: 10, right: 10, left: 0, bottom: 20 }}
         >
           <defs>
             <linearGradient id="colorROI" x1="0" y1="0" x2="0" y2="1">
@@ -113,8 +113,8 @@ export default function ROIForecastChart({
             axisLine={{ stroke: '#6b5d4f' }}
             label={{ 
               value: 'Month', 
-              position: 'insideBottom', 
-              offset: -5,
+              position: 'bottom', 
+              offset: 0,
               style: { 
                 fill: '#b8a894', 
                 fontSize: 10,
