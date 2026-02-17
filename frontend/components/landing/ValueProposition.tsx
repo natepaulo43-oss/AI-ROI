@@ -30,12 +30,12 @@ export default function ValueProposition() {
       <FeatureItem
         number="01"
         title="Data-Driven Predictions"
-        description="Built on empirical research and real-world data from SME AI adoption initiatives across multiple industries and firm sizes"
+        description="Trained on 462 real-world AI deployment cases including Fortune 500 implementations (Klarna, Alibaba, JPMorgan) across 16 sectors and 15 use cases"
       />
       <FeatureItem
         number="02"
-        title="Machine Learning Core"
-        description="Powered by gradient boosting regression models trained on firm characteristics, operational maturity, and historical outcomes"
+        title="Binary Classification Model"
+        description="XGBoost classifier predicting High vs Not-High ROI (≥145.5% threshold) with 68.8% accuracy, significantly outperforming regression approaches"
       />
       <FeatureItem
         number="03"

@@ -29,6 +29,13 @@ export interface PredictionRequest {
   human_in_loop: boolean;
 }
 
+export interface MonthlyForecast {
+  month: number;
+  roi: number;
+  lower: number;
+  upper: number;
+}
+
 export interface PredictionResponse {
   prediction: string; // "High" or "Not-High"
   probability_high: number; // 0-1
@@ -38,6 +45,10 @@ export interface PredictionResponse {
   interpretation: string;
   direction: 'high' | 'not-high';
   timestamp: string;
+  predicted_roi: number; // Predicted ROI percentage
+  roi_lower_bound: number; // Lower confidence interval
+  roi_upper_bound: number; // Upper confidence interval
+  forecast_months: MonthlyForecast[]; // Monthly forecast data
 }
 
 // Backend expects EUR, so we convert from USD
@@ -65,6 +76,10 @@ interface BackendResponse {
   confidence: number;
   threshold: number;
   interpretation: string;
+  predicted_roi: number;
+  roi_lower_bound: number;
+  roi_upper_bound: number;
+  forecast_months: MonthlyForecast[];
 }
 
 export async function fetchPrediction(data: PredictionRequest): Promise<PredictionResponse> {
@@ -115,6 +130,10 @@ export async function fetchPrediction(data: PredictionRequest): Promise<Predicti
       interpretation: backendResponse.interpretation,
       direction,
       timestamp: new Date().toISOString(),
+      predicted_roi: backendResponse.predicted_roi,
+      roi_lower_bound: backendResponse.roi_lower_bound,
+      roi_upper_bound: backendResponse.roi_upper_bound,
+      forecast_months: backendResponse.forecast_months,
     };
   } catch (error) {
     console.error('Prediction API error:', error);

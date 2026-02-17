@@ -4,34 +4,34 @@ import FeatureImportanceChart from '@/components/insights/FeatureImportanceChart
 import TechnicalSpecs from '@/components/insights/TechnicalSpecs';
 
 const MOCK_FEATURE_IMPORTANCE = [
-  { feature: 'AI Investment Amount', importance: 0.35 },
-  { feature: 'Operational Maturity', importance: 0.28 },
-  { feature: 'Current AI Usage Level', importance: 0.18 },
-  { feature: 'Firm Size', importance: 0.12 },
-  { feature: 'Industry Sector', importance: 0.05 },
-  { feature: 'Primary Use Case', importance: 0.02 },
+  { feature: 'Time Saved (hours/month)', importance: 0.261 },
+  { feature: 'Has Time Savings Flag', importance: 0.155 },
+  { feature: 'Finance Sector', importance: 0.100 },
+  { feature: 'Investment Ratio', importance: 0.077 },
+  { feature: 'Deployment Speed', importance: 0.042 },
+  { feature: 'Log Investment', importance: 0.035 },
 ];
 
 const MOCK_METRICS = [
   {
-    label: 'R² Score',
-    value: '0.82',
-    description: 'Proportion of variance explained by the model',
+    label: 'Accuracy',
+    value: '68.82%',
+    description: 'Binary classification accuracy (High vs Not-High ROI)',
   },
   {
-    label: 'RMSE',
-    value: '4.3%',
-    description: 'Root mean squared error of predictions',
+    label: 'AUC-ROC',
+    value: '70.76%',
+    description: 'Area under ROC curve - discrimination ability',
   },
   {
-    label: 'MAE',
-    value: '3.1%',
-    description: 'Mean absolute error across test set',
+    label: 'Precision (High)',
+    value: '52.78%',
+    description: 'Accuracy when predicting High ROI projects',
   },
   {
     label: 'Training Samples',
-    value: '1,247',
-    description: 'Number of SME cases used for training',
+    value: '462',
+    description: 'AI deployment cases after preprocessing',
   },
 ];
 
@@ -62,10 +62,10 @@ export default function Insights() {
             <div className="bg-gradient-to-br from-[#4a3f35] to-[#3d342a] rounded-[2rem] aspect-[4/3] flex items-center justify-center p-12">
               <div className="text-center">
                 <div className="text-[0.65rem] uppercase tracking-[0.2em] text-[#b8a894] mb-4">
-                  XGBoost Architecture
+                  Binary Classification
                 </div>
                 <p className="text-sm text-[#e8dfd5] leading-relaxed font-light">
-                  Gradient boosting ensemble with sequential tree construction for optimal prediction accuracy
+                  Predicts High ROI (≥145.5%) vs Not-High. 500 trees, depth 8, learning rate 0.03. Outperforms regression by 329%
                 </p>
               </div>
             </div>
@@ -85,10 +85,10 @@ export default function Insights() {
               Note on Transparency
             </div>
             <p className="text-sm text-[#e8dfd5] leading-relaxed font-light">
-              This model was trained on historical data from SME AI adoption initiatives. Feature 
-              importance values help explain which factors most strongly influence predicted ROI. 
-              The model achieves strong performance (R² = 0.82) while maintaining interpretability, 
-              making it suitable for academic research and decision-support applications.
+              This binary classifier was trained on 462 AI deployment cases. Feature 
+              importance shows time savings and early deployment signals are the strongest predictors. 
+              The model achieves 68.8% accuracy with statistical significance (p less than 0.001), 
+              making it suitable for conference presentation and decision-support applications.
             </p>
           </div>
         </div>

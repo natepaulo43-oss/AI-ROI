@@ -206,6 +206,9 @@ export default function Tool() {
               predictedRoi={result.predicted_roi}
               direction={result.direction}
               interpretation={result.interpretation}
+              forecastData={result.forecast_months}
+              threshold={result.threshold}
+              confidence={result.confidence}
             />
           )}
           {!isLoading && !result && !error && (
