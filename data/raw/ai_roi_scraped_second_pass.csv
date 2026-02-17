@@ -1,0 +1,55 @@
+year,quarter,sector,company_size,revenue_m_eur,ai_use_case,deployment_type,days_diagnostic,days_poc,days_to_deployment,investment_eur,roi,time_saved_hours_month,revenue_increase_percent,human_in_loop
+2024,q2,manufacturing,pme,9.0,process automation,hybrid,35,60,270,35495,1000.0,2560,0.0,1
+2024,q4,retail,pme,9.6,process automation,nlp,4,7,30,43973,164.2,0,9.0,1
+2024,q1,education,pme,9.6,document processing,hybrid,35,56,270,57074,223.3,0,0.0,1
+2024,q1,finance,pme,9.9,fraud detection,hybrid,40,76,360,30599,192.8,0,30.0,1
+2024,q1,retail,pme,8.8,customer service bot,hybrid,30,59,270,23928,79.9,0,0.0,1
+2024,q4,technology,pme,11.1,customer service bot,automation,29,57,270,24879,239.3,0,0.0,1
+2024,q1,retail,pme,9.0,sales automation,hybrid,52,80,360,30990,140.8,0,0.0,1
+2024,q2,retail,pme,9.4,predictive analytics,analytics,35,57,270,42796,250.0,0,0.0,1
+2024,q2,retail,pme,558.0,sales automation,hybrid,143,287,1080,24345,246.4,0,66.0,1
+2024,q2,media,pme,10.7,document processing,hybrid,28,79,270,62854,200.0,1280,0.0,1
+2024,q3,education,pme,11.4,process automation,automation,32,78,270,30797,119.8,0,0.0,1
+2024,q1,retail,pme,10.1,predictive analytics,analytics,21,38,180,31259,148.5,0,10.0,1
+2024,q2,retail,pme,10.3,sales automation,hybrid,8,16,60,61479,182.5,0,15.0,1
+2024,q4,media,pme,10.9,process automation,automation,37,61,270,24833,40.0,256,0.0,1
+2024,q2,manufacturing,pme,9.8,predictive analytics,analytics,39,69,270,26167,250.0,0,0.0,1
+2024,q4,finance,pme,9.9,sales automation,automation,32,67,270,33243,205.1,0,260.0,0
+2024,q2,technology,pme,11.3,process automation,automation,72,150,630,45356,320.0,0,0.0,0
+2024,q2,retail,pme,37.0,predictive analytics,analytics,27,63,270,50959,150.0,0,0.0,1
+2024,q4,retail,pme,10.1,customer service bot,nlp,40,75,270,56116,122.1,0,100.0,1
+2024,q1,services pro,pme,8.2,process automation,hybrid,29,79,270,37180,60.0,384,0.0,1
+2024,q4,retail,pme,9.3,document processing,hybrid,38,71,270,44870,145.5,0,25.0,0
+2024,q2,services pro,pme,0.2,predictive analytics,analytics,26,44,180,56727,120.0,0,0.0,1
+2024,q2,services pro,pme,9.1,predictive analytics,hybrid,10,24,90,42885,200.0,0,0.0,1
+2024,q3,services pro,pme,8.2,pricing optimization,hybrid,27,75,270,27238,160.0,1024,19.0,1
+2024,q3,services pro,pme,9.5,process automation,automation,11,24,90,37732,60.0,384,0.0,1
+2024,q3,manufacturing,pme,8.1,process automation,hybrid,26,37,180,60721,58.8,0,0.0,1
+2024,q4,agroalimentaire,pme,10.8,process automation,hybrid,49,83,360,30597,46.0,294,0.0,1
+2024,q4,agroalimentaire,pme,9.2,process automation,hybrid,29,77,270,22250,52.0,332,0.0,1
+2024,q3,services pro,pme,7.2,process automation,hybrid,195,373,1440,3704426,251.1,0,0.0,1
+2024,q3,services pro,pme,8.6,process automation,hybrid,53,96,360,61162,520.0,0,0.0,1
+2024,q2,services pro,pme,5.7,process automation,hybrid,39,56,270,23837,270.0,0,0.0,1
+2024,q3,manufacturing,pme,7.0,process automation,hybrid,30,70,270,38740,80.0,512,0.0,1
+2024,q4,services pro,pme,9.0,process automation,automation,27,54,270,31790,24.0,153,0.0,1
+2024,q2,sante,pme,10.1,document processing,hybrid,36,75,270,24819,300.0,0,0.0,1
+2024,q3,services pro,pme,9.1,predictive analytics,hybrid,38,80,270,58274,150.0,0,0.0,1
+2024,q1,logistique,pme,7.5,predictive analytics,hybrid,35,80,270,46412,150.0,0,0.0,1
+2024,q2,logistique,pme,11.0,predictive analytics,hybrid,32,75,270,49253,250.0,0,0.0,1
+2024,q1,services pro,pme,8.6,process automation,automation,35,76,270,47188,80.0,512,0.0,1
+2024,q4,services pro,pme,10.3,document processing,hybrid,37,56,270,59581,150.0,960,0.0,1
+2024,q4,finance,pme,9.7,fraud detection,hybrid,34,80,270,37621,140.0,896,0.0,1
+2024,q4,insurance,pme,9.3,process automation,hybrid,31,65,270,32487,120.0,768,0.0,1
+2024,q3,services pro,pme,9.2,sales automation,hybrid,8,12,60,51458,680.0,2560,0.0,0
+2024,q1,sante,pme,8.8,process automation,hybrid,32,77,270,55197,66.9,0,57.0,1
+2024,q4,construction,pme,8.4,process automation,hybrid,37,58,270,46586,180.0,1152,0.0,1
+2024,q4,retail,pme,10.7,sales automation,hybrid,34,72,270,42208,98.8,0,15.0,1
+2024,q2,manufacturing,pme,8.6,quality control vision,analytics,40,98,360,46500,1000.0,0,0.0,1
+2024,q2,services pro,pme,5.7,process automation,automation,30,79,270,26204,275.0,320,0.0,1
+2024,q3,retail,pme,10.1,sales automation,automation,34,69,270,46174,29.0,185,0.0,1
+2024,q4,services pro,pme,5.4,document processing,hybrid,142,222,1080,39498,505.0,870,0.0,1
+2024,q2,services pro,pme,7.9,predictive analytics,automation,34,63,270,29609,300.0,0,0.0,0
+2024,q2,manufacturing,eti,34.8,process automation,automation,39,72,270,128844,80.7,0,0.0,1
+2024,q2,manufacturing,eti,23.3,process automation,hybrid,33,64,270,65100,118.6,0,0.0,1
+2024,q1,services pro,eti,33.4,process automation,hybrid,29,74,270,120617,67.7,0,0.0,1
+2024,q1,services pro,eti,39.8,process automation,hybrid,40,79,270,165836,57.6,0,0.0,1

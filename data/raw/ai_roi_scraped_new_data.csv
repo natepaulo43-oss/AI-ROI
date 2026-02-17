@@ -1,0 +1,54 @@
+year,quarter,sector,company_size,revenue_m_eur,ai_use_case,deployment_type,days_diagnostic,days_poc,days_to_deployment,investment_eur,roi,time_saved_hours_month,revenue_increase_percent,human_in_loop
+2024,q4,finance,eti,744.0,customer service bot,nlp,4,6,30,304993,91.6,0,0.0,1
+2024,q4,media,pme,9.3,process automation,hybrid,25,36,180,34175,200.0,1280,0.0,1
+2024,q1,retail,pme,27.9,predictive analytics,hybrid,47,88,360,41157,139.1,0,0.0,1
+2024,q2,manufacturing,pme,13.9,sales automation,hybrid,35,68,240,32084,1000.0,2560,0.0,1
+2024,q4,manufacturing,pme,37.2,predictive analytics,hybrid,33,82,300,32591,117.8,0,0.0,0
+2024,q3,automotive,pme,32.3,predictive analytics,analytics,50,87,360,28322,51.3,0,0.0,0
+2024,q1,agroalimentaire,pme,82.9,predictive analytics,analytics,52,91,360,28441,50.0,320,0.0,1
+2024,q3,retail,pme,4.7,customer service bot,nlp,12,25,90,4650,119.4,0,30.0,1
+2024,q1,retail,pme,59.4,customer service bot,nlp,22,46,180,57428,68.2,0,0.0,1
+2024,q3,retail,pme,31.9,pricing optimization,hybrid,13,28,120,52302,195.6,0,0.0,0
+2024,q1,retail,pme,59.0,pricing optimization,hybrid,23,45,180,24817,1200.0,0,0.0,1
+2024,q2,finance,eti,83.7,predictive analytics,analytics,36,99,360,138050,135.1,0,20.0,1
+2024,q3,services pro,eti,372.0,sales automation,hybrid,35,65,270,372637,159.6,0,0.0,1
+2024,q4,insurance,pme,49.5,document processing,hybrid,44,105,360,55738,420.0,0,0.0,1
+2024,q1,insurance,pme,49.7,quality control vision,vision,62,128,450,43277,730.0,0,0.0,1
+2024,q2,services pro,eti,93.0,customer service bot,nlp,18,48,180,169660,168.8,0,0.0,1
+2024,q4,retail,pme,79.8,process automation,hybrid,38,91,360,51168,108.2,0,0.0,1
+2024,q1,services pro,eti,186.0,sales automation,hybrid,22,47,180,212203,51.5,0,0.0,1
+2024,q1,construction,pme,16.4,process automation,hybrid,51,97,360,27190,117.3,0,0.0,0
+2024,q2,construction,pme,34.9,quality control vision,hybrid,28,53,240,36889,60.5,0,0.0,1
+2024,q1,agroalimentaire,pme,43.5,predictive analytics,hybrid,36,104,360,27282,50.0,320,0.0,1
+2024,q3,agroalimentaire,pme,93.7,predictive analytics,analytics,46,72,360,48625,147.9,0,0.0,0
+2024,q3,agroalimentaire,pme,43.2,quality control vision,hybrid,37,77,360,53227,39.1,0,0.0,1
+2024,q3,logistique,eti,46.5,predictive analytics,hybrid,44,75,360,87514,150.0,0,0.0,1
+2024,q2,logistique,pme,3.1,predictive analytics,hybrid,40,70,270,62386,200.0,0,0.0,1
+2024,q1,services pro,eti,55.8,predictive analytics,hybrid,46,93,360,46500,700.0,0,0.0,1
+2024,q1,services pro,pme,3.7,document processing,hybrid,20,49,180,13950,116.1,0,0.0,1
+2024,q4,services pro,pme,5.6,document processing,hybrid,17,33,120,18600,300.0,0,0.0,1
+2024,q3,services pro,pme,2.8,document processing,hybrid,21,49,180,23250,800.0,0,0.0,1
+2024,q3,sante,pme,4.7,document processing,hybrid,43,86,360,37200,114.7,0,0.0,1
+2024,q4,education,pme,18.6,process automation,hybrid,36,74,360,54417,153.9,0,0.0,1
+2024,q4,technology,grande,930.0,customer service bot,nlp,53,97,360,424269,59.9,0,0.0,1
+2024,q4,sante,pme,14.9,document processing,hybrid,100,153,720,27900000,185.4,0,700.0,1
+2024,q3,services pro,pme,18.6,customer service bot,nlp,26,46,180,7440,3750.0,0,0.0,1
+2024,q3,manufacturing,pme,27.9,predictive analytics,analytics,49,92,360,46500,30.0,192,0.0,1
+2024,q3,retail,pme,13.9,pricing optimization,hybrid,20,44,180,23250,300.0,0,12.0,1
+2024,q3,logistique,pme,18.6,predictive analytics,hybrid,32,63,270,27900,150.0,0,0.0,0
+2024,q2,media,pme,7.4,process automation,hybrid,24,48,180,13950,300.0,819,15.0,0
+2024,q2,finance,pme,11.2,document processing,hybrid,32,48,240,32550,100.0,640,0.0,1
+2024,q3,services pro,pme,9.3,process automation,hybrid,49,79,360,38424,119.9,0,0.0,1
+2024,q4,services pro,pme,9.3,process automation,hybrid,73,165,720,45149,182.0,1164,0.0,1
+2024,q2,services pro,pme,13.9,process automation,hybrid,47,82,360,41137,300.0,0,0.0,1
+2024,q1,services pro,pme,24.3,predictive analytics,hybrid,37,88,360,54225,88.1,0,0.0,1
+2024,q1,services pro,pme,18.6,process automation,hybrid,53,90,360,37977,353.0,0,0.0,1
+2024,q4,telecom,eti,669.6,process automation,hybrid,70,132,540,316317,50.0,320,0.0,1
+2024,q4,services pro,grande,930.0,customer service bot,nlp,50,100,360,203112,28.0,179,0.0,1
+2024,q4,finance,pme,92.7,process automation,automation,55,131,450,35251,120.0,768,0.0,1
+2024,q4,services pro,pme,56.9,process automation,automation,49,94,360,39858,50.0,320,0.0,1
+2024,q4,services pro,pme,18.6,process automation,hybrid,59,160,540,93000,370.0,0,0.0,1
+2024,q1,media,pme,44.6,process automation,automation,38,74,360,93000,450.0,0,0.0,1
+2024,q3,media,pme,16.3,sales automation,hybrid,112,292,1080,35412,299.0,0,0.0,0
+2024,q4,services pro,pme,3.1,process automation,automation,45,105,360,60656,52.1,0,0.0,1
+2024,q1,services pro,pme,35.0,process automation,hybrid,50,78,360,93000,350.0,512,0.0,1
