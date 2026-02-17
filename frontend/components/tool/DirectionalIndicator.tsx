@@ -1,20 +1,16 @@
 interface DirectionalIndicatorProps {
-  direction: 'positive' | 'neutral' | 'negative';
+  direction: 'high' | 'not-high';
 }
 
 export default function DirectionalIndicator({ direction }: DirectionalIndicatorProps) {
   const config = {
-    positive: {
+    high: {
       icon: '↑',
-      label: 'Positive',
+      label: 'High ROI',
     },
-    neutral: {
+    'not-high': {
       icon: '→',
-      label: 'Neutral',
-    },
-    negative: {
-      icon: '↓',
-      label: 'Negative',
+      label: 'Not-High ROI',
     },
   };
 

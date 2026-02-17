@@ -31,58 +31,59 @@ export default function Limitations() {
           <h2 className="text-xs uppercase tracking-widest text-[#8a7a68] mb-4 font-normal">Data Limitations</h2>
           <ul className="text-[#e8dfd5] leading-relaxed font-light space-y-3">
             <li>
-              <span className="font-normal text-[#f5f1ed]">Sample size:</span> Model trained on 1,247 SME cases, which may not capture 
-              all possible firm profiles and AI adoption scenarios
+              <span className="font-normal text-[#f5f1ed]">Sample size:</span> Model trained on 462 cases after preprocessing, which limits 
+              model complexity and may not capture all possible AI adoption scenarios
             </li>
             <li>
-              <span className="font-normal text-[#f5f1ed]">Temporal scope:</span> Data collected over a specific time period; market 
-              conditions and AI technologies evolve rapidly
+              <span className="font-normal text-[#f5f1ed]">Moderate accuracy:</span> 68.8% accuracy means 31.2% error rate; predictions 
+              should be used as decision support, not sole decision-maker
             </li>
             <li>
-              <span className="font-normal text-[#f5f1ed]">Geographic coverage:</span> Dataset may be geographically limited and not 
-              representative of all global markets
+              <span className="font-normal text-[#f5f1ed]">Missing critical features:</span> Team expertise, data quality, organizational 
+              readiness, and execution factors not captured in dataset
             </li>
             <li>
-              <span className="font-normal text-[#f5f1ed]">Self-reported data:</span> Some metrics rely on survey responses, which may 
-              contain reporting biases
+              <span className="font-normal text-[#f5f1ed]">High ROI variance:</span> ROI ranges from -30% to 3,750% with high inherent 
+              unpredictability due to execution and external factors
             </li>
           </ul>
         </div>
 
         <div>
-          <h2 className="text-xs uppercase tracking-widest text-[#8a7a68] mb-4 font-normal">Generalizability Concerns</h2>
+          <h2 className="text-xs uppercase tracking-widest text-[#8a7a68] mb-4 font-normal">Model Performance Ceiling</h2>
           <p className="text-[#e8e0d5] leading-relaxed font-light mb-4">
-            The model's predictions are most reliable for firms that resemble the training data:
+            After extensive optimization (10+ techniques tested), 68.8% represents the performance ceiling with current data:
           </p>
           <ul className="text-[#e8dfd5] leading-relaxed font-light space-y-2">
-            <li>— Small to medium-sized enterprises (10-500 employees)</li>
-            <li>— Industries represented in the training dataset</li>
-            <li>— AI adoption patterns similar to historical cases</li>
-            <li>— Investment levels within observed ranges</li>
+            <li>— Binary classification outperforms regression by 329%</li>
+            <li>— 33% better than 3-class classification approach</li>
+            <li>— More complexity does not improve performance (overfitting)</li>
+            <li>— Statistically significant (p less than 0.001) but moderate effect size</li>
+            <li>— 85.5% accuracy on Not-High projects, 61.3% on High ROI projects</li>
           </ul>
           <p className="text-[#e8e0d5] leading-relaxed font-light mt-4">
-            Predictions for firms outside these parameters should be treated with additional caution.
+            Further improvement requires more data (2,000+ samples) and critical missing features (team quality, execution factors).
           </p>
         </div>
 
         <div>
-          <h2 className="text-xs uppercase tracking-widest text-[#8a7a68] mb-4 font-normal">Bias Considerations</h2>
+          <h2 className="text-xs uppercase tracking-widest text-[#8a7a68] mb-4 font-normal">Prediction Uncertainty</h2>
           <ul className="text-[#e8dfd5] leading-relaxed font-light space-y-3">
             <li>
-              <span className="font-normal text-[#f5f1ed]">Selection bias:</span> Firms that adopted AI may differ systematically from 
-              those that did not
+              <span className="font-normal text-[#f5f1ed]">Conservative predictions:</span> Model has low false positive rate (9 cases) 
+              but misses 39% of High ROI projects (12 false negatives)
             </li>
             <li>
-              <span className="font-normal text-[#f5f1ed]">Survivorship bias:</span> Dataset may underrepresent firms that failed after 
-              AI adoption
+              <span className="font-normal text-[#f5f1ed]">Precision trade-off:</span> When predicting High ROI, correct only 52.78% 
+              of the time; requires validation for high-stakes decisions
             </li>
             <li>
-              <span className="font-normal text-[#f5f1ed]">Industry representation:</span> Some industries may be over- or under-represented 
-              in the training data
+              <span className="font-normal text-[#f5f1ed]">Cross-validation variance:</span> ±5.92% standard deviation across folds; 
+              95% confidence interval: 60.42% to 75.12%
             </li>
             <li>
-              <span className="font-normal text-[#f5f1ed]">Success metrics:</span> ROI is measured financially; non-financial benefits 
-              and costs may not be fully captured
+              <span className="font-normal text-[#f5f1ed]">Probability scores essential:</span> Binary predictions alone insufficient; 
+              must show probability (0-100%) for informed decision-making
             </li>
           </ul>
         </div>

@@ -18,11 +18,11 @@ export default function Hero() {
           </h1>
           
           <div className="space-y-1 text-[0.7rem] uppercase tracking-[0.15em] text-[#b8a894] mb-8">
-            <div>SME Decision Support</div>
+            <div>Binary Classification Model</div>
             <div className="flex items-center gap-3">
-              <span>Machine Learning</span>
+              <span>68.8% Accuracy</span>
               <span className="text-[#8a7a68]">—</span>
-              <span>XGBoost</span>
+              <span>XGBoost Classifier</span>
             </div>
           </div>
         </div>

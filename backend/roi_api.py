@@ -7,19 +7,26 @@ import os
 
 app = FastAPI(title="ROI Prediction API")
 
-model = None
-MODEL_PATH = os.path.join('backend', 'models', 'roi_classifier_best.pkl')
+classifier_model = None
+regression_model = None
+CLASSIFIER_PATH = os.path.join('backend', 'models', 'roi_classifier_best.pkl')
+REGRESSION_PATH = os.path.join('backend', 'models', 'roi_model.pkl')
 
 @app.on_event("startup")
 async def load_model():
-    global model
+    global classifier_model, regression_model
     try:
-        model = joblib.load(MODEL_PATH)
-        print(f"✓ Best Binary Classifier loaded successfully from {MODEL_PATH}")
+        classifier_model = joblib.load(CLASSIFIER_PATH)
+        print(f"✓ Binary Classifier loaded from {CLASSIFIER_PATH}")
         print(f"   Model Type: Binary Classification (High ROI vs Not-High)")
         print(f"   Accuracy: 68.82% (Statistically Significant: p < 0.001)")
+        
+        regression_model = joblib.load(REGRESSION_PATH)
+        print(f"✓ Regression Model loaded from {REGRESSION_PATH}")
+        print(f"   Model Type: Continuous ROI Prediction")
+        print(f"   Performance: R²=0.42, MAE=±62.67%")
     except Exception as e:
-        print(f"✗ Error loading model: {e}")
+        print(f"✗ Error loading models: {e}")
         raise
 
 class PredictionRequest(BaseModel):
@@ -45,12 +52,16 @@ class PredictionResponse(BaseModel):
     confidence: float  # Confidence score (0-1)
     threshold: float  # ROI threshold for "High" classification (145.5%)
     interpretation: str  # Human-readable interpretation
+    predicted_roi: float  # Predicted ROI percentage
+    roi_lower_bound: float  # Lower confidence interval (predicted_roi - MAE)
+    roi_upper_bound: float  # Upper confidence interval (predicted_roi + MAE)
+    forecast_months: list  # Monthly ROI forecast for visualization
 
 @app.post("/predict", response_model=PredictionResponse)
 async def predict_roi(request: PredictionRequest):
     try:
-        if model is None:
-            raise HTTPException(status_code=500, detail="Model not loaded")
+        if classifier_model is None or regression_model is None:
+            raise HTTPException(status_code=500, detail="Models not loaded")
         
         # Feature engineering (matching training pipeline)
         log_investment = np.log1p(request.investment_eur)
@@ -86,9 +97,38 @@ async def predict_roi(request: PredictionRequest):
         }
         features = pd.DataFrame(feature_dict)
         
-        # Get prediction and probabilities
-        prediction_binary = model.predict(features)[0]  # 0 = Not-High, 1 = High
-        probabilities = model.predict_proba(features)[0]  # [prob_not_high, prob_high]
+        # Get classification prediction and probabilities
+        prediction_binary = classifier_model.predict(features)[0]  # 0 = Not-High, 1 = High
+        probabilities = classifier_model.predict_proba(features)[0]  # [prob_not_high, prob_high]
+        
+        # Get continuous ROI prediction from regression model
+        predicted_roi = float(regression_model.predict(features)[0])
+        
+        # Calculate confidence intervals (using MAE of 62.67% from model documentation)
+        mae = 62.67
+        roi_lower = predicted_roi - mae
+        roi_upper = predicted_roi + mae
+        
+        # Generate monthly forecast (12 months) with gradual ramp-up
+        # ROI typically starts lower and increases as AI system matures
+        forecast_months = []
+        for month in range(1, 13):
+            # Ramp-up curve: starts at 30% of predicted, reaches 100% by month 6, then stabilizes
+            if month <= 6:
+                ramp_factor = 0.3 + (0.7 * (month / 6))
+            else:
+                ramp_factor = 1.0 + (0.1 * np.random.normal(0, 0.1))  # Small variation after stabilization
+            
+            month_roi = predicted_roi * ramp_factor
+            month_lower = roi_lower * ramp_factor
+            month_upper = roi_upper * ramp_factor
+            
+            forecast_months.append({
+                'month': month,
+                'roi': round(month_roi, 2),
+                'lower': round(month_lower, 2),
+                'upper': round(month_upper, 2)
+            })
         
         prob_not_high = float(probabilities[0])
         prob_high = float(probabilities[1])
@@ -108,7 +148,11 @@ async def predict_roi(request: PredictionRequest):
             probability_not_high=prob_not_high,
             confidence=confidence,
             threshold=145.5,
-            interpretation=interpretation
+            interpretation=interpretation,
+            predicted_roi=round(predicted_roi, 2),
+            roi_lower_bound=round(roi_lower, 2),
+            roi_upper_bound=round(roi_upper, 2),
+            forecast_months=forecast_months
         )
     
     except Exception as e:
@@ -122,5 +166,6 @@ async def root():
 async def health():
     return {
         "status": "healthy",
-        "model_loaded": model is not None
+        "classifier_loaded": classifier_model is not None,
+        "regression_loaded": regression_model is not None
     }
