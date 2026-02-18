@@ -21,7 +21,7 @@ export default function FeatureImportanceChart({ data }: FeatureImportanceChartP
           Importance
         </h3>
         <p className="text-sm text-[#e8dfd5] font-light leading-relaxed">
-          Features ranked by their contribution to the model's predictions. Higher values indicate 
+          Features ranked by their contribution to the model&apos;s predictions. Higher values indicate 
           greater influence on ROI outcomes.
         </p>
       </div>

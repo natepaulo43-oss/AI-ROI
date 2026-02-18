@@ -57,7 +57,7 @@ export default function LearningCurveChart() {
           <div>
             <div className="text-[#f5f1ed] font-normal mb-1">No Overfitting</div>
             <div className="text-[#b8a894]">
-              Small gap (~4.6%) between curves indicates the model isn't memorizing 
+              Small gap (~4.6%) between curves indicates the model isn&apos;t memorizing 
               training data
             </div>
           </div>

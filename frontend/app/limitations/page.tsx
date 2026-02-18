@@ -106,7 +106,7 @@ export default function Limitations() {
             Users of this tool should:
           </p>
           <ul className="text-[#e8dfd5] leading-relaxed font-light space-y-2">
-            <li>— Understand the model's limitations before making decisions</li>
+            <li>— Understand the model&apos;s limitations before making decisions</li>
             <li>— Avoid over-reliance on automated predictions</li>
             <li>— Consider ethical implications of AI adoption in their context</li>
             <li>— Maintain transparency when using model outputs to inform decisions</li>
