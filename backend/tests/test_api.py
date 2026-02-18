@@ -28,10 +28,10 @@ def client():
     with patch('app.model_loader.load_model', return_value=create_mock_models()):
         # Import app inside the patch context
         from app.main import app
-        import app.main
+        from app import main as app_main
         
         # Set models to mock
-        app.main.models = create_mock_models()
+        app_main.models = create_mock_models()
         
         with TestClient(app) as test_client:
             yield test_client
