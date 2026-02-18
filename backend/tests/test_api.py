@@ -4,12 +4,42 @@ Uses FastAPI TestClient to test endpoints without running a server.
 """
 
 import pytest
+from unittest.mock import Mock, patch, MagicMock
+import numpy as np
 from fastapi.testclient import TestClient
-from app.main import app
 
-client = TestClient(app)
+# Mock the model loader before importing the app
+def create_mock_models():
+    """Create mock models for testing"""
+    mock_classifier = Mock()
+    mock_classifier.predict.return_value = np.array([1])
+    mock_classifier.predict_proba.return_value = np.array([[0.3, 0.7]])
+    
+    mock_regression = Mock()
+    mock_regression.predict.return_value = np.array([180.5])
+    
+    return {
+        'classifier': mock_classifier,
+        'regression': mock_regression
+    }
 
-def test_root_endpoint():
+# Patch before importing app
+with patch('app.model_loader.load_model', return_value=create_mock_models()):
+    from app.main import app
+    # Set models to mock immediately
+    app.state.models = create_mock_models()
+
+@pytest.fixture
+def client():
+    """Create test client with mocked models"""
+    with patch('app.model_loader.load_model', return_value=create_mock_models()):
+        with TestClient(app) as test_client:
+            # Ensure models are set in the app
+            import app.main
+            app.main.models = create_mock_models()
+            yield test_client
+
+def test_root_endpoint(client):
     """Test the root endpoint"""
     response = client.get("/")
     assert response.status_code == 200
@@ -18,7 +48,7 @@ def test_root_endpoint():
     assert data["version"] == "2.0"
     assert data["status"] == "running"
 
-def test_health_check():
+def test_health_check(client):
     """Test the health check endpoint"""
     response = client.get("/health")
     assert response.status_code == 200
@@ -27,7 +57,7 @@ def test_health_check():
     assert data["status"] == "healthy"
     assert "model_version" in data
 
-def test_prediction_basic():
+def test_prediction_basic(client):
     """Test the prediction endpoint with valid data"""
     sample_data = {
         "year": 2024,
@@ -50,10 +80,12 @@ def test_prediction_basic():
     assert response.status_code == 200
     data = response.json()
     assert "predicted_roi" in data
-    assert "classification" in data
-    assert "model_version" in data
+    assert "prediction" in data
+    assert "probability_high" in data
+    assert "forecast_months" in data
+    assert isinstance(data["predicted_roi"], (int, float))
 
-def test_prediction_with_signals():
+def test_prediction_with_signals(client):
     """Test prediction with early deployment signals"""
     sample_data = {
         "year": 2024,
@@ -78,7 +110,7 @@ def test_prediction_with_signals():
     assert "predicted_roi" in data
     assert isinstance(data["predicted_roi"], (int, float))
 
-def test_invalid_quarter():
+def test_invalid_quarter(client):
     """Test with invalid quarter value"""
     invalid_data = {
         "year": 2024,
@@ -100,7 +132,7 @@ def test_invalid_quarter():
     response = client.post("/predict", json=invalid_data)
     assert response.status_code == 422
 
-def test_missing_required_fields():
+def test_missing_required_fields(client):
     """Test with missing required fields"""
     incomplete_data = {
         "year": 2024,
