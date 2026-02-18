@@ -109,10 +109,13 @@ async def predict_roi(request: PredictionRequest):
         roi_lower = predicted_roi - mae
         roi_upper = predicted_roi + mae
         
-        # Generate monthly forecast (12 months) with gradual ramp-up
+        # Generate monthly forecast based on deployment timeline with gradual ramp-up
         # ROI typically starts lower and increases as AI system matures
+        # Calculate number of months from days_to_deployment
+        forecast_month_count = max(12, int(np.ceil(request.days_to_deployment / 30)))
+        
         forecast_months = []
-        for month in range(1, 13):
+        for month in range(1, forecast_month_count + 1):
             # Ramp-up curve: starts at 30% of predicted, reaches 100% by month 6, then stabilizes
             if month <= 6:
                 ramp_factor = 0.3 + (0.7 * (month / 6))

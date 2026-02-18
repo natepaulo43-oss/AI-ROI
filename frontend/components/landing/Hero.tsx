@@ -10,11 +10,9 @@ export default function Hero() {
           </div>
           
           <h1 className="text-[5.5rem] font-light text-[#f5f1ed] leading-[0.95] tracking-tight mb-12">
-            AI Adoption
+            AI Adoption:
             <br />
-            ROI
-            <br />
-            Prediction
+            Predicting ROI
           </h1>
           
           <div className="space-y-1 text-[0.7rem] uppercase tracking-[0.15em] text-[#b8a894] mb-8">
