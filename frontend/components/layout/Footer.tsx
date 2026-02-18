@@ -8,7 +8,7 @@ export default function Footer() {
             <p className="mt-2 text-[#8a7a68]">Presented at SEDSI Conference · 2026</p>
           </div>
           <div className="text-xs text-[#8a7a68]">
-            Research Project
+            Nate Paulo, Rollins AI Business Association
           </div>
         </div>
       </div>
