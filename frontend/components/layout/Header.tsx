@@ -15,11 +15,11 @@ export default function Header() {
             <Link href="/hypothesis" className="text-sm font-normal text-[#c4b5a0] hover:text-[#f5f1ed] transition-colors">
               Motivations
             </Link>
-            <Link href="/insights" className="text-sm font-normal text-[#c4b5a0] hover:text-[#f5f1ed] transition-colors">
-              Insights
-            </Link>
             <Link href="/methodology" className="text-sm font-normal text-[#c4b5a0] hover:text-[#f5f1ed] transition-colors">
               Methodology
+            </Link>
+            <Link href="/insights" className="text-sm font-normal text-[#c4b5a0] hover:text-[#f5f1ed] transition-colors">
+              Insights
             </Link>
             <Link href="/limitations" className="text-sm font-normal text-[#c4b5a0] hover:text-[#f5f1ed] transition-colors">
               Limitations

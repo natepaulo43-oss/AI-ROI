@@ -1,4 +1,6 @@
 import PageLayout from '@/components/layout/PageLayout';
+import ModelEvolutionChart from '@/components/insights/ModelEvolutionChart';
+import LearningCurveChart from '@/components/insights/LearningCurveChart';
 
 export default function Methodology() {
   return (
@@ -80,6 +82,12 @@ export default function Methodology() {
             </ul>
           </div>
         </div>
+
+        {/* Model Evolution Visualization */}
+        <ModelEvolutionChart />
+
+        {/* Learning Curve Visualization */}
+        <LearningCurveChart />
 
         {/* Evaluation metrics - large display */}
         <div className="grid grid-cols-12 gap-12 items-center">
