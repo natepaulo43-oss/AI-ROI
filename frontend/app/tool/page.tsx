@@ -12,42 +12,30 @@ import LoadingState from '@/components/tool/LoadingState';
 import { fetchPrediction, PredictionResponse } from '@/lib/api';
 
 const SECTOR_OPTIONS = [
-  { value: 'agroalimentaire', label: 'Agriculture & Food' },
-  { value: 'automotive', label: 'Automotive' },
-  { value: 'construction', label: 'Construction' },
-  { value: 'education', label: 'Education' },
-  { value: 'energie', label: 'Energy & Utilities' },
   { value: 'finance', label: 'Finance & Banking' },
-  { value: 'insurance', label: 'Insurance' },
-  { value: 'logistique', label: 'Logistics & Supply Chain' },
   { value: 'manufacturing', label: 'Manufacturing' },
-  { value: 'media', label: 'Media & Entertainment' },
-  { value: 'pharma', label: 'Pharmaceutical' },
   { value: 'retail', label: 'Retail & E-commerce' },
   { value: 'sante', label: 'Healthcare' },
-  { value: 'services pro', label: 'Professional Services' },
-  { value: 'technology', label: 'Technology' },
+  { value: 'logistique', label: 'Logistics & Supply Chain' },
   { value: 'telecom', label: 'Telecommunications' },
+  { value: 'energie', label: 'Energy & Utilities' },
+  { value: 'services pro', label: 'Professional Services' },
+  { value: 'construction', label: 'Construction' },
+  { value: 'agroalimentaire', label: 'Agriculture & Food' },
 ];
 
 const USE_CASE_OPTIONS = [
-  { value: 'customer service bot', label: 'Customer Service & Chatbots', group: 'Customer Experience' },
-  { value: 'personalization engine', label: 'Personalization Engine', group: 'Customer Experience' },
-  { value: 'sentiment analysis', label: 'Sentiment Analysis', group: 'Customer Experience' },
+  { value: 'customer service bot', label: 'Customer Service Chatbot', group: 'Customer Experience' },
   
-  { value: 'process automation', label: 'Process Automation (RPA)', group: 'Operations' },
-  { value: 'quality control vision', label: 'Quality Control & Vision', group: 'Operations' },
-  { value: 'document processing', label: 'Document Processing & OCR', group: 'Operations' },
-  { value: 'inventory management', label: 'Inventory Management', group: 'Operations' },
-  { value: 'supply chain optimization', label: 'Supply Chain Optimization', group: 'Operations' },
+  { value: 'process automation', label: 'Process Automation', group: 'Operations & Efficiency' },
+  { value: 'quality control vision', label: 'Quality Control & Computer Vision', group: 'Operations & Efficiency' },
+  { value: 'document processing', label: 'Document Processing & OCR', group: 'Operations & Efficiency' },
   
-  { value: 'predictive analytics', label: 'Predictive Analytics', group: 'Analytics & Intelligence' },
-  { value: 'demand forecasting', label: 'Demand Forecasting', group: 'Analytics & Intelligence' },
-  { value: 'risk assessment', label: 'Risk Assessment', group: 'Analytics & Intelligence' },
-  { value: 'fraud detection', label: 'Fraud Detection & Prevention', group: 'Analytics & Intelligence' },
+  { value: 'predictive analytics', label: 'Predictive Analytics', group: 'Data & Intelligence' },
+  { value: 'fraud detection', label: 'Fraud Detection', group: 'Data & Intelligence' },
   
-  { value: 'sales automation', label: 'Sales & Marketing Automation', group: 'Revenue & Growth' },
-  { value: 'pricing optimization', label: 'Pricing Optimization', group: 'Revenue & Growth' },
+  { value: 'sales automation', label: 'Sales & Marketing Automation', group: 'Revenue Growth' },
+  { value: 'pricing optimization', label: 'Pricing Optimization', group: 'Revenue Growth' },
 ];
 
 const COMPANY_SIZE_OPTIONS = [
@@ -86,6 +74,7 @@ export default function Tool() {
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [result, setResult] = useState<PredictionResponse | null>(null);
   const [error, setError] = useState<string | null>(null);
+  const [showAdvanced, setShowAdvanced] = useState<boolean>(false);
 
   const handleSubmit = async () => {
     // Validate required fields
@@ -158,7 +147,7 @@ export default function Tool() {
           AI Returns
         </h1>
         <p className="text-sm text-[#e8dfd5] font-light max-w-md leading-relaxed">
-          Get a data-driven ROI prediction based on 500+ real AI implementations. Fill in your project details below.
+          Get a data-driven ROI prediction based on 462 real AI implementations. Fill in your project details below.
         </p>
       </div>
 
@@ -185,7 +174,7 @@ export default function Tool() {
                 value={revenueUSD}
                 onChange={setRevenueUSD}
                 step={100000}
-                placeholder="e.g., 5000000 ($5M)"
+                placeholder="e.g., 5000000"
               />
             </FormSection>
 
@@ -207,33 +196,46 @@ export default function Tool() {
                 value={investmentUSD}
                 onChange={setInvestmentUSD}
                 step={10000}
-                placeholder="e.g., 250000 ($250K)"
+                placeholder="e.g., 250000"
               />
               <NumberInput
                 label="Expected Timeline (Months)"
                 value={deploymentMonths}
                 onChange={setDeploymentMonths}
                 step={1}
-                placeholder="e.g., 6-12 months"
+                placeholder="e.g., 6"
               />
             </FormSection>
 
-            <FormSection title="Expected Benefits (Optional - Improves Accuracy)">
-              <NumberInput
-                label="Time Saved (Hours/Month)"
-                value={timeSaved}
-                onChange={setTimeSaved}
-                step={10}
-                placeholder="e.g., 200 hours/month"
-              />
-              <NumberInput
-                label="Revenue Increase (%)"
-                value={revenueIncrease}
-                onChange={setRevenueIncrease}
-                step={1}
-                placeholder="e.g., 5% increase"
-              />
-            </FormSection>
+            <div className="mb-12">
+              <button
+                type="button"
+                onClick={() => setShowAdvanced(!showAdvanced)}
+                className="flex items-center gap-2 text-xs uppercase tracking-widest text-[#8a7a68] hover:text-[#b8a894] transition-colors mb-6 font-normal"
+              >
+                <span>{showAdvanced ? '−' : '+'}</span>
+                <span>Advanced Options (Optional - Improves Accuracy)</span>
+              </button>
+              
+              {showAdvanced && (
+                <div className="space-y-6">
+                  <NumberInput
+                    label="Time Saved (Hours/Month)"
+                    value={timeSaved}
+                    onChange={setTimeSaved}
+                    step={10}
+                    placeholder="e.g., 200 hours/month"
+                  />
+                  <NumberInput
+                    label="Revenue Increase (%)"
+                    value={revenueIncrease}
+                    onChange={setRevenueIncrease}
+                    step={1}
+                    placeholder="e.g., 5% increase"
+                  />
+                </div>
+              )}
+            </div>
           </InputPanel>
         </div>
 

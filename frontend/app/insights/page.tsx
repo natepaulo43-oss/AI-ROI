@@ -4,12 +4,12 @@ import FeatureImportanceChart from '@/components/insights/FeatureImportanceChart
 import TechnicalSpecs from '@/components/insights/TechnicalSpecs';
 
 const MOCK_FEATURE_IMPORTANCE = [
-  { feature: 'Time Saved (hours/month)', importance: 0.261 },
-  { feature: 'Has Time Savings Flag', importance: 0.155 },
-  { feature: 'Finance Sector', importance: 0.100 },
-  { feature: 'Investment Ratio', importance: 0.077 },
-  { feature: 'Deployment Speed', importance: 0.042 },
-  { feature: 'Log Investment', importance: 0.035 },
+  { feature: 'Time Saved (hours/month)', importance: 0.245 },
+  { feature: 'Revenue Investment Ratio', importance: 0.118 },
+  { feature: 'Time Efficiency', importance: 0.095 },
+  { feature: 'Deployment Speed', importance: 0.082 },
+  { feature: 'Revenue Time Interaction', importance: 0.071 },
+  { feature: 'Log Investment', importance: 0.058 },
 ];
 
 const MOCK_METRICS = [
@@ -85,10 +85,8 @@ export default function Insights() {
               Note on Transparency
             </div>
             <p className="text-sm text-[#e8dfd5] leading-relaxed font-light">
-              This binary classifier was trained on 462 AI deployment cases. Feature 
-              importance shows time savings and early deployment signals are the strongest predictors. 
-              The model achieves 68.8% accuracy with statistical significance (p less than 0.001), 
-              making it suitable for conference presentation and decision-support applications.
+              Feature importance shows time savings and early deployment signals are the strongest predictors. 
+              The model achieves statistically significant performance, making it suitable for decision-support applications.
             </p>
           </div>
         </div>
