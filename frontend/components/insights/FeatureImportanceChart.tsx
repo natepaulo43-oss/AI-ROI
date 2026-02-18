@@ -14,7 +14,7 @@ export default function FeatureImportanceChart({ data }: FeatureImportanceChartP
     <div className="grid grid-cols-12 gap-12">
       {/* Left: Title and description */}
       <div className="col-span-4">
-        <div className="text-[0.65rem] uppercase tracking-[0.2em] text-[#8a7a68] mb-3">Figure 1</div>
+        <div className="text-[0.65rem] uppercase tracking-[0.2em] text-[#8a7a68] mb-3">Figure 4</div>
         <h3 className="text-3xl font-light text-[#f5f1ed] mb-6 leading-tight">
           Feature
           <br />

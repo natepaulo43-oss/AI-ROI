@@ -1,3 +1,5 @@
+import ROIDistributionChart from '@/components/insights/ROIDistributionChart';
+
 export default function Hypothesis() {
   return (
     <div className="mx-auto max-w-7xl px-12 py-16">
@@ -79,6 +81,9 @@ export default function Hypothesis() {
             </div>
           </div>
         </div>
+
+        {/* ROI Distribution Visualization */}
+        <ROIDistributionChart />
 
         {/* The Goal */}
         <div className="border-l-2 border-[#6b5d4f] pl-6 py-2">

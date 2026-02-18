@@ -1,3 +1,6 @@
+import ModelEvolutionChart from '@/components/insights/ModelEvolutionChart';
+import LearningCurveChart from '@/components/insights/LearningCurveChart';
+
 export default function About() {
   return (
     <div className="mx-auto max-w-7xl px-12 py-16">
@@ -64,6 +67,9 @@ export default function About() {
           </p>
         </div>
 
+        {/* Model Evolution Visualization */}
+        <ModelEvolutionChart />
+
         {/* Dataset Information */}
         <div className="border-l-2 border-[#6b5d4f] pl-6 py-2">
           <h2 className="text-sm font-normal text-[#f5f1ed] mb-4">Dataset Composition</h2>
@@ -107,6 +113,8 @@ export default function About() {
           </div>
         </div>
 
+        {/* Learning Curve Visualization */}
+        <LearningCurveChart />
 
         {/* Model Performance */}
         <div className="border-l-2 border-[#6b5d4f] pl-6 py-2">

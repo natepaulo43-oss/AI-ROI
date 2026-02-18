@@ -2,6 +2,9 @@ import PageLayout from '@/components/layout/PageLayout';
 import ModelCard from '@/components/insights/ModelCard';
 import FeatureImportanceChart from '@/components/insights/FeatureImportanceChart';
 import TechnicalSpecs from '@/components/insights/TechnicalSpecs';
+import ROCCurveChart from '@/components/insights/ROCCurveChart';
+import ConfusionMatrixChart from '@/components/insights/ConfusionMatrixChart';
+import DeploymentSpeedChart from '@/components/insights/DeploymentSpeedChart';
 
 const MOCK_FEATURE_IMPORTANCE = [
   { feature: 'Time Saved (hours/month)', importance: 0.245 },
@@ -74,6 +77,15 @@ export default function Insights() {
 
         {/* Feature importance - full width */}
         <FeatureImportanceChart data={MOCK_FEATURE_IMPORTANCE} />
+
+        {/* ROC Curve - full width */}
+        <ROCCurveChart />
+
+        {/* Confusion Matrix - full width */}
+        <ConfusionMatrixChart />
+
+        {/* Deployment Speed - full width */}
+        <DeploymentSpeedChart />
 
         {/* Technical specs with visual balance */}
         <div className="grid grid-cols-12 gap-12">
