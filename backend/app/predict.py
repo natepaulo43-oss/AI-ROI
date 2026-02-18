@@ -96,14 +96,74 @@ def make_prediction(models, input_data: PredictionInput) -> PredictionOutput:
     roi_lower = predicted_roi - mae
     roi_upper = predicted_roi + mae
     
-    # Generate monthly forecast (12 months) with gradual ramp-up
+    # Generate monthly forecast based on deployment timeline with gradual ramp-up
+    # Calculate number of months from days_to_deployment
+    forecast_month_count = max(12, int(np.ceil(input_data.days_to_deployment / 30)))
+    
+    # Dynamic ramp-up parameters based on use case complexity
+    # Based on industry research: customer service (3-6mo), predictive maintenance (12-24mo)
+    use_case_maturation = {
+        # Fast adoption (3-5 months) - Simple, immediate value
+        'customer service bot': {'ramp_months': 4, 'initial': 0.45},
+        'chatbot': {'ramp_months': 4, 'initial': 0.45},
+        'document processing': {'ramp_months': 5, 'initial': 0.40},
+        'process automation': {'ramp_months': 5, 'initial': 0.40},
+        
+        # Medium adoption (6-8 months) - Moderate complexity
+        'quality control vision': {'ramp_months': 6, 'initial': 0.35},
+        'fraud detection': {'ramp_months': 7, 'initial': 0.30},
+        'personalization engine': {'ramp_months': 6, 'initial': 0.35},
+        'sentiment analysis': {'ramp_months': 6, 'initial': 0.35},
+        'sales automation': {'ramp_months': 7, 'initial': 0.32},
+        'pricing optimization': {'ramp_months': 7, 'initial': 0.32},
+        
+        # Slow adoption (8-10 months) - High complexity, data-intensive
+        'predictive analytics': {'ramp_months': 8, 'initial': 0.30},
+        'demand forecasting': {'ramp_months': 8, 'initial': 0.30},
+        'supply chain optimization': {'ramp_months': 8, 'initial': 0.28},
+        'inventory management': {'ramp_months': 8, 'initial': 0.28},
+        'risk assessment': {'ramp_months': 9, 'initial': 0.25}
+    }
+    
+    # Get maturation profile for the use case
+    maturation = use_case_maturation.get(
+        input_data.ai_use_case,
+        {'ramp_months': 6, 'initial': 0.35, 'growth_rate': 0.02}  # default
+    )
+    
+    # Adjust ramp-up based on company size (larger = slower adoption)
+    size_multiplier = {
+        'micro': 0.9,
+        'pequena': 1.0,
+        'media': 1.15,
+        'grande': 1.3
+    }.get(input_data.company_size, 1.0)
+    
+    # Adjust based on deployment type
+    deployment_multiplier = {
+        'cloud': 0.95,
+        'on_premise': 1.1,
+        'hybrid': 1.2
+    }.get(input_data.deployment_type, 1.0)
+    
+    # Calculate effective ramp months
+    effective_ramp_months = maturation['ramp_months'] * size_multiplier * deployment_multiplier
+    
     forecast_months = []
-    for month in range(1, 13):
-        # Ramp-up curve: starts at 30% of predicted, reaches 100% by month 6, then stabilizes
-        if month <= 6:
-            ramp_factor = 0.3 + (0.7 * (month / 6))
+    for month in range(1, forecast_month_count + 1):
+        if month <= effective_ramp_months:
+            # Ramp-up phase: sigmoid curve for smooth acceleration
+            progress = month / effective_ramp_months
+            ramp_factor = maturation['initial'] + (1 - maturation['initial']) * (1 / (1 + np.exp(-10 * (progress - 0.5))))
         else:
-            ramp_factor = 1.0 + (0.1 * np.random.normal(0, 0.1))  # Small variation after stabilization
+            # Post-ramp stabilization: model's prediction represents stabilized ROI
+            # Add small realistic variation (±2-5%) to show natural performance fluctuation
+            months_after_ramp = month - effective_ramp_months
+            # Diminishing variation over time (more stable as system matures)
+            variation_amplitude = 0.05 * np.exp(-0.1 * months_after_ramp)
+            # Use deterministic variation based on month (not random) for consistent forecasts
+            variation = variation_amplitude * np.sin(months_after_ramp * 0.5)
+            ramp_factor = 1.0 + variation
         
         month_roi = predicted_roi * ramp_factor
         month_lower = roi_lower * ramp_factor

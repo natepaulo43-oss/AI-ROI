@@ -24,6 +24,19 @@ export default function ROIForecastChart({
   predictedROI,
   threshold 
 }: ROIForecastChartProps) {
+  const monthCount = forecastData.length;
+  
+  // Calculate x-axis tick interval for months > 12
+  const getXAxisTicks = () => {
+    if (monthCount <= 12) {
+      return undefined; // Show all months
+    }
+    // For > 12 months, show ticks at intervals to avoid crowding
+    const interval = Math.ceil(monthCount / 12);
+    return forecastData
+      .filter((_, index) => index % interval === 0 || index === monthCount - 1)
+      .map(d => d.month);
+  };
   const CustomTooltip = ({ active, payload }: any) => {
     if (active && payload && payload.length) {
       const data = payload[0].payload;
@@ -73,12 +86,12 @@ export default function ROIForecastChart({
     <div className="w-full">
       <div className="mb-6">
         <div className="text-[0.65rem] uppercase tracking-[0.2em] text-[#b8a894] mb-2">
-          12-Month ROI Forecast
+          {monthCount}-Month ROI Forecast
         </div>
         <p className="text-xs text-[#e8dfd5]/70 leading-relaxed">
           Projected ROI trajectory with {' '}
           <span className="text-[#d4a574]">±62.67% confidence interval</span>
-          {' '}(MAE). ROI typically ramps up over 6 months as the AI system matures.
+          {' '}(MAE). Ramp-up timeline varies by use case complexity, company size, and deployment type.
         </p>
       </div>
 
@@ -111,6 +124,7 @@ export default function ROIForecastChart({
             tick={{ fill: '#b8a894', fontSize: 11 }}
             tickLine={{ stroke: '#6b5d4f' }}
             axisLine={{ stroke: '#6b5d4f' }}
+            ticks={getXAxisTicks()}
             label={{ 
               value: 'Month', 
               position: 'bottom', 
@@ -203,10 +217,10 @@ export default function ROIForecastChart({
             </div>
             <div>
               <div className="text-[0.6rem] uppercase tracking-[0.15em] text-[#b8a894] mb-1">
-                Month 12 ROI
+                Month {monthCount} ROI
               </div>
               <div className="text-lg font-light text-[#f5f1ed]">
-                {forecastData[11]?.roi?.toFixed(1) || '0.0'}%
+                {forecastData[monthCount - 1]?.roi?.toFixed(1) || '0.0'}%
               </div>
             </div>
           </div>
