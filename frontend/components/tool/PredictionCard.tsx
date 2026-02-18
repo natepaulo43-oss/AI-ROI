@@ -2,7 +2,7 @@ import DirectionalIndicator from './DirectionalIndicator';
 
 interface PredictionCardProps {
   predictedRoi: number;
-  direction: 'positive' | 'neutral' | 'negative';
+  direction: 'high' | 'not-high';
 }
 
 export default function PredictionCard({ predictedRoi, direction }: PredictionCardProps) {
