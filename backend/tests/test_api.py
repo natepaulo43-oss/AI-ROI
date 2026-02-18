@@ -4,11 +4,10 @@ Uses FastAPI TestClient to test endpoints without running a server.
 """
 
 import pytest
-from unittest.mock import Mock, patch, MagicMock
+from unittest.mock import Mock, patch
 import numpy as np
 from fastapi.testclient import TestClient
 
-# Mock the model loader before importing the app
 def create_mock_models():
     """Create mock models for testing"""
     mock_classifier = Mock()
@@ -23,20 +22,18 @@ def create_mock_models():
         'regression': mock_regression
     }
 
-# Patch before importing app
-with patch('app.model_loader.load_model', return_value=create_mock_models()):
-    from app.main import app
-    # Set models to mock immediately
-    app.state.models = create_mock_models()
-
 @pytest.fixture
 def client():
     """Create test client with mocked models"""
     with patch('app.model_loader.load_model', return_value=create_mock_models()):
+        # Import app inside the patch context
+        from app.main import app
+        import app.main
+        
+        # Set models to mock
+        app.main.models = create_mock_models()
+        
         with TestClient(app) as test_client:
-            # Ensure models are set in the app
-            import app.main
-            app.main.models = create_mock_models()
             yield test_client
 
 def test_root_endpoint(client):
