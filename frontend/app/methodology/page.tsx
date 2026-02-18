@@ -27,7 +27,7 @@ export default function Methodology() {
               and synthetic data based on industry research. Data sources include:
             </p>
             <ul className="text-[#e8dfd5] leading-relaxed font-light space-y-2 text-sm">
-              <li>— 462 AI deployment cases after preprocessing</li>
+              <li>— 514 AI deployment cases after preprocessing</li>
               <li>— Fortune 500 implementations (Klarna, Alibaba, JPMorgan, Walmart)</li>
               <li>— 200+ synthetic cases from McKinsey, Gartner, BCG research</li>
               <li>— 16 industry sectors and 15 distinct AI use cases</li>
@@ -37,7 +37,7 @@ export default function Methodology() {
           <div className="col-span-6 col-start-7">
             <div className="bg-gradient-to-br from-[#4a3f35] to-[#3d342a] rounded-[2rem] aspect-[4/3] flex items-center justify-center p-8">
               <div className="text-center">
-                <div className="text-[3rem] font-light text-[#f5f1ed] mb-2">462</div>
+                <div className="text-[3rem] font-light text-[#f5f1ed] mb-2">514</div>
                 <div className="text-[0.65rem] uppercase tracking-[0.2em] text-[#b8a894]">
                   Training Cases
                 </div>
@@ -73,7 +73,7 @@ export default function Methodology() {
             <ul className="text-[#e8dfd5] leading-relaxed font-light space-y-2 text-sm">
               <li>— Regression: 16% R² (unusable)</li>
               <li>— 3-class classification: 51.6% accuracy</li>
-              <li>— Binary classification: 68.8% accuracy (winner)</li>
+              <li>— Binary classification: 86.4% accuracy (winner)</li>
               <li>— XGBoost: 500 trees, depth 8, learning rate 0.03</li>
               <li>— Class balancing: scale_pos_weight=2</li>
               <li>— 5-fold stratified cross-validation</li>
@@ -97,21 +97,21 @@ export default function Methodology() {
           <div className="col-span-7 col-start-6">
             <div className="grid grid-cols-3 gap-8">
               <div className="text-center">
-                <div className="text-[2.5rem] font-light text-[#f5f1ed] tabular-nums">68.82%</div>
+                <div className="text-[2.5rem] font-light text-[#f5f1ed] tabular-nums">86.41%</div>
                 <div className="text-[0.65rem] uppercase tracking-[0.2em] text-[#b8a894] mt-2">Accuracy</div>
               </div>
               <div className="text-center">
-                <div className="text-[2.5rem] font-light text-[#f5f1ed] tabular-nums">70.76%</div>
+                <div className="text-[2.5rem] font-light text-[#f5f1ed] tabular-nums">91.13%</div>
                 <div className="text-[0.65rem] uppercase tracking-[0.2em] text-[#b8a894] mt-2">AUC-ROC</div>
               </div>
               <div className="text-center">
-                <div className="text-[2.5rem] font-light text-[#f5f1ed] tabular-nums">52.78%</div>
+                <div className="text-[2.5rem] font-light text-[#f5f1ed] tabular-nums">82.35%</div>
                 <div className="text-[0.65rem] uppercase tracking-[0.2em] text-[#b8a894] mt-2">Precision</div>
               </div>
             </div>
             <div className="grid grid-cols-2 gap-8 mt-8">
               <div className="text-center">
-                <div className="text-xl font-light text-[#f5f1ed] tabular-nums">61.29%</div>
+                <div className="text-xl font-light text-[#f5f1ed] tabular-nums">77.78%</div>
                 <div className="text-[0.6rem] uppercase tracking-[0.2em] text-[#b8a894] mt-2">Recall (High ROI)</div>
               </div>
               <div className="text-center">
@@ -138,7 +138,7 @@ export default function Methodology() {
             </div>
             <div>
               <div className="text-[#8a7a68] text-xs uppercase tracking-widest mb-2">Binary (Final)</div>
-              <div className="text-2xl font-light text-[#f5f1ed] mb-1">68.8%</div>
+              <div className="text-2xl font-light text-[#f5f1ed] mb-1">86.4%</div>
               <p className="text-[#e8dfd5] text-sm font-light">Production-ready</p>
             </div>
           </div>

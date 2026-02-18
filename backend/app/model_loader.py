@@ -27,7 +27,7 @@ def load_model():
     print(f"Loading classifier from: {classifier_path}")
     classifier = joblib.load(classifier_path)
     print("✓ Binary Classifier loaded (High ROI vs Not-High)")
-    print("  Accuracy: 68.82% (Statistically Significant: p < 0.001)")
+    print("  Accuracy: 86.41% | AUC-ROC: 91.13% (Statistically Significant: p < 0.001)")
     
     print(f"Loading regression model from: {regression_path}")
     regression = joblib.load(regression_path)

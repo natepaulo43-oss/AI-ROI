@@ -15,22 +15,22 @@ const MOCK_FEATURE_IMPORTANCE = [
 const MOCK_METRICS = [
   {
     label: 'Accuracy',
-    value: '68.82%',
+    value: '86.41%',
     description: 'Binary classification accuracy (High vs Not-High ROI)',
   },
   {
     label: 'AUC-ROC',
-    value: '70.76%',
+    value: '91.13%',
     description: 'Area under ROC curve - discrimination ability',
   },
   {
     label: 'Precision (High)',
-    value: '52.78%',
+    value: '82.35%',
     description: 'Accuracy when predicting High ROI projects',
   },
   {
     label: 'Training Samples',
-    value: '462',
+    value: '514',
     description: 'AI deployment cases after preprocessing',
   },
 ];

@@ -10,6 +10,7 @@ __pycache__/
 *.pyd
 .venv/
 venv/
+env/
 
 # Jupyter
 .ipynb_checkpoints/
@@ -18,11 +19,53 @@ venv/
 node_modules/
 .next/
 out/
+.turbo/
 
 # OS
 .DS_Store
+Thumbs.db
 
-# Model artifacts (add later selectively)
+# Model artifacts
 *.joblib
 *.pkl
-*.json
+*.h5
+*.pt
+*.pth
+backend/models/*.pkl
+backend/models/*.joblib
+
+# Data files - KEEP PRIVATE
+data/raw/**
+data/processed/**
+data/scraper/**
+!data/raw/.gitkeep
+!data/processed/.gitkeep
+
+# Analysis and research outputs
+analysis/
+research_output/
+*.png
+*.jpg
+*.jpeg
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Logs
+*.log
+logs/
+
+# Testing
+.pytest_cache/
+.coverage
+htmlcov/
+
+# TypeScript
+*.tsbuildinfo
+
+# Monitoring
+monitoring/*.log

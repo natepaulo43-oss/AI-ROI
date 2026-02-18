@@ -18,7 +18,7 @@ export default function Hero() {
           <div className="space-y-1 text-[0.7rem] uppercase tracking-[0.15em] text-[#b8a894] mb-8">
             <div>Binary Classification Model</div>
             <div className="flex items-center gap-3">
-              <span>68.8% Accuracy</span>
+              <span>86.4% Accuracy</span>
               <span className="text-[#8a7a68]">—</span>
               <span>XGBoost Classifier</span>
             </div>

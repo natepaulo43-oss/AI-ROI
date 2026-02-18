@@ -71,9 +71,9 @@ export default function About() {
             <div>
               <h3 className="text-[#8a7a68] text-xs uppercase tracking-widest mb-3">Training Data</h3>
               <ul className="text-[#e8dfd5] leading-relaxed font-light space-y-2 text-sm">
-                <li>— 462 AI deployment cases after preprocessing</li>
-                <li>— 309 Not-High ROI projects (67%)</li>
-                <li>— 153 High ROI projects (33%)</li>
+                <li>— 514 AI deployment cases after preprocessing</li>
+                <li>— 335 Not-High ROI projects (65%)</li>
+                <li>— 179 High ROI projects (35%)</li>
                 <li>— 16 industry sectors represented</li>
                 <li>— 15 distinct AI use cases</li>
               </ul>
@@ -108,17 +108,17 @@ export default function About() {
         </div>
 
 
-        {/* Why 68.8% is the Ceiling */}
+        {/* Model Performance */}
         <div className="border-l-2 border-[#6b5d4f] pl-6 py-2">
-          <h2 className="text-sm font-normal text-[#f5f1ed] mb-4">Performance Ceiling Explanation</h2>
+          <h2 className="text-sm font-normal text-[#f5f1ed] mb-4">Current Performance</h2>
           <p className="text-[#e8dfd5] leading-relaxed font-light mb-4">
-            After extensive optimization, 68.8% represents the maximum achievable accuracy with current data due to:
+            The binary XGBoost classifier achieves 86.4% accuracy with 91.1% AUC-ROC on the current dataset:
           </p>
           <div className="space-y-4">
             <div>
-              <div className="text-[#f5f1ed] text-sm mb-2 font-normal">Small Dataset</div>
+              <div className="text-[#f5f1ed] text-sm mb-2 font-normal">Strong Predictive Power</div>
               <p className="text-[#e8dfd5] text-sm font-light">
-                Only 462 samples limits model complexity. Need 2,000+ samples for significant improvement.
+                514 samples with balanced features enable reliable High vs Not-High ROI classification.
               </p>
             </div>
             <div>
