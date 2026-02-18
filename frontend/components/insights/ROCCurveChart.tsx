@@ -45,7 +45,7 @@ export default function ROCCurveChart() {
           ROC Curve
         </h3>
         <p className="text-sm text-[#e8dfd5] font-light leading-relaxed mb-4">
-          Receiver Operating Characteristic curve showing the model's discrimination ability. 
+          Receiver Operating Characteristic curve showing the model&apos;s discrimination ability. 
           AUC-ROC of 91.13% indicates excellent separation between High and Not-High ROI projects.
         </p>
         <div className="space-y-2 text-xs text-[#b8a894] font-light">
@@ -102,7 +102,7 @@ export default function ROCCurveChart() {
           </LineChart>
         </ResponsiveContainer>
         <p className="text-xs text-[#8a7a68] text-center mt-2 font-light">
-          The curve's distance from the diagonal indicates strong predictive power
+          The curve&apos;s distance from the diagonal indicates strong predictive power
         </p>
       </div>
     </div>
