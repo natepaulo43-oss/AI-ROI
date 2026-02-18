@@ -31,12 +31,12 @@ export default function Limitations() {
           <h2 className="text-xs uppercase tracking-widest text-[#8a7a68] mb-4 font-normal">Data Limitations</h2>
           <ul className="text-[#e8dfd5] leading-relaxed font-light space-y-3">
             <li>
-              <span className="font-normal text-[#f5f1ed]">Sample size:</span> Model trained on 462 cases after preprocessing, which limits 
+              <span className="font-normal text-[#f5f1ed]">Limited sample size:</span> Training data size limits 
               model complexity and may not capture all possible AI adoption scenarios
             </li>
             <li>
-              <span className="font-normal text-[#f5f1ed]">Moderate accuracy:</span> 68.8% accuracy means 31.2% error rate; predictions 
-              should be used as decision support, not sole decision-maker
+              <span className="font-normal text-[#f5f1ed]">Moderate accuracy:</span> Predictions have a meaningful error rate and 
+              should be used as decision support, not as the sole decision-maker
             </li>
             <li>
               <span className="font-normal text-[#f5f1ed]">Missing critical features:</span> Team expertise, data quality, organizational 
@@ -52,17 +52,16 @@ export default function Limitations() {
         <div>
           <h2 className="text-xs uppercase tracking-widest text-[#8a7a68] mb-4 font-normal">Model Performance Ceiling</h2>
           <p className="text-[#e8e0d5] leading-relaxed font-light mb-4">
-            After extensive optimization (10+ techniques tested), 68.8% represents the performance ceiling with current data:
+            Current performance represents the ceiling achievable with available data. The model shows:
           </p>
           <ul className="text-[#e8dfd5] leading-relaxed font-light space-y-2">
-            <li>— Binary classification outperforms regression by 329%</li>
-            <li>— 33% better than 3-class classification approach</li>
-            <li>— More complexity does not improve performance (overfitting)</li>
-            <li>— Statistically significant (p less than 0.001) but moderate effect size</li>
-            <li>— 85.5% accuracy on Not-High projects, 61.3% on High ROI projects</li>
+            <li>— Higher accuracy on Not-High projects (85.5%) than High ROI projects (61.3%)</li>
+            <li>— Statistically significant but moderate effect size</li>
+            <li>— More complexity does not improve performance (overfitting risk)</li>
           </ul>
           <p className="text-[#e8e0d5] leading-relaxed font-light mt-4">
-            Further improvement requires more data (2,000+ samples) and critical missing features (team quality, execution factors).
+            Further improvement requires more data (2,000+ samples) and critical missing features (team quality, execution factors). 
+            See the About and Methodology pages for detailed performance comparisons.
           </p>
         </div>
 
@@ -74,11 +73,10 @@ export default function Limitations() {
               but misses 39% of High ROI projects (12 false negatives)
             </li>
             <li>
-              <span className="font-normal text-[#f5f1ed]">Precision trade-off:</span> When predicting High ROI, correct only 52.78% 
-              of the time; requires validation for high-stakes decisions
+              <span className="font-normal text-[#f5f1ed]">Precision trade-off:</span> High ROI predictions require validation for high-stakes decisions
             </li>
             <li>
-              <span className="font-normal text-[#f5f1ed]">Cross-validation variance:</span> ±5.92% standard deviation across folds; 
+              <span className="font-normal text-[#f5f1ed]">Cross-validation variance:</span> Performance varies across data splits; 
               95% confidence interval: 60.42% to 75.12%
             </li>
             <li>

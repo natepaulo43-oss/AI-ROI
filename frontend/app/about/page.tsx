@@ -19,55 +19,49 @@ export default function About() {
         {/* Model Evolution */}
         <div>
           <h2 className="text-xs uppercase tracking-widest text-[#8a7a68] mb-6 font-normal">Model Evolution</h2>
+          <p className="text-[#e8dfd5] leading-relaxed font-light mb-6">
+            The model went through three major iterations before reaching production readiness:
+          </p>
           <div className="space-y-6">
             <div className="grid grid-cols-12 gap-8">
               <div className="col-span-3">
-                <div className="text-2xl font-light text-[#f5f1ed]">Stage 1: Regression</div>
+                <div className="text-2xl font-light text-[#f5f1ed]">Regression</div>
                 <div className="text-[#8a7a68] text-sm mt-2">Initial Approach</div>
               </div>
               <div className="col-span-8">
-                <p className="text-[#e8dfd5] leading-relaxed font-light mb-3">
-                  Initial XGBoost regression model attempted to predict exact ROI percentages. 
-                  Achieved only 16% R² score, indicating the model explained just 16% of variance in outcomes.
-                </p>
-                <p className="text-[#b8a894] text-sm font-light">
-                  Result: Unusable for production (329% worse than final approach)
+                <p className="text-[#e8dfd5] leading-relaxed font-light">
+                  Attempted to predict exact ROI percentages but proved unusable due to high variance in outcomes.
                 </p>
               </div>
             </div>
 
             <div className="grid grid-cols-12 gap-8">
               <div className="col-span-3">
-                <div className="text-2xl font-light text-[#f5f1ed]">Stage 2: 3-Class</div>
+                <div className="text-2xl font-light text-[#f5f1ed]">3-Class</div>
                 <div className="text-[#8a7a68] text-sm mt-2">Classification Pivot</div>
               </div>
               <div className="col-span-8">
-                <p className="text-[#e8dfd5] leading-relaxed font-light mb-3">
-                  Reframed as 3-class classification (Low/Medium/High ROI) using 33rd and 67th percentile thresholds.
-                  Achieved 51.6% accuracy with advanced feature engineering.
-                </p>
-                <p className="text-[#b8a894] text-sm font-light">
-                  Result: Marginal improvement but still below acceptable threshold
+                <p className="text-[#e8dfd5] leading-relaxed font-light">
+                  Reframed as Low/Medium/High ROI classification but still showed marginal performance.
                 </p>
               </div>
             </div>
 
             <div className="grid grid-cols-12 gap-8">
               <div className="col-span-3">
-                <div className="text-2xl font-light text-[#f5f1ed]">Stage 3: Binary</div>
-                <div className="text-[#8a7a68] text-sm mt-2">Breakthrough</div>
+                <div className="text-2xl font-light text-[#f5f1ed]">Binary</div>
+                <div className="text-[#8a7a68] text-sm mt-2">Final Solution</div>
               </div>
               <div className="col-span-8">
-                <p className="text-[#e8dfd5] leading-relaxed font-light mb-3">
-                  Binary classification (High ROI above 145.5% vs Not-High) achieved 68.82% accuracy with 70.76% AUC-ROC.
-                  Statistically significant (p less than 0.001) and production-ready.
-                </p>
-                <p className="text-[#b8a894] text-sm font-light">
-                  Result: 33% better than 3-class, 329% better than regression
+                <p className="text-[#e8dfd5] leading-relaxed font-light">
+                  Binary classification (High ROI ≥145.5% vs Not-High) achieved production-ready performance and statistical significance.
                 </p>
               </div>
             </div>
           </div>
+          <p className="text-[#b8a894] text-sm font-light mt-6">
+            See the Methodology page for detailed performance metrics and technical specifications.
+          </p>
         </div>
 
         {/* Dataset Information */}
@@ -97,66 +91,22 @@ export default function About() {
           </div>
         </div>
 
-        {/* Optimization Techniques */}
+        {/* Optimization Journey */}
         <div>
           <h2 className="text-xs uppercase tracking-widest text-[#8a7a68] mb-6 font-normal">Optimization Journey</h2>
-          <p className="text-[#e8dfd5] leading-relaxed font-light mb-6">
-            Over 10 advanced techniques tested to push beyond the 68.8% accuracy ceiling:
+          <p className="text-[#e8dfd5] leading-relaxed font-light mb-4">
+            Over 10 advanced techniques were tested to improve performance, including ultra-optimized gradient boosting, 
+            probability calibration, ensemble methods, and polynomial feature expansion.
           </p>
-          <div className="grid grid-cols-2 gap-6">
-            <div>
-              <h3 className="text-[#f5f1ed] text-sm mb-3 font-normal">Techniques Tested</h3>
-              <ul className="text-[#e8dfd5] leading-relaxed font-light space-y-1 text-sm">
-                <li>— Ultra-optimized gradient boosting (1000+ trees)</li>
-                <li>— Probability calibration (sigmoid & isotonic)</li>
-                <li>— Optimized decision thresholds</li>
-                <li>— Weighted ensemble methods</li>
-                <li>— Cross-validation ensembles</li>
-                <li>— Polynomial feature expansion</li>
-                <li>— Complex interaction terms</li>
-              </ul>
-            </div>
-            <div>
-              <h3 className="text-[#f5f1ed] text-sm mb-3 font-normal">Key Finding</h3>
-              <p className="text-[#e8dfd5] leading-relaxed font-light text-sm mb-3">
-                More complexity does not equal better performance. All advanced techniques 
-                performed worse than the simple baseline, with accuracy dropping to 58-67%.
-              </p>
-              <p className="text-[#b8a894] text-sm font-light">
-                The simple binary XGBoost classifier (500 trees, depth 8) represents the 
-                optimal balance for this dataset size.
-              </p>
-            </div>
+          <div className="border-l-2 border-[#6b5d4f] pl-6 py-2">
+            <h3 className="text-[#f5f1ed] text-sm mb-2 font-normal">Key Finding</h3>
+            <p className="text-[#e8dfd5] leading-relaxed font-light text-sm">
+              More complexity does not equal better performance. All advanced techniques performed worse than the simple baseline. 
+              The simple binary XGBoost classifier represents the optimal balance for this dataset size.
+            </p>
           </div>
         </div>
 
-        {/* Statistical Validation */}
-        <div>
-          <h2 className="text-xs uppercase tracking-widest text-[#8a7a68] mb-6 font-normal">Statistical Validation</h2>
-          <div className="grid grid-cols-3 gap-8">
-            <div>
-              <div className="text-[#f5f1ed] text-sm mb-2 font-normal">Permutation Test</div>
-              <div className="text-2xl font-light text-[#f5f1ed] mb-2">p = 0.0099</div>
-              <p className="text-[#e8dfd5] text-sm font-light">
-                Model outperformed 99 out of 100 random permutations
-              </p>
-            </div>
-            <div>
-              <div className="text-[#f5f1ed] text-sm mb-2 font-normal">Binomial Test</div>
-              <div className="text-2xl font-light text-[#f5f1ed] mb-2">p = 0.000183</div>
-              <p className="text-[#e8dfd5] text-sm font-light">
-                Less than 0.02% chance of results occurring by random guessing
-              </p>
-            </div>
-            <div>
-              <div className="text-[#f5f1ed] text-sm mb-2 font-normal">Cross-Validation</div>
-              <div className="text-2xl font-light text-[#f5f1ed] mb-2">67.77% ± 5.92%</div>
-              <p className="text-[#e8dfd5] text-sm font-light">
-                95% confidence interval: 60.42% to 75.12%
-              </p>
-            </div>
-          </div>
-        </div>
 
         {/* Why 68.8% is the Ceiling */}
         <div className="border-l-2 border-[#6b5d4f] pl-6 py-2">

@@ -100,16 +100,11 @@ export default function Hypothesis() {
           <div className="grid grid-cols-2 gap-8">
             <div>
               <h3 className="text-[#f5f1ed] text-sm mb-3 font-normal">SME-Focused Dataset</h3>
-              <p className="text-[#e8dfd5] leading-relaxed font-light text-sm mb-3">
-                Built on 462 real AI deployment cases specifically from small and medium enterprises, 
-                not extrapolated from large enterprise data.
+              <p className="text-[#e8dfd5] leading-relaxed font-light text-sm">
+                Built on real AI deployment cases specifically from small and medium enterprises, 
+                not extrapolated from large enterprise data. Covers 16 industry sectors, 15 distinct AI use cases, 
+                with revenue ranging from $1.1M to $540M and investments from $10.8K to $2.16M.
               </p>
-              <ul className="text-[#e8dfd5] leading-relaxed font-light space-y-2 text-sm">
-                <li>— 16 industry sectors represented</li>
-                <li>— 15 distinct AI use cases</li>
-                <li>— Revenue range: $1.1M – $540M</li>
-                <li>— Investment range: $10.8K – $2.16M</li>
-              </ul>
             </div>
             <div>
               <h3 className="text-[#f5f1ed] text-sm mb-3 font-normal">Practical Approach</h3>
@@ -118,7 +113,7 @@ export default function Hypothesis() {
                 than unreliable precise predictions.
               </p>
               <ul className="text-[#e8dfd5] leading-relaxed font-light space-y-2 text-sm">
-                <li>— 68.8% accuracy (statistically significant)</li>
+                <li>— Statistically significant performance</li>
                 <li>— Clear decision support framework</li>
                 <li>— Transparent limitations communicated</li>
                 <li>— Free and accessible to all SMEs</li>
@@ -134,16 +129,15 @@ export default function Hypothesis() {
             <div className="mb-6">
               <div className="text-[#8a7a68] text-xs uppercase tracking-widest mb-3">Alternative Hypothesis (H₁)</div>
               <p className="text-lg font-light text-[#f5f1ed] leading-relaxed">
-                SMEs with higher AI integration scores (composite measure of investment efficiency, 
-                deployment speed, and early operational gains) will have a significantly higher probability 
-                of achieving High ROI (≥145.5%) compared to SMEs with lower integration scores.
+                SMEs that implement AI with clear operational alignment, structured deployment, and defined use cases 
+                are more likely to achieve high ROI than SMEs that adopt AI without a defined strategy.
               </p>
             </div>
             <div>
               <div className="text-[#8a7a68] text-xs uppercase tracking-widest mb-3">Null Hypothesis (H₀)</div>
               <p className="text-lg font-light text-[#f5f1ed] leading-relaxed">
-                AI integration score has no statistically significant effect on the probability of 
-                achieving High ROI (≥145.5%) in SMEs.
+                There is no statistically significant relationship between the structure and strategic alignment of AI 
+                implementation and ROI outcomes in SMEs.
               </p>
             </div>
           </div>
@@ -169,7 +163,7 @@ export default function Hypothesis() {
                 <li>— Demonstrates binary classification superiority for ROI prediction</li>
                 <li>— Provides SME-specific AI adoption dataset</li>
                 <li>— Identifies execution quality as primary success factor</li>
-                <li>— Establishes 68.8% accuracy baseline for future work</li>
+                <li>— Establishes performance baseline for future work</li>
                 <li>— Highlights critical missing features for improvement</li>
               </ul>
             </div>
@@ -215,7 +209,7 @@ export default function Hypothesis() {
         <div>
           <h2 className="text-xs uppercase tracking-widest text-[#8a7a68] mb-6 font-normal">Future Research Directions</h2>
           <p className="text-[#e8dfd5] leading-relaxed font-light mb-6">
-            To improve prediction accuracy beyond 68.8%, future research should focus on:
+            To improve prediction accuracy, future research should focus on:
           </p>
           <div className="grid grid-cols-2 gap-8">
             <div>
