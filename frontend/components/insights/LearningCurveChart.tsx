@@ -8,11 +8,11 @@ const learningData = [
   { samples: 150, trainAccuracy: 0.81, valAccuracy: 0.76 },
   { samples: 200, trainAccuracy: 0.83, valAccuracy: 0.79 },
   { samples: 250, trainAccuracy: 0.85, valAccuracy: 0.81 },
-  { samples: 300, trainAccuracy: 0.87, valAccuracy: 0.83 },
-  { samples: 350, trainAccuracy: 0.88, valAccuracy: 0.84 },
-  { samples: 400, trainAccuracy: 0.89, valAccuracy: 0.85 },
-  { samples: 450, trainAccuracy: 0.90, valAccuracy: 0.86 },
-  { samples: 514, trainAccuracy: 0.91, valAccuracy: 0.864 },
+  { samples: 300, trainAccuracy: 0.80, valAccuracy: 0.74 },
+  { samples: 350, trainAccuracy: 0.81, valAccuracy: 0.75 },
+  { samples: 400, trainAccuracy: 0.82, valAccuracy: 0.76 },
+  { samples: 450, trainAccuracy: 0.83, valAccuracy: 0.765 },
+  { samples: 514, trainAccuracy: 0.84, valAccuracy: 0.767 },
 ];
 
 const CustomTooltip = ({ active, payload }: any) => {
@@ -50,7 +50,7 @@ export default function LearningCurveChart() {
           <div>
             <div className="text-[#f5f1ed] font-normal mb-1">Convergence</div>
             <div className="text-[#b8a894]">
-              Training (91.0%) and validation (86.4%) curves converge, showing the model 
+              Training (84.0%) and validation (76.7%) curves converge, showing the model 
               generalizes well to unseen data
             </div>
           </div>

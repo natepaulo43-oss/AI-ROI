@@ -8,7 +8,7 @@ A full-stack web application that predicts Return on Investment (ROI) for AI dep
 
 ## 🎯 Overview
 
-This tool helps organizations estimate the ROI of AI initiatives by analyzing historical deployment data. The ML model achieves **86.4% accuracy** in predicting whether an AI project will achieve high ROI (>145.5%).
+This tool helps organizations estimate the ROI of AI initiatives by analyzing historical deployment data. The ML model achieves **76.7% accuracy** with **75.5% average confidence** in predicting whether an AI project will achieve high ROI (≥145.5%).
 
 ### Key Features
 
@@ -116,9 +116,10 @@ python test_api.py
 
 ## 📊 Model Performance
 
-- **Algorithm**: XGBoost Binary Classifier
-- **Accuracy**: 86.4%
-- **AUC-ROC**: 91.1%
+- **Algorithm**: Gradient Boosting (Binary Classification)
+- **Accuracy**: 76.70%
+- **AUC-ROC**: 76.74%
+- **Average Confidence**: 75.5%
 - **Dataset**: 514 AI deployment projects
 - **Target**: High ROI (≥145.5%) vs Not-High ROI (<145.5%)
 
@@ -126,9 +127,9 @@ python test_api.py
 
 | Metric | Not-High ROI | High ROI |
 |--------|--------------|----------|
-| Precision | 88% | 82% |
-| Recall | 91% | 78% |
-| F1-Score | 90% | 80% |
+| Precision | 85.7% | 73.5% |
+| Recall | 85.7% | 62.5% |
+| F1-Score | 85.7% | 67.6% |
 
 See [`docs/MODEL_ANALYSIS.md`](docs/MODEL_ANALYSIS.md) for detailed model analysis and performance history.
 
@@ -293,10 +294,15 @@ Predict ROI category for an AI project
 **Response:**
 ```json
 {
-  "predicted_roi_category": "Not-High",
-  "confidence": 0.73,
-  "model_version": "v3.0_binary_xgboost",
-  "accuracy_note": "Model accuracy: 68.8%"
+  "prediction": "Not-High",
+  "probability_high": 0.27,
+  "probability_not_high": 0.73,
+  "confidence": 0.46,
+  "threshold": 145.5,
+  "interpretation": "Not-High ROI Expected (<145.5%). Probability: 73.0% | Confidence: 46.0%",
+  "predicted_roi": 112.5,
+  "roi_lower_bound": 49.83,
+  "roi_upper_bound": 175.17
 }
 ```
 

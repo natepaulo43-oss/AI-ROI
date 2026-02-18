@@ -57,7 +57,7 @@ export default function About() {
               </div>
               <div className="col-span-8">
                 <p className="text-[#e8dfd5] leading-relaxed font-light">
-                  Binary classification (High ROI ≥145.5% vs Not-High) achieved production-ready performance and statistical significance.
+                  Binary classification (High ROI ≥145.5% vs Not-High) using Gradient Boosting algorithm achieved production-ready performance with 76.7% accuracy and 75.5% average confidence.
                 </p>
               </div>
             </div>
@@ -105,11 +105,13 @@ export default function About() {
             probability calibration, ensemble methods, and polynomial feature expansion.
           </p>
           <div className="border-l-2 border-[#6b5d4f] pl-6 py-2">
-            <h3 className="text-[#f5f1ed] text-sm mb-2 font-normal">Key Finding</h3>
-            <p className="text-[#e8dfd5] leading-relaxed font-light text-sm">
-              More complexity does not equal better performance. All advanced techniques performed worse than the simple baseline. 
-              The simple binary XGBoost classifier represents the optimal balance for this dataset size.
-            </p>
+            <div>
+              <div className="text-[#f5f1ed] text-sm mb-2 font-normal">Key Finding</div>
+              <p className="text-[#e8dfd5] leading-relaxed font-light text-sm">
+                More complexity does not equal better performance. After testing XGBoost, Random Forest, and Gradient Boosting with various hyperparameters, 
+                Gradient Boosting with balanced parameters achieved the best performance with significantly improved confidence scores (75.5% average).
+              </p>
+            </div>
           </div>
         </div>
 
@@ -120,7 +122,7 @@ export default function About() {
         <div className="border-l-2 border-[#6b5d4f] pl-6 py-2">
           <h2 className="text-sm font-normal text-[#f5f1ed] mb-4">Current Performance</h2>
           <p className="text-[#e8dfd5] leading-relaxed font-light mb-4">
-            The binary XGBoost classifier achieves 86.4% accuracy with 91.1% AUC-ROC on the current dataset:
+            The binary Gradient Boosting classifier achieves 76.7% accuracy with 76.7% AUC-ROC and 75.5% average confidence on the current dataset:
           </p>
           <div className="space-y-4">
             <div>

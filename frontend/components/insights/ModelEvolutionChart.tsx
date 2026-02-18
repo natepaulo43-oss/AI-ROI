@@ -22,8 +22,8 @@ const data = [
   { 
     model: 'Binary', 
     r2: null,
-    accuracy: 0.864,
-    description: 'Acc = 86.4%',
+    accuracy: 0.767,
+    description: 'Acc = 76.7%',
     color: '#d4a574',
     status: 'Production'
   },
@@ -53,7 +53,7 @@ export default function ModelEvolutionChart() {
         </h3>
         <p className="text-sm text-[#e8dfd5] font-light leading-relaxed mb-4">
           Performance comparison across three modeling approaches. Binary classification 
-          achieved a 329% improvement over regression (0.864 vs 0.13 R²-equivalent).
+          achieved a 490% improvement over regression (0.767 vs 0.13 R²-equivalent).
         </p>
         <div className="space-y-3 text-xs font-light">
           <div>

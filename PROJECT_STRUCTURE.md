@@ -3,10 +3,10 @@
 ## Production Models (Active)
 
 ### Binary Classifier: `backend/models/roi_classifier_best.pkl`
-- **Algorithm:** XGBoost Binary Classifier
-- **Accuracy:** 86.41%
-- **AUC-ROC:** 91.13%
-- **F1-Score:** 80%
+- **Algorithm:** Gradient Boosting Classifier
+- **Accuracy:** 76.70%
+- **AUC-ROC:** 76.74%
+- **Average Confidence:** 75.5%
 - **Purpose:** Predicts High ROI (≥145.5%) vs Not-High ROI (<145.5%)
 - **Status:** ✅ Active in production
 
@@ -123,10 +123,11 @@ AI_ROI/
 ## Model Training
 
 ### Classifier Training
-The classifier was trained using XGBoost on binary classification task:
+The classifier was trained using Gradient Boosting on binary classification task:
 - Threshold: 145.5% ROI
 - Features: 18 engineered features including log transforms, ratios, and interactions
-- Dataset: 515 AI deployment projects
+- Dataset: 514 AI deployment projects
+- Training Script: `backend/train_roi_classifier.py`
 
 ### Regression Training
 To retrain the regression model:

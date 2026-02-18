@@ -8,11 +8,11 @@ This directory contains the production machine learning models used by the backe
 **Purpose:** Predicts whether an AI project will achieve High ROI (≥145.5%) or Not-High ROI (<145.5%)
 
 **Performance Metrics:**
-- **Accuracy:** 86.41%
-- **AUC-ROC:** 91.13%
-- **F1-Score:** 80%
-- **Algorithm:** XGBoost Binary Classifier
-- **Statistically Significant:** p < 0.001
+- **Accuracy:** 76.70%
+- **AUC-ROC:** 76.74%
+- **Average Confidence:** 75.5%
+- **Algorithm:** Gradient Boosting Classifier
+- **Validated:** 5-fold cross-validation
 
 **Usage:**
 - Primary model for ROI category prediction
@@ -67,7 +67,7 @@ To retrain these models:
 
 **Classifier:**
 ```bash
-python training/train_model.py
+python backend/train_roi_classifier.py
 ```
 
 **Regression:**

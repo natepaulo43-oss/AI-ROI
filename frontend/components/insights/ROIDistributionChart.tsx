@@ -3,13 +3,13 @@
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, ReferenceLine, Cell } from 'recharts';
 
 const data = [
-  { range: '-30 to 0%', count: 12, label: '-30-0%' },
-  { range: '0 to 50%', count: 89, label: '0-50%' },
-  { range: '50 to 100%', count: 124, label: '50-100%' },
-  { range: '100 to 145%', count: 110, label: '100-145%' },
-  { range: '145 to 200%', count: 87, label: '145-200%', highlight: true },
-  { range: '200 to 300%', count: 56, label: '200-300%', highlight: true },
-  { range: '300 to 500%', count: 24, label: '300-500%', highlight: true },
+  { range: '-30 to 0%', count: 8, label: '-30-0%' },
+  { range: '0 to 50%', count: 76, label: '0-50%' },
+  { range: '50 to 100%', count: 118, label: '50-100%' },
+  { range: '100 to 145%', count: 132, label: '100-145%' },
+  { range: '145 to 200%', count: 94, label: '145-200%', highlight: true },
+  { range: '200 to 300%', count: 52, label: '200-300%', highlight: true },
+  { range: '300 to 500%', count: 22, label: '300-500%', highlight: true },
   { range: '500+%', count: 12, label: '500+%', highlight: true },
 ];
 

@@ -1,8 +1,10 @@
 # Ultimate Model Performance Analysis
 
-## Current Status: 68.8% Accuracy Ceiling
+> **⚠️ HISTORICAL DOCUMENT**: This analysis documents the 68.8% accuracy model trained on 462 samples. The **current production model** achieves **76.70% accuracy** on 514 samples with improved feature engineering. This document is preserved for historical reference and methodology insights.
 
-After extensive optimization attempts, we've reached a **performance ceiling at 68.8% accuracy** for binary ROI classification. Here's what we've learned:
+## Historical Status: 68.8% Accuracy Ceiling (462-sample model)
+
+After extensive optimization attempts, we reached a **performance ceiling at 68.8% accuracy** for binary ROI classification with the 462-sample dataset. Here's what we learned:
 
 ---
 
