@@ -19,7 +19,7 @@ async def load_model():
         classifier_model = joblib.load(CLASSIFIER_PATH)
         print(f"✓ Binary Classifier loaded from {CLASSIFIER_PATH}")
         print(f"   Model Type: Binary Classification (High ROI vs Not-High)")
-        print(f"   Accuracy: 68.82% (Statistically Significant: p < 0.001)")
+        print(f"   Accuracy: 76.70% | AUC-ROC: 76.74% | Avg Confidence: 75.5%")
         
         regression_model = joblib.load(REGRESSION_PATH)
         print(f"✓ Regression Model loaded from {REGRESSION_PATH}")
@@ -135,15 +135,17 @@ async def predict_roi(request: PredictionRequest):
         
         prob_not_high = float(probabilities[0])
         prob_high = float(probabilities[1])
-        confidence = max(prob_high, prob_not_high)
+        # Confidence is the distance from 50% (how decisive the prediction is)
+        # 0% = completely uncertain (50/50), 100% = completely certain (0/100 or 100/0)
+        confidence = abs(prob_high - 0.5) * 2
         
         # Interpret prediction
         if prediction_binary == 1:
             prediction_label = "High"
-            interpretation = f"High ROI Expected (≥145.5%). Confidence: {prob_high*100:.1f}%"
+            interpretation = f"High ROI Expected (≥145.5%). Probability: {prob_high*100:.1f}% | Confidence: {confidence*100:.1f}%"
         else:
             prediction_label = "Not-High"
-            interpretation = f"Not-High ROI Expected (<145.5%). Confidence: {prob_not_high*100:.1f}%"
+            interpretation = f"Not-High ROI Expected (<145.5%). Probability: {prob_not_high*100:.1f}% | Confidence: {confidence*100:.1f}%"
         
         return PredictionResponse(
             prediction=prediction_label,

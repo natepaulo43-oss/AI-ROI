@@ -11,10 +11,10 @@ interface ConfusionMatrixChartProps {
 
 export default function ConfusionMatrixChart({ data }: ConfusionMatrixChartProps) {
   const matrix = data || {
-    truePositive: 147,
-    falsePositive: 30,
-    trueNegative: 288,
-    falseNegative: 49,
+    truePositive: 25,
+    falsePositive: 9,
+    trueNegative: 54,
+    falseNegative: 15,
   };
 
   const total = matrix.truePositive + matrix.falsePositive + matrix.trueNegative + matrix.falseNegative;

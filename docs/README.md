@@ -5,7 +5,7 @@ This directory contains detailed documentation for the AI ROI Prediction Tool.
 ## 📚 Available Documentation
 
 ### Model & Analysis
-- **[MODEL_ANALYSIS.md](MODEL_ANALYSIS.md)** - Comprehensive model performance analysis, optimization history, and technical details about the 68.8% accuracy binary classifier
+- **[MODEL_ANALYSIS.md](MODEL_ANALYSIS.md)** - Historical model performance analysis documenting the 68.8% accuracy model (462 samples). Current production model achieves 76.70% accuracy on 514 samples.
 
 ### Design & Architecture
 - **[DESIGN.md](DESIGN.md)** - System architecture, design decisions, and technical specifications
@@ -25,11 +25,13 @@ This directory contains detailed documentation for the AI ROI Prediction Tool.
 ### API Documentation
 - Interactive API docs available at `http://localhost:8000/docs` when running the backend
 
-### Model Information
-- **Algorithm**: XGBoost Binary Classifier
-- **Accuracy**: 68.8%
-- **Dataset**: 462 AI deployment projects
-- **Target**: High ROI (>150%) vs Not-High ROI (≤150%)
+### Current Production Model
+- **Algorithm**: Gradient Boosting Binary Classifier
+- **Accuracy**: 76.70%
+- **AUC-ROC**: 76.74%
+- **Avg Confidence**: 75.5%
+- **Dataset**: 514 AI deployment projects
+- **Target**: High ROI (≥145.5%) vs Not-High ROI (<145.5%)
 
 ## 📖 Documentation Structure
 

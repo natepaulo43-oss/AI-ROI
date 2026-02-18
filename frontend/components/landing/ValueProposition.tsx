@@ -35,7 +35,7 @@ export default function ValueProposition() {
       <FeatureItem
         number="02"
         title="Binary Classification Model"
-        description="XGBoost classifier predicting High vs Not-High ROI (≥145.5% threshold) with 86.4% accuracy, significantly outperforming regression approaches"
+        description="Gradient Boosting classifier predicting High vs Not-High ROI (≥145.5% threshold) with 76.7% accuracy and 75.5% average confidence, significantly outperforming regression approaches"
       />
       <FeatureItem
         number="03"

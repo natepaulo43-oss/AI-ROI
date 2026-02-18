@@ -7,29 +7,29 @@ import ConfusionMatrixChart from '@/components/insights/ConfusionMatrixChart';
 import DeploymentSpeedChart from '@/components/insights/DeploymentSpeedChart';
 
 const MOCK_FEATURE_IMPORTANCE = [
-  { feature: 'Time Saved (hours/month)', importance: 0.245 },
-  { feature: 'Revenue Investment Ratio', importance: 0.118 },
-  { feature: 'Time Efficiency', importance: 0.095 },
-  { feature: 'Deployment Speed', importance: 0.082 },
-  { feature: 'Revenue Time Interaction', importance: 0.071 },
-  { feature: 'Log Investment', importance: 0.058 },
+  { feature: 'Time Saved (hours/month)', importance: 0.234 },
+  { feature: 'Revenue Investment Ratio', importance: 0.142 },
+  { feature: 'Revenue Time Interaction', importance: 0.098 },
+  { feature: 'Time Efficiency', importance: 0.087 },
+  { feature: 'Deployment Speed', importance: 0.076 },
+  { feature: 'Log Investment', importance: 0.063 },
 ];
 
 const MOCK_METRICS = [
   {
     label: 'Accuracy',
-    value: '86.41%',
+    value: '76.70%',
     description: 'Binary classification accuracy (High vs Not-High ROI)',
   },
   {
     label: 'AUC-ROC',
-    value: '91.13%',
+    value: '76.74%',
     description: 'Area under ROC curve - discrimination ability',
   },
   {
-    label: 'Precision (High)',
-    value: '82.35%',
-    description: 'Accuracy when predicting High ROI projects',
+    label: 'Avg Confidence',
+    value: '75.50%',
+    description: 'Average prediction confidence (decisiveness)',
   },
   {
     label: 'Training Samples',
@@ -68,7 +68,7 @@ export default function Insights() {
                   Binary Classification
                 </div>
                 <p className="text-sm text-[#e8dfd5] leading-relaxed font-light">
-                  Predicts High ROI (≥145.5%) vs Not-High. 500 trees, depth 8, learning rate 0.03. Outperforms regression by 329%
+                  Predicts High ROI (≥145.5%) vs Not-High using Gradient Boosting. 500 trees, depth 5, learning rate 0.05. Achieves 76.7% accuracy, significantly outperforming regression approaches.
                 </p>
               </div>
             </div>
@@ -97,8 +97,8 @@ export default function Insights() {
               Note on Transparency
             </div>
             <p className="text-sm text-[#e8dfd5] leading-relaxed font-light">
-              Feature importance shows time savings and early deployment signals are the strongest predictors. 
-              The model achieves statistically significant performance, making it suitable for decision-support applications.
+              Feature importance shows time savings and revenue efficiency metrics are the strongest predictors. 
+              The model achieves 76.7% accuracy with 75.5% average confidence, making it suitable for decision-support applications.
             </p>
           </div>
         </div>

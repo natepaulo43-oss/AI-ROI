@@ -106,7 +106,7 @@ export default function Hypothesis() {
             <div>
               <h3 className="text-[#f5f1ed] text-sm mb-3 font-normal">SME-Focused Dataset</h3>
               <p className="text-[#e8dfd5] leading-relaxed font-light text-sm">
-                Built on real AI deployment cases specifically from small and medium enterprises, 
+                Built on 514 real AI deployment cases specifically from small and medium enterprises, 
                 not extrapolated from large enterprise data. Covers 16 industry sectors, 15 distinct AI use cases, 
                 with revenue ranging from $1.1M to $540M and investments from $10.8K to $2.16M.
               </p>
@@ -118,7 +118,7 @@ export default function Hypothesis() {
                 than unreliable precise predictions.
               </p>
               <ul className="text-[#e8dfd5] leading-relaxed font-light space-y-2 text-sm">
-                <li>— Statistically significant performance</li>
+                <li>— 76.7% accuracy with 76.74% AUC-ROC</li>
                 <li>— Clear decision support framework</li>
                 <li>— Transparent limitations communicated</li>
                 <li>— Free and accessible to all SMEs</li>

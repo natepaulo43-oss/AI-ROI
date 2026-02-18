@@ -44,7 +44,7 @@ export default function Methodology() {
                   Training Cases
                 </div>
                 <div className="text-sm text-[#e8dfd5] mt-4 font-light">
-                  309 Not-High (67%) | 153 High (33%)
+                  335 Not-High (65%) | 179 High (35%)
                 </div>
               </div>
             </div>
@@ -60,7 +60,7 @@ export default function Methodology() {
             </p>
             <ul className="text-[#e8dfd5] leading-relaxed font-light space-y-2 text-sm">
               <li>— Outlier removal (ROI outside -100% to 500% range)</li>
-              <li>— Binary classification threshold at 145.5% ROI (67th percentile)</li>
+              <li>— Binary classification threshold at 145.5% ROI (65th percentile)</li>
               <li>— Feature engineering: 18 base features to 57 after encoding</li>
               <li>— One-hot encoding for 5 categorical variables</li>
               <li>— StandardScaler normalization for numeric features</li>
@@ -75,9 +75,9 @@ export default function Methodology() {
             <ul className="text-[#e8dfd5] leading-relaxed font-light space-y-2 text-sm">
               <li>— Regression: 16% R² (unusable)</li>
               <li>— 3-class classification: 51.6% accuracy</li>
-              <li>— Binary classification: 86.4% accuracy (winner)</li>
-              <li>— XGBoost: 500 trees, depth 8, learning rate 0.03</li>
-              <li>— Class balancing: scale_pos_weight=2</li>
+              <li>— Binary classification: 76.7% accuracy (winner)</li>
+              <li>— Gradient Boosting: 500 trees, depth 5, learning rate 0.05</li>
+              <li>— Class balancing: scale_pos_weight=1.87</li>
               <li>— 5-fold stratified cross-validation</li>
             </ul>
           </div>
@@ -98,32 +98,35 @@ export default function Methodology() {
             <h2 className="text-2xl font-light text-[#f5f1ed] mb-4">
               Binary Classification Results
             </h2>
+            <p className="text-[#b8a894] text-xs font-light mb-2">
+              Gradient Boosting Algorithm
+            </p>
             <p className="text-[#e8dfd5] text-sm font-light">
-              Statistically significant (p less than 0.001)
+              Validated with 5-fold cross-validation
             </p>
           </div>
           <div className="col-span-7 col-start-6">
             <div className="grid grid-cols-3 gap-8">
               <div className="text-center">
-                <div className="text-[2.5rem] font-light text-[#f5f1ed] tabular-nums">86.41%</div>
+                <div className="text-[2.5rem] font-light text-[#f5f1ed] tabular-nums">76.70%</div>
                 <div className="text-[0.65rem] uppercase tracking-[0.2em] text-[#b8a894] mt-2">Accuracy</div>
               </div>
               <div className="text-center">
-                <div className="text-[2.5rem] font-light text-[#f5f1ed] tabular-nums">91.13%</div>
+                <div className="text-[2.5rem] font-light text-[#f5f1ed] tabular-nums">76.74%</div>
                 <div className="text-[0.65rem] uppercase tracking-[0.2em] text-[#b8a894] mt-2">AUC-ROC</div>
               </div>
               <div className="text-center">
-                <div className="text-[2.5rem] font-light text-[#f5f1ed] tabular-nums">82.35%</div>
-                <div className="text-[0.65rem] uppercase tracking-[0.2em] text-[#b8a894] mt-2">Precision</div>
+                <div className="text-[2.5rem] font-light text-[#f5f1ed] tabular-nums">75.50%</div>
+                <div className="text-[0.65rem] uppercase tracking-[0.2em] text-[#b8a894] mt-2">Avg Confidence</div>
               </div>
             </div>
             <div className="grid grid-cols-2 gap-8 mt-8">
               <div className="text-center">
-                <div className="text-xl font-light text-[#f5f1ed] tabular-nums">77.78%</div>
+                <div className="text-xl font-light text-[#f5f1ed] tabular-nums">63.89%</div>
                 <div className="text-[0.6rem] uppercase tracking-[0.2em] text-[#b8a894] mt-2">Recall (High ROI)</div>
               </div>
               <div className="text-center">
-                <div className="text-xl font-light text-[#f5f1ed] tabular-nums">67.77% ± 5.92%</div>
+                <div className="text-xl font-light text-[#f5f1ed] tabular-nums">68.12% ± 2.71%</div>
                 <div className="text-[0.6rem] uppercase tracking-[0.2em] text-[#b8a894] mt-2">Cross-Validation</div>
               </div>
             </div>
@@ -146,8 +149,8 @@ export default function Methodology() {
             </div>
             <div>
               <div className="text-[#8a7a68] text-xs uppercase tracking-widest mb-2">Binary (Final)</div>
-              <div className="text-2xl font-light text-[#f5f1ed] mb-1">86.4%</div>
-              <p className="text-[#e8dfd5] text-sm font-light">Production-ready</p>
+              <div className="text-2xl font-light text-[#f5f1ed] mb-1">76.7%</div>
+              <div className="text-[#e8dfd5] text-sm font-light">Production-ready</div>
             </div>
           </div>
         </div>

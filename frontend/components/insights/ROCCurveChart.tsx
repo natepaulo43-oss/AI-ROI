@@ -46,12 +46,12 @@ export default function ROCCurveChart() {
         </h3>
         <p className="text-sm text-[#e8dfd5] font-light leading-relaxed mb-4">
           Receiver Operating Characteristic curve showing the model&apos;s discrimination ability. 
-          AUC-ROC of 91.13% indicates excellent separation between High and Not-High ROI projects.
+          AUC-ROC of 76.74% indicates good separation between High and Not-High ROI projects.
         </p>
         <div className="space-y-2 text-xs text-[#b8a894] font-light">
           <div className="flex items-center gap-2">
             <div className="w-3 h-0.5 bg-[#d4a574]"></div>
-            <span>Model (AUC = 0.911)</span>
+            <span>Model (AUC = 0.7674)</span>
           </div>
           <div className="flex items-center gap-2">
             <div className="w-3 h-0.5 bg-[#6b5d4f]"></div>
