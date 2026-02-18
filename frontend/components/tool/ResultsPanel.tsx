@@ -42,7 +42,7 @@ export default function ResultsPanel({
                 Classification
               </div>
               <div className="text-2xl font-light text-[#f5f1ed]">
-                {predictedRoi >= threshold ? 'High ROI' : 'Not-High ROI'}
+                {direction === 'high' ? 'High ROI' : 'Not-High ROI'}
               </div>
             </div>
           </div>
