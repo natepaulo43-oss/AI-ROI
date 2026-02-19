@@ -30,7 +30,7 @@ export default function ValueProposition() {
       <FeatureItem
         number="01"
         title="Data-Driven Predictions"
-        description="Trained on 514 real-world AI deployment cases including Fortune 500 implementations (Klarna, Alibaba, JPMorgan) across 16 sectors and 15 use cases"
+        description="Trained on 514 real-world AI deployment cases across 16 sectors and 15 use cases"
       />
       <FeatureItem
         number="02"

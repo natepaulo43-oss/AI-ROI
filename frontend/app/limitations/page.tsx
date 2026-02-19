@@ -69,8 +69,8 @@ export default function Limitations() {
           <h2 className="text-xs uppercase tracking-widest text-[#8a7a68] mb-4 font-normal">Prediction Uncertainty</h2>
           <ul className="text-[#e8dfd5] leading-relaxed font-light space-y-3">
             <li>
-              <span className="font-normal text-[#f5f1ed]">Conservative predictions:</span> Model has low false positive rate (9 cases) 
-              but misses 39% of High ROI projects (12 false negatives)
+              <span className="font-normal text-[#f5f1ed]">Conservative predictions:</span> Model has low false positive rate (11 cases) 
+              but misses 36.11% of High ROI projects (13 false negatives)
             </li>
             <li>
               <span className="font-normal text-[#f5f1ed]">Precision trade-off:</span> High ROI predictions require validation for high-stakes decisions
