@@ -11,10 +11,10 @@ interface ConfusionMatrixChartProps {
 
 export default function ConfusionMatrixChart({ data }: ConfusionMatrixChartProps) {
   const matrix = data || {
-    truePositive: 25,
-    falsePositive: 9,
-    trueNegative: 54,
-    falseNegative: 15,
+    truePositive: 23,
+    falsePositive: 11,
+    trueNegative: 56,
+    falseNegative: 13,
   };
 
   const total = matrix.truePositive + matrix.falsePositive + matrix.trueNegative + matrix.falseNegative;
@@ -41,8 +41,9 @@ export default function ConfusionMatrixChart({ data }: ConfusionMatrixChartProps
           Confusion Matrix
         </h3>
         <p className="text-sm text-[#e8dfd5] font-light leading-relaxed mb-6">
-          Classification performance breakdown showing the model correctly identifies both High ROI 
-          and Not-High ROI projects, avoiding majority-class bias.
+          Results from one fold of 5-fold cross-validation (103 validation cases). 
+          Demonstrates balanced performance identifying both High ROI and Not-High ROI projects, 
+          avoiding majority-class bias.
         </p>
         <div className="space-y-3 text-xs font-light">
           <div>
@@ -105,9 +106,9 @@ export default function ConfusionMatrixChart({ data }: ConfusionMatrixChartProps
                     opacity: getCellOpacity(matrix.trueNegative)
                   }}
                 >
-                  <div className="text-3xl font-light text-[#f5f1ed] mb-1">{matrix.trueNegative}</div>
-                  <div className="text-[0.6rem] uppercase tracking-wider text-[#e8dfd5]">True Negative</div>
-                  <div className="text-xs text-[#b8a894] mt-1">{(matrix.trueNegative / total * 100).toFixed(1)}%</div>
+                  <div className="text-4xl font-semibold text-white mb-1" style={{ textShadow: '0 2px 4px rgba(0,0,0,0.5)' }}>{matrix.trueNegative}</div>
+                  <div className="text-[0.6rem] uppercase tracking-wider text-white" style={{ textShadow: '0 1px 2px rgba(0,0,0,0.5)' }}>True Negative</div>
+                  <div className="text-xs text-white mt-1" style={{ textShadow: '0 1px 2px rgba(0,0,0,0.5)' }}>{(matrix.trueNegative / total * 100).toFixed(1)}%</div>
                 </div>
 
                 {/* False Positive */}
@@ -118,9 +119,9 @@ export default function ConfusionMatrixChart({ data }: ConfusionMatrixChartProps
                     opacity: getCellOpacity(matrix.falsePositive)
                   }}
                 >
-                  <div className="text-3xl font-light text-[#f5f1ed] mb-1">{matrix.falsePositive}</div>
-                  <div className="text-[0.6rem] uppercase tracking-wider text-[#e8dfd5]">False Positive</div>
-                  <div className="text-xs text-[#b8a894] mt-1">{(matrix.falsePositive / total * 100).toFixed(1)}%</div>
+                  <div className="text-4xl font-semibold text-white mb-1" style={{ textShadow: '0 2px 4px rgba(0,0,0,0.5)' }}>{matrix.falsePositive}</div>
+                  <div className="text-[0.6rem] uppercase tracking-wider text-white" style={{ textShadow: '0 1px 2px rgba(0,0,0,0.5)' }}>False Positive</div>
+                  <div className="text-xs text-white mt-1" style={{ textShadow: '0 1px 2px rgba(0,0,0,0.5)' }}>{(matrix.falsePositive / total * 100).toFixed(1)}%</div>
                 </div>
 
                 {/* False Negative */}
@@ -131,9 +132,9 @@ export default function ConfusionMatrixChart({ data }: ConfusionMatrixChartProps
                     opacity: getCellOpacity(matrix.falseNegative)
                   }}
                 >
-                  <div className="text-3xl font-light text-[#f5f1ed] mb-1">{matrix.falseNegative}</div>
-                  <div className="text-[0.6rem] uppercase tracking-wider text-[#e8dfd5]">False Negative</div>
-                  <div className="text-xs text-[#b8a894] mt-1">{(matrix.falseNegative / total * 100).toFixed(1)}%</div>
+                  <div className="text-4xl font-semibold text-white mb-1" style={{ textShadow: '0 2px 4px rgba(0,0,0,0.5)' }}>{matrix.falseNegative}</div>
+                  <div className="text-[0.6rem] uppercase tracking-wider text-white" style={{ textShadow: '0 1px 2px rgba(0,0,0,0.5)' }}>False Negative</div>
+                  <div className="text-xs text-white mt-1" style={{ textShadow: '0 1px 2px rgba(0,0,0,0.5)' }}>{(matrix.falseNegative / total * 100).toFixed(1)}%</div>
                 </div>
 
                 {/* True Positive */}
@@ -144,16 +145,16 @@ export default function ConfusionMatrixChart({ data }: ConfusionMatrixChartProps
                     opacity: getCellOpacity(matrix.truePositive)
                   }}
                 >
-                  <div className="text-3xl font-light text-[#f5f1ed] mb-1">{matrix.truePositive}</div>
-                  <div className="text-[0.6rem] uppercase tracking-wider text-[#e8dfd5]">True Positive</div>
-                  <div className="text-xs text-[#b8a894] mt-1">{(matrix.truePositive / total * 100).toFixed(1)}%</div>
+                  <div className="text-4xl font-semibold text-white mb-1" style={{ textShadow: '0 2px 4px rgba(0,0,0,0.5)' }}>{matrix.truePositive}</div>
+                  <div className="text-[0.6rem] uppercase tracking-wider text-white" style={{ textShadow: '0 1px 2px rgba(0,0,0,0.5)' }}>True Positive</div>
+                  <div className="text-xs text-white mt-1" style={{ textShadow: '0 1px 2px rgba(0,0,0,0.5)' }}>{(matrix.truePositive / total * 100).toFixed(1)}%</div>
                 </div>
               </div>
             </div>
           </div>
 
           <p className="text-xs text-[#8a7a68] text-center mt-6 font-light max-w-lg">
-            Model achieves {accuracy}% overall accuracy with balanced performance across both classes
+            This fold achieves {accuracy}% accuracy, consistent with the 76.70% overall accuracy from 5-fold cross-validation
           </p>
         </div>
       </div>
