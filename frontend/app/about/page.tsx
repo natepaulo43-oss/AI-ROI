@@ -91,7 +91,6 @@ export default function About() {
                 <li>— Alibaba: 150M annual savings</li>
                 <li>— JPMorgan: 1.5B saved, 20% revenue boost</li>
                 <li>— Walmart: 25% supply chain cost reduction</li>
-                <li>— Plus 200+ synthetic cases from research</li>
               </ul>
             </div>
           </div>

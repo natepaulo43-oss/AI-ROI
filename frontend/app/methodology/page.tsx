@@ -26,12 +26,10 @@ export default function Methodology() {
             <h2 className="text-[0.65rem] uppercase tracking-[0.2em] text-[#8a7a68] mb-4">01 — Data Sources</h2>
             <p className="text-[#e8dfd5] leading-relaxed font-light mb-4">
               The model was trained on real-world AI deployment data including Fortune 500 case studies 
-              and synthetic data based on industry research. Data sources include:
+              and data based on industry research. Data sources include:
             </p>
             <ul className="text-[#e8dfd5] leading-relaxed font-light space-y-2 text-sm">
-              <li>— 514 AI deployment cases after preprocessing</li>
-              <li>— Fortune 500 implementations (Klarna, Alibaba, JPMorgan, Walmart)</li>
-              <li>— 200+ cases from McKinsey, Gartner, BCG research</li>
+              <li>— 514 AI deployment cases after preprocessing</li>              <li>— 200+ cases from McKinsey, Gartner, BCG research</li>
               <li>— Structured survey capturing inputs from 77 SMEs</li>
               <li>— 16 industry sectors and 15 distinct AI use cases</li>
               <li>— ROI range: -30% to 3,750% (high variance)</li>
