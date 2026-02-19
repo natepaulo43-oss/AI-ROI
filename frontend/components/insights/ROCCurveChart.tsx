@@ -1,27 +1,22 @@
 'use client';
 
-import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, ReferenceLine } from 'recharts';
+import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
 
 const rocData = [
-  { fpr: 0.00, tpr: 0.00 },
-  { fpr: 0.02, tpr: 0.15 },
-  { fpr: 0.04, tpr: 0.32 },
-  { fpr: 0.06, tpr: 0.48 },
-  { fpr: 0.08, tpr: 0.61 },
-  { fpr: 0.10, tpr: 0.71 },
-  { fpr: 0.15, tpr: 0.82 },
-  { fpr: 0.20, tpr: 0.88 },
-  { fpr: 0.25, tpr: 0.92 },
-  { fpr: 0.30, tpr: 0.95 },
-  { fpr: 0.40, tpr: 0.97 },
-  { fpr: 0.50, tpr: 0.98 },
-  { fpr: 0.70, tpr: 0.99 },
-  { fpr: 1.00, tpr: 1.00 },
-];
-
-const randomData = [
-  { fpr: 0.00, tpr: 0.00 },
-  { fpr: 1.00, tpr: 1.00 },
+  { fpr: 0.00, tpr: 0.00, randomTpr: 0.00 },
+  { fpr: 0.02, tpr: 0.15, randomTpr: 0.02 },
+  { fpr: 0.04, tpr: 0.32, randomTpr: 0.04 },
+  { fpr: 0.06, tpr: 0.48, randomTpr: 0.06 },
+  { fpr: 0.08, tpr: 0.61, randomTpr: 0.08 },
+  { fpr: 0.10, tpr: 0.71, randomTpr: 0.10 },
+  { fpr: 0.15, tpr: 0.82, randomTpr: 0.15 },
+  { fpr: 0.20, tpr: 0.88, randomTpr: 0.20 },
+  { fpr: 0.25, tpr: 0.92, randomTpr: 0.25 },
+  { fpr: 0.30, tpr: 0.95, randomTpr: 0.30 },
+  { fpr: 0.40, tpr: 0.97, randomTpr: 0.40 },
+  { fpr: 0.50, tpr: 0.98, randomTpr: 0.50 },
+  { fpr: 0.70, tpr: 0.99, randomTpr: 0.70 },
+  { fpr: 1.00, tpr: 1.00, randomTpr: 1.00 },
 ];
 
 const CustomTooltip = ({ active, payload }: any) => {
@@ -62,7 +57,7 @@ export default function ROCCurveChart() {
 
       <div className="col-span-7 col-start-6">
         <ResponsiveContainer width="100%" height={320}>
-          <LineChart margin={{ top: 20, right: 30, left: 20, bottom: 40 }}>
+          <LineChart data={rocData} margin={{ top: 20, right: 30, left: 20, bottom: 40 }}>
             <CartesianGrid strokeDasharray="3 3" stroke="#4a3f35" />
             <XAxis 
               type="number"
@@ -81,23 +76,24 @@ export default function ROCCurveChart() {
               tick={{ fill: '#8a7a68', fontSize: 11 }}
               label={{ value: 'True Positive Rate', angle: -90, position: 'insideLeft', fill: '#8a7a68', fontSize: 11 }}
             />
-            <Tooltip content={<CustomTooltip />} />
+            <Tooltip content={<CustomTooltip />} cursor={{ stroke: '#8a7a68', strokeWidth: 1 }} />
             <Line 
-              data={randomData}
               type="linear" 
-              dataKey="tpr" 
+              dataKey="randomTpr" 
               stroke="#6b5d4f" 
               strokeWidth={1}
               strokeDasharray="5 5"
               dot={false}
+              isAnimationActive={false}
             />
             <Line 
-              data={rocData}
               type="monotone" 
               dataKey="tpr" 
               stroke="#d4a574" 
               strokeWidth={2.5}
               dot={false}
+              activeDot={{ r: 6, fill: '#f5f1ed', stroke: '#d4a574', strokeWidth: 2 }}
+              isAnimationActive={false}
             />
           </LineChart>
         </ResponsiveContainer>
