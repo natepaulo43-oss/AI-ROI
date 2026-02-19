@@ -5,17 +5,17 @@ import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContaine
 const data = [
   { 
     model: 'Regression', 
-    r2: 0.13, 
+    r2: 0.16, 
     accuracy: null,
-    description: 'R² = 0.13',
+    description: 'R² = 0.16',
     color: '#6b5d4f',
     status: 'Unusable'
   },
   { 
     model: '3-Class', 
     r2: null,
-    accuracy: 0.58,
-    description: 'Acc = 58%',
+    accuracy: 0.516,
+    description: 'Acc = 51.6%',
     color: '#8a7a68',
     status: 'Marginal'
   },
@@ -53,7 +53,7 @@ export default function ModelEvolutionChart() {
         </h3>
         <p className="text-sm text-[#e8dfd5] font-light leading-relaxed mb-4">
           Performance comparison across three modeling approaches. Binary classification 
-          achieved a 490% improvement over regression (0.767 vs 0.13 R²-equivalent).
+          achieved a 379% improvement over regression (0.767 vs 0.16 R²-equivalent).
         </p>
         <div className="space-y-3 text-xs font-light">
           <div>
