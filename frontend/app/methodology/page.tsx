@@ -64,7 +64,7 @@ export default function Methodology() {
               <li>— Feature engineering: 18 base features to 57 after encoding</li>
               <li>— One-hot encoding for 5 categorical variables</li>
               <li>— StandardScaler normalization for numeric features</li>
-              <li>— Train-test split (80/20) stratified by ROI class</li>
+              <li>— Stratified sampling by ROI class for balanced validation</li>
             </ul>
           </div>
           <div className="col-span-5 col-start-8">
