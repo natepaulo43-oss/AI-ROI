@@ -31,7 +31,7 @@ export default function Methodology() {
             <ul className="text-[#e8dfd5] leading-relaxed font-light space-y-2 text-sm">
               <li>— 514 AI deployment cases after preprocessing</li>
               <li>— Fortune 500 implementations (Klarna, Alibaba, JPMorgan, Walmart)</li>
-              <li>— 200+ synthetic cases from McKinsey, Gartner, BCG research</li>
+              <li>— 200+ cases from McKinsey, Gartner, BCG research</li>
               <li>— 16 industry sectors and 15 distinct AI use cases</li>
               <li>— ROI range: -30% to 3,750% (high variance)</li>
             </ul>
