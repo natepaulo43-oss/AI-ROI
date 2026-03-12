@@ -1,0 +1,14 @@
+services:
+  - type: web
+    name: ai-roi-api
+    runtime: docker
+    dockerfilePath: ./Dockerfile
+    dockerContext: ./backend
+    region: oregon
+    plan: free
+    branch: main
+    healthCheckPath: /health
+    envVars:
+      - key: PORT
+        value: 8000
+    autoDeploy: true

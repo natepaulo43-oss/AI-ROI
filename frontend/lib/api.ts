@@ -82,6 +82,46 @@ interface BackendResponse {
   forecast_months: MonthlyForecast[];
 }
 
+// Retry helper for handling cold starts on free hosting tiers
+async function fetchWithRetry(
+  url: string, 
+  options: RequestInit, 
+  maxRetries = 3,
+  initialDelay = 2000
+): Promise<Response> {
+  let lastError: Error | null = null;
+  
+  for (let attempt = 0; attempt < maxRetries; attempt++) {
+    try {
+      const controller = new AbortController();
+      const timeoutId = setTimeout(() => controller.abort(), 60000); // 60s timeout
+      
+      const response = await fetch(url, {
+        ...options,
+        signal: controller.signal,
+      });
+      
+      clearTimeout(timeoutId);
+      return response;
+    } catch (error) {
+      lastError = error as Error;
+      
+      // Don't retry on abort or if it's the last attempt
+      if (error instanceof Error && error.name === 'AbortError') {
+        throw new Error('Request timeout - the API may be warming up. Please try again.');
+      }
+      
+      if (attempt < maxRetries - 1) {
+        const delay = initialDelay * Math.pow(2, attempt);
+        console.log(`Retry attempt ${attempt + 1}/${maxRetries} after ${delay}ms...`);
+        await new Promise(resolve => setTimeout(resolve, delay));
+      }
+    }
+  }
+  
+  throw lastError || new Error('Request failed after retries');
+}
+
 export async function fetchPrediction(data: PredictionRequest): Promise<PredictionResponse> {
   // Convert USD to EUR for backend
   const backendRequest: BackendRequest = {
@@ -102,13 +142,18 @@ export async function fetchPrediction(data: PredictionRequest): Promise<Predicti
   };
 
   try {
-    const response = await fetch(`${API_BASE_URL}/predict`, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
+    const response = await fetchWithRetry(
+      `${API_BASE_URL}/predict`,
+      {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(backendRequest),
       },
-      body: JSON.stringify(backendRequest),
-    });
+      3, // max retries
+      2000 // initial delay (2s)
+    );
 
     if (!response.ok) {
       const errorData = await response.json().catch(() => ({}));
@@ -140,7 +185,7 @@ export async function fetchPrediction(data: PredictionRequest): Promise<Predicti
     throw new Error(
       error instanceof Error 
         ? error.message 
-        : 'Failed to get prediction. Please ensure the backend API is running.'
+        : 'Failed to get prediction. The API may be warming up - please try again in a moment.'
     );
   }
 }
