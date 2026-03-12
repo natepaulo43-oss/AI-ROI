@@ -1,0 +1,47 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+.venv/
+ENV/
+.pytest_cache/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Git
+.git/
+.gitignore
+
+# Data files (keep models, exclude raw data)
+data/raw/
+data/processed/
+
+# Documentation
+docs/
+*.md
+!README.md
+
+# Research outputs
+research_output/
+backend/research_output/
+
+# Scripts
+scripts/
+*.sh
+*.ps1
+
+# Training scripts (not needed in production)
+train_*.py

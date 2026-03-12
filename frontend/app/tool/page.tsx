@@ -245,7 +245,7 @@ export default function Tool() {
             <div className="bg-red-900/20 border border-red-500/30 rounded-[2rem] p-8 mb-6">
               <p className="text-red-400 text-sm">{error}</p>
               <p className="text-red-300/60 text-xs mt-2">
-                Make sure the backend API is running at http://localhost:8000
+                The API may be warming up from sleep. This can take 30-60 seconds on the first request.
               </p>
             </div>
           )}
