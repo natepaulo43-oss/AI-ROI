@@ -8,6 +8,7 @@ services:
     plan: free
     branch: main
     healthCheckPath: /health
+    buildCommand: ""
     envVars:
       - key: PORT
         value: 8000
