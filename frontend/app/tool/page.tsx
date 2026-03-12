@@ -9,6 +9,7 @@ import Dropdown from '@/components/tool/inputs/Dropdown';
 import Slider from '@/components/tool/inputs/Slider';
 import ResultsPanel from '@/components/tool/ResultsPanel';
 import LoadingState from '@/components/tool/LoadingState';
+import WarmupCountdown from '@/components/tool/WarmupCountdown';
 import { fetchPrediction, PredictionResponse } from '@/lib/api';
 
 const SECTOR_OPTIONS = [
@@ -75,6 +76,8 @@ export default function Tool() {
   const [result, setResult] = useState<PredictionResponse | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [showAdvanced, setShowAdvanced] = useState<boolean>(false);
+  const [showWarmup, setShowWarmup] = useState<boolean>(false);
+  const [warmupError, setWarmupError] = useState<string | null>(null);
 
   const handleSubmit = async () => {
     // Validate required fields
@@ -101,6 +104,8 @@ export default function Tool() {
     setIsLoading(true);
     setResult(null);
     setError(null);
+    setShowWarmup(false);
+    setWarmupError(null);
 
     try {
       // Calculate derived fields from deployment months
@@ -128,7 +133,18 @@ export default function Tool() {
       setResult(prediction);
     } catch (error) {
       console.error('Prediction failed:', error);
-      setError(error instanceof Error ? error.message : 'Prediction failed. Please try again.');
+      const errorMessage = error instanceof Error ? error.message : 'Prediction failed. Please try again.';
+      
+      // Check if this is a warm-up related error
+      if (errorMessage.includes('warming up') || 
+          errorMessage.includes('timeout') || 
+          errorMessage.includes('Failed to fetch') ||
+          errorMessage.includes('Network request failed')) {
+        setWarmupError(errorMessage);
+        setShowWarmup(true);
+      } else {
+        setError(errorMessage);
+      }
     } finally {
       setIsLoading(false);
     }
@@ -241,12 +257,16 @@ export default function Tool() {
 
         {/* Right column: Results (6 columns, offset) */}
         <div className="col-span-6 col-start-7">
-          {error && (
+          {showWarmup && (
+            <WarmupCountdown 
+              onRetry={handleSubmit}
+              initialSeconds={60}
+              errorMessage={warmupError || undefined}
+            />
+          )}
+          {error && !showWarmup && (
             <div className="bg-red-900/20 border border-red-500/30 rounded-[2rem] p-8 mb-6">
               <p className="text-red-400 text-sm">{error}</p>
-              <p className="text-red-300/60 text-xs mt-2">
-                The API may be warming up from sleep. This can take 30-60 seconds on the first request.
-              </p>
             </div>
           )}
           {isLoading && <LoadingState />}

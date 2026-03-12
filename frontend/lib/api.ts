@@ -182,11 +182,24 @@ export async function fetchPrediction(data: PredictionRequest): Promise<Predicti
     };
   } catch (error) {
     console.error('Prediction API error:', error);
-    throw new Error(
-      error instanceof Error 
-        ? error.message 
-        : 'Failed to get prediction. The API may be warming up - please try again in a moment.'
-    );
+    
+    // Provide specific error messages for different failure scenarios
+    if (error instanceof Error) {
+      // Network errors or connection failures (likely cold start)
+      if (error.message.includes('Failed to fetch') || 
+          error.message.includes('Network request failed') ||
+          error.message.includes('fetch failed')) {
+        throw new Error('Unable to connect to the API. The service may be warming up from sleep mode.');
+      }
+      // Timeout errors
+      if (error.message.includes('timeout') || error.message.includes('AbortError')) {
+        throw new Error('Request timeout - the API is warming up from sleep. This typically takes 30-60 seconds on the first request.');
+      }
+      // Pass through other specific errors
+      throw error;
+    }
+    
+    throw new Error('Failed to get prediction. The API may be warming up - please try again in a moment.');
   }
 }
 
