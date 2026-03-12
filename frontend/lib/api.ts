@@ -2,8 +2,8 @@
 const USD_TO_EUR = 0.91; // 1 USD = 0.91 EUR
 const EUR_TO_USD = 1.10; // 1 EUR = 1.10 USD
 
-// Backend API URL
-const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8000';
+// Backend API URL - remove trailing slash if present
+const API_BASE_URL = (process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8000').replace(/\/$/, '');
 
 export interface PredictionRequest {
   // Company characteristics
