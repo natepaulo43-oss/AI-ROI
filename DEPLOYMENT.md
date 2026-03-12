@@ -84,6 +84,8 @@ The ML models (~3 MB total) with sklearn/xgboost dependencies are too heavy for 
    ```
    
    Replace `your-service-name` with your actual Render service URL.
+   
+   **IMPORTANT**: Do NOT include a trailing slash. Use `https://ai-roi-api.onrender.com` not `https://ai-roi-api.onrender.com/`
 
 3. **Deploy to Vercel**:
 
@@ -97,7 +99,7 @@ The ML models (~3 MB total) with sklearn/xgboost dependencies are too heavy for 
      - **Build Command**: `npm run build`
      - **Output Directory**: `.next`
    - Add environment variable:
-     - `NEXT_PUBLIC_API_URL` = `https://your-service-name.onrender.com`
+     - `NEXT_PUBLIC_API_URL` = `https://your-service-name.onrender.com` (no trailing slash)
    - Click "Deploy"
 
    **Option B: Using Vercel CLI**
