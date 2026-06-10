@@ -2,13 +2,13 @@ import PageLayout from '@/components/layout/PageLayout';
 
 export default function Limitations() {
   return (
-    <div className="mx-auto max-w-7xl px-12 py-16">
+    <div className="mx-auto max-w-7xl px-4 sm:px-12 py-16">
       {/* Page header */}
       <div className="mb-20">
         <div className="text-[0.65rem] uppercase tracking-[0.2em] text-[#8a7a68] mb-6">
           Responsible AI
         </div>
-        <h1 className="text-[4rem] font-light text-[#f5f1ed] leading-[0.95] tracking-tight mb-4">
+        <h1 className="text-[2.5rem] sm:text-[4rem] font-light text-[#f5f1ed] leading-[0.95] tracking-tight mb-4">
           Limitations
         </h1>
         <p className="text-sm text-[#e8dfd5] font-light max-w-md">

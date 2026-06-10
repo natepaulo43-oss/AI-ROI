@@ -4,7 +4,7 @@ import CTAButton from '@/components/landing/CTAButton';
 
 export default function Home() {
   return (
-    <div className="mx-auto max-w-7xl px-12 py-8">
+    <div className="mx-auto max-w-7xl px-4 sm:px-12 py-8">
       <Hero />
       <ValueProposition />
       <CTAButton />

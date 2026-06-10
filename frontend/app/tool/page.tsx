@@ -151,13 +151,13 @@ export default function Tool() {
   };
 
   return (
-    <div className="mx-auto max-w-7xl px-12 py-16 min-h-screen">
+    <div className="mx-auto max-w-7xl px-4 sm:px-12 py-16 min-h-screen">
       {/* Page header with asymmetric layout */}
       <div className="mb-20">
         <div className="text-[0.65rem] uppercase tracking-[0.2em] text-[#8a7a68] mb-6">
           AI ROI Calculator
         </div>
-        <h1 className="text-[4rem] font-light text-[#f5f1ed] leading-[0.95] tracking-tight mb-4">
+        <h1 className="text-[2.5rem] sm:text-[4rem] font-light text-[#f5f1ed] leading-[0.95] tracking-tight mb-4">
           Predict Your
           <br />
           AI Returns
@@ -168,9 +168,9 @@ export default function Tool() {
       </div>
 
       {/* Asymmetric grid: form left, results right */}
-      <div className="grid grid-cols-12 gap-12">
-        {/* Left column: Input form (5 columns) */}
-        <div className="col-span-5">
+      <div className="grid grid-cols-1 sm:grid-cols-12 gap-8 sm:gap-12">
+        {/* Left column: Input form */}
+        <div className="col-span-1 sm:col-span-5">
           <InputPanel onSubmit={handleSubmit} isLoading={isLoading}>
             <FormSection title="Your Business">
               <Dropdown
@@ -255,8 +255,8 @@ export default function Tool() {
           </InputPanel>
         </div>
 
-        {/* Right column: Results (6 columns, offset) */}
-        <div className="col-span-6 col-start-7">
+        {/* Right column: Results */}
+        <div className="col-span-1 sm:col-span-6 sm:col-start-7">
           {showWarmup && (
             <WarmupCountdown 
               onRetry={handleSubmit}
