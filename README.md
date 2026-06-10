@@ -1,4 +1,4 @@
-# AI ROI Prediction Tool 🤖📊
+# AI ROI Prediction Tool 
 
 A full-stack web application that predicts Return on Investment (ROI) for AI deployment projects using machine learning. Built with Next.js, FastAPI, and XGBoost.
 
@@ -6,7 +6,7 @@ A full-stack web application that predicts Return on Investment (ROI) for AI dep
 ![Python](https://img.shields.io/badge/python-3.10+-blue.svg)
 ![Next.js](https://img.shields.io/badge/next.js-14+-black.svg)
 
-## 🎯 Overview
+##  Overview
 
 This tool helps organizations estimate the ROI of AI initiatives by analyzing historical deployment data. The ML model achieves **76.7% accuracy** with **75.5% average confidence** in predicting whether an AI project will achieve high ROI (≥145.5%).
 
@@ -18,7 +18,7 @@ This tool helps organizations estimate the ROI of AI initiatives by analyzing hi
 - **Data Visualization**: ROI forecasting charts and confidence metrics
 - **Production Ready**: Optimized model with proper error handling
 
-## 🏗️ Project Structure
+##  Project Structure
 
 ```
 AI_ROI/
@@ -51,7 +51,7 @@ AI_ROI/
 └── LICENSE              # MIT License
 ```
 
-## 🚀 Quick Start
+##  Quick Start
 
 ### Prerequisites
 
