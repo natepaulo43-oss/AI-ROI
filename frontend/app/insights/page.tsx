@@ -40,13 +40,13 @@ const MOCK_METRICS = [
 
 export default function Insights() {
   return (
-    <div className="mx-auto max-w-7xl px-12 py-16">
+    <div className="mx-auto max-w-7xl px-4 sm:px-12 py-16">
       {/* Page header */}
       <div className="mb-20">
         <div className="text-[0.65rem] uppercase tracking-[0.2em] text-[#8a7a68] mb-6">
           Model Analysis
         </div>
-        <h1 className="text-[4rem] font-light text-[#f5f1ed] leading-[0.95] tracking-tight mb-4">
+        <h1 className="text-[2.5rem] sm:text-[4rem] font-light text-[#f5f1ed] leading-[0.95] tracking-tight mb-4">
           Insights
         </h1>
         <p className="text-sm text-[#e8dfd5] font-light max-w-md">
@@ -57,11 +57,11 @@ export default function Insights() {
       {/* Asymmetric content sections */}
       <div className="space-y-32">
         {/* Model overview with visual element */}
-        <div className="grid grid-cols-12 gap-12 items-start">
-          <div className="col-span-5">
+        <div className="grid grid-cols-1 sm:grid-cols-12 gap-8 sm:gap-12 items-start">
+          <div className="col-span-1 sm:col-span-5">
             <ModelCard />
           </div>
-          <div className="col-span-6 col-start-7">
+          <div className="col-span-1 sm:col-span-6 sm:col-start-7">
             <div className="bg-gradient-to-br from-[#4a3f35] to-[#3d342a] rounded-[2rem] aspect-[4/3] flex items-center justify-center p-12">
               <div className="text-center">
                 <div className="text-[0.65rem] uppercase tracking-[0.2em] text-[#b8a894] mb-4">
@@ -88,11 +88,11 @@ export default function Insights() {
         <DeploymentSpeedChart />
 
         {/* Technical specs with visual balance */}
-        <div className="grid grid-cols-12 gap-12">
-          <div className="col-span-6">
+        <div className="grid grid-cols-1 sm:grid-cols-12 gap-8 sm:gap-12">
+          <div className="col-span-1 sm:col-span-6">
             <TechnicalSpecs metrics={MOCK_METRICS} />
           </div>
-          <div className="col-span-5 col-start-8">
+          <div className="col-span-1 sm:col-span-5 sm:col-start-8">
             <div className="text-[0.65rem] uppercase tracking-[0.2em] text-[#8a7a68] mb-4">
               Note on Transparency
             </div>

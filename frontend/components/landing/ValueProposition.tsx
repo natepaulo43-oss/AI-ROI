@@ -6,14 +6,17 @@ interface FeatureItemProps {
 
 function FeatureItem({ number, title, description }: FeatureItemProps) {
   return (
-    <div className="grid grid-cols-12 gap-8 items-start">
-      <div className="col-span-1 text-[0.65rem] uppercase tracking-[0.2em] text-[#8a7a68]">
+    <div className="grid grid-cols-1 sm:grid-cols-12 gap-3 sm:gap-8 items-start">
+      <div className="hidden sm:block sm:col-span-1 text-[0.65rem] uppercase tracking-[0.2em] text-[#8a7a68]">
         {number}
       </div>
-      <div className="col-span-3">
-        <h3 className="text-2xl font-light text-[#f5f1ed] leading-tight">{title}</h3>
+      <div className="sm:col-span-3">
+        <div className="flex items-baseline gap-3 sm:block">
+          <span className="sm:hidden text-[0.65rem] uppercase tracking-[0.2em] text-[#8a7a68]">{number}</span>
+          <h3 className="text-xl sm:text-2xl font-light text-[#f5f1ed] leading-tight">{title}</h3>
+        </div>
       </div>
-      <div className="col-span-7">
+      <div className="sm:col-span-7">
         <p className="text-[#e8dfd5] leading-relaxed font-light text-sm">{description}</p>
       </div>
     </div>
@@ -22,11 +25,11 @@ function FeatureItem({ number, title, description }: FeatureItemProps) {
 
 export default function ValueProposition() {
   return (
-    <div className="mt-32 space-y-12">
-      <div className="text-[0.65rem] uppercase tracking-[0.2em] text-[#8a7a68] mb-16">
+    <div className="mt-16 sm:mt-32 space-y-10 sm:space-y-12">
+      <div className="text-[0.65rem] uppercase tracking-[0.2em] text-[#8a7a68] mb-10 sm:mb-16">
         Key Capabilities
       </div>
-      
+
       <FeatureItem
         number="01"
         title="Data-Driven Predictions"
