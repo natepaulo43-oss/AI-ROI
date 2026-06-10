@@ -60,7 +60,7 @@ export default function ROIForecastChart({
   };
 
   const CustomLegend = () => (
-    <div className="flex items-center justify-center gap-6 mt-4">
+    <div className="flex flex-wrap items-center justify-center gap-4 mt-4">
       <div className="flex items-center gap-2">
         <div className="w-3 h-3 rounded-full bg-[#d4a574]"></div>
         <span className="text-[0.65rem] uppercase tracking-[0.15em] text-[#b8a894]">
@@ -198,7 +198,7 @@ export default function ROIForecastChart({
 
       {forecastData && forecastData.length > 0 && (
         <div className="mt-6 pt-6 border-t border-[#6b5d4f]/40">
-          <div className="grid grid-cols-3 gap-4">
+          <div className="grid grid-cols-3 gap-2 sm:gap-4">
             <div>
               <div className="text-[0.6rem] uppercase tracking-[0.15em] text-[#b8a894] mb-1">
                 Stabilized ROI

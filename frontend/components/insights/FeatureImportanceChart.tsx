@@ -11,9 +11,9 @@ export default function FeatureImportanceChart({ data }: FeatureImportanceChartP
   const maxImportance = Math.max(...data.map((d) => d.importance));
 
   return (
-    <div className="grid grid-cols-12 gap-12">
+    <div className="grid grid-cols-1 sm:grid-cols-12 gap-8 sm:gap-12">
       {/* Left: Title and description */}
-      <div className="col-span-4">
+      <div className="col-span-1 sm:col-span-4">
         <div className="text-[0.65rem] uppercase tracking-[0.2em] text-[#8a7a68] mb-3">Figure 4</div>
         <h3 className="text-3xl font-light text-[#f5f1ed] mb-6 leading-tight">
           Feature
@@ -27,7 +27,7 @@ export default function FeatureImportanceChart({ data }: FeatureImportanceChartP
       </div>
 
       {/* Right: Chart data */}
-      <div className="col-span-7 col-start-6">
+      <div className="col-span-1 sm:col-span-7 sm:col-start-6">
         <div className="space-y-6 pt-8">
           {data.map((item, index) => (
             <div key={index}>
