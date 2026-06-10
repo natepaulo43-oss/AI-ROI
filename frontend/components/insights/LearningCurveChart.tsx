@@ -36,8 +36,8 @@ const CustomTooltip = ({ active, payload }: any) => {
 
 export default function LearningCurveChart() {
   return (
-    <div className="grid grid-cols-12 gap-12">
-      <div className="col-span-4">
+    <div className="grid grid-cols-1 sm:grid-cols-12 gap-8 sm:gap-12">
+      <div className="col-span-1 sm:col-span-4">
         <div className="text-[0.65rem] uppercase tracking-[0.2em] text-[#8a7a68] mb-3">Figure 3</div>
         <h3 className="text-3xl font-light text-[#f5f1ed] mb-6 leading-tight">
           Learning Curve
@@ -71,7 +71,7 @@ export default function LearningCurveChart() {
         </div>
       </div>
 
-      <div className="col-span-7 col-start-6">
+      <div className="col-span-1 sm:col-span-7 sm:col-start-6">
         <ResponsiveContainer width="100%" height={340}>
           <LineChart data={learningData} margin={{ top: 20, right: 30, left: 20, bottom: 40 }}>
             <CartesianGrid strokeDasharray="3 3" stroke="#4a3f35" />

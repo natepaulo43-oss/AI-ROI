@@ -34,8 +34,8 @@ export default function ConfusionMatrixChart({ data }: ConfusionMatrixChartProps
   };
 
   return (
-    <div className="grid grid-cols-12 gap-12">
-      <div className="col-span-4">
+    <div className="grid grid-cols-1 sm:grid-cols-12 gap-8 sm:gap-12">
+      <div className="col-span-1 sm:col-span-4">
         <div className="text-[0.65rem] uppercase tracking-[0.2em] text-[#8a7a68] mb-3">Figure 6</div>
         <h3 className="text-3xl font-light text-[#f5f1ed] mb-6 leading-tight">
           Confusion Matrix
@@ -64,19 +64,19 @@ export default function ConfusionMatrixChart({ data }: ConfusionMatrixChartProps
         </div>
       </div>
 
-      <div className="col-span-7 col-start-6">
-        <div className="flex flex-col items-center pt-8">
+      <div className="col-span-1 sm:col-span-7 sm:col-start-6">
+        <div className="flex flex-col items-center pt-4 sm:pt-8">
           {/* Matrix Grid */}
           <div className="relative">
             {/* Column Labels */}
-            <div className="flex mb-4 ml-32">
+            <div className="flex mb-4 ml-20 sm:ml-32">
               <div className="text-[0.65rem] uppercase tracking-[0.2em] text-[#8a7a68] mb-2">
                 Predicted
               </div>
             </div>
-            <div className="flex mb-2 ml-32">
-              <div className="w-40 text-center text-xs text-[#e8dfd5] font-light">Not-High ROI</div>
-              <div className="w-40 text-center text-xs text-[#e8dfd5] font-light">High ROI</div>
+            <div className="flex mb-2 ml-20 sm:ml-32">
+              <div className="w-28 sm:w-40 text-center text-xs text-[#e8dfd5] font-light">Not-High ROI</div>
+              <div className="w-28 sm:w-40 text-center text-xs text-[#e8dfd5] font-light">High ROI</div>
             </div>
 
             {/* Matrix with Row Labels */}
@@ -88,10 +88,10 @@ export default function ConfusionMatrixChart({ data }: ConfusionMatrixChartProps
                 </div>
               </div>
               <div className="flex flex-col justify-center mr-4">
-                <div className="h-32 flex items-center">
+                <div className="h-24 sm:h-32 flex items-center">
                   <div className="text-xs text-[#e8dfd5] font-light whitespace-nowrap">Not-High ROI</div>
                 </div>
-                <div className="h-32 flex items-center">
+                <div className="h-24 sm:h-32 flex items-center">
                   <div className="text-xs text-[#e8dfd5] font-light whitespace-nowrap">High ROI</div>
                 </div>
               </div>
@@ -100,52 +100,52 @@ export default function ConfusionMatrixChart({ data }: ConfusionMatrixChartProps
               <div className="grid grid-cols-2 gap-3">
                 {/* True Negative */}
                 <div 
-                  className="w-40 h-32 rounded-lg flex flex-col items-center justify-center border border-[#4a3f35]"
+                  className="w-28 sm:w-40 h-24 sm:h-32 rounded-lg flex flex-col items-center justify-center border border-[#4a3f35]"
                   style={{ 
                     backgroundColor: getCellColor(true),
                     opacity: getCellOpacity(matrix.trueNegative)
                   }}
                 >
-                  <div className="text-4xl font-semibold text-white mb-1" style={{ textShadow: '0 2px 4px rgba(0,0,0,0.5)' }}>{matrix.trueNegative}</div>
+                  <div className="text-2xl sm:text-4xl font-semibold text-white mb-1" style={{ textShadow: '0 2px 4px rgba(0,0,0,0.5)' }}>{matrix.trueNegative}</div>
                   <div className="text-[0.6rem] uppercase tracking-wider text-white" style={{ textShadow: '0 1px 2px rgba(0,0,0,0.5)' }}>True Negative</div>
                   <div className="text-xs text-white mt-1" style={{ textShadow: '0 1px 2px rgba(0,0,0,0.5)' }}>{(matrix.trueNegative / total * 100).toFixed(1)}%</div>
                 </div>
 
                 {/* False Positive */}
                 <div 
-                  className="w-40 h-32 rounded-lg flex flex-col items-center justify-center border border-[#4a3f35]"
+                  className="w-28 sm:w-40 h-24 sm:h-32 rounded-lg flex flex-col items-center justify-center border border-[#4a3f35]"
                   style={{ 
                     backgroundColor: getCellColor(false),
                     opacity: getCellOpacity(matrix.falsePositive)
                   }}
                 >
-                  <div className="text-4xl font-semibold text-white mb-1" style={{ textShadow: '0 2px 4px rgba(0,0,0,0.5)' }}>{matrix.falsePositive}</div>
+                  <div className="text-2xl sm:text-4xl font-semibold text-white mb-1" style={{ textShadow: '0 2px 4px rgba(0,0,0,0.5)' }}>{matrix.falsePositive}</div>
                   <div className="text-[0.6rem] uppercase tracking-wider text-white" style={{ textShadow: '0 1px 2px rgba(0,0,0,0.5)' }}>False Positive</div>
                   <div className="text-xs text-white mt-1" style={{ textShadow: '0 1px 2px rgba(0,0,0,0.5)' }}>{(matrix.falsePositive / total * 100).toFixed(1)}%</div>
                 </div>
 
                 {/* False Negative */}
                 <div 
-                  className="w-40 h-32 rounded-lg flex flex-col items-center justify-center border border-[#4a3f35]"
+                  className="w-28 sm:w-40 h-24 sm:h-32 rounded-lg flex flex-col items-center justify-center border border-[#4a3f35]"
                   style={{ 
                     backgroundColor: getCellColor(false),
                     opacity: getCellOpacity(matrix.falseNegative)
                   }}
                 >
-                  <div className="text-4xl font-semibold text-white mb-1" style={{ textShadow: '0 2px 4px rgba(0,0,0,0.5)' }}>{matrix.falseNegative}</div>
+                  <div className="text-2xl sm:text-4xl font-semibold text-white mb-1" style={{ textShadow: '0 2px 4px rgba(0,0,0,0.5)' }}>{matrix.falseNegative}</div>
                   <div className="text-[0.6rem] uppercase tracking-wider text-white" style={{ textShadow: '0 1px 2px rgba(0,0,0,0.5)' }}>False Negative</div>
                   <div className="text-xs text-white mt-1" style={{ textShadow: '0 1px 2px rgba(0,0,0,0.5)' }}>{(matrix.falseNegative / total * 100).toFixed(1)}%</div>
                 </div>
 
                 {/* True Positive */}
                 <div 
-                  className="w-40 h-32 rounded-lg flex flex-col items-center justify-center border border-[#4a3f35]"
+                  className="w-28 sm:w-40 h-24 sm:h-32 rounded-lg flex flex-col items-center justify-center border border-[#4a3f35]"
                   style={{ 
                     backgroundColor: getCellColor(true),
                     opacity: getCellOpacity(matrix.truePositive)
                   }}
                 >
-                  <div className="text-4xl font-semibold text-white mb-1" style={{ textShadow: '0 2px 4px rgba(0,0,0,0.5)' }}>{matrix.truePositive}</div>
+                  <div className="text-2xl sm:text-4xl font-semibold text-white mb-1" style={{ textShadow: '0 2px 4px rgba(0,0,0,0.5)' }}>{matrix.truePositive}</div>
                   <div className="text-[0.6rem] uppercase tracking-wider text-white" style={{ textShadow: '0 1px 2px rgba(0,0,0,0.5)' }}>True Positive</div>
                   <div className="text-xs text-white mt-1" style={{ textShadow: '0 1px 2px rgba(0,0,0,0.5)' }}>{(matrix.truePositive / total * 100).toFixed(1)}%</div>
                 </div>
