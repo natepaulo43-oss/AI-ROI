@@ -1,22 +1,34 @@
-# AI ROI Prediction Tool 
+# AI ROI Prediction Tool
 
-A full-stack web application that predicts Return on Investment (ROI) for AI deployment projects using machine learning. Built with Next.js, FastAPI, and XGBoost.
+A full-stack ML tool that predicts whether an AI deployment project will hit high ROI, trained on real-world SME AI adoption case studies.
 
 ![License](https://img.shields.io/badge/license-MIT-blue.svg)
 ![Python](https://img.shields.io/badge/python-3.10+-blue.svg)
 ![Next.js](https://img.shields.io/badge/next.js-14+-black.svg)
 
-##  Overview
+## Why I built it
 
-This tool helps organizations estimate the ROI of AI initiatives by analyzing historical deployment data. The ML model achieves **76.7% accuracy** with **75.5% average confidence** in predicting whether an AI project will achieve high ROI (≥145.5%).
+Most "AI ROI" claims are vibes, not numbers. This tool grounds the question in an actual dataset — 514 real AI deployment projects — and turns "will this AI initiative pay off" into a binary classification problem with a measurable, reported accuracy, instead of a consultant's slide.
 
-### Key Features
+## Tech Stack
 
-- **ML-Powered Predictions**: Binary classification model (High vs Not-High ROI)
-- **Interactive Web Interface**: Modern, responsive UI built with Next.js and TailwindCSS
-- **Real-time API**: FastAPI backend with automatic documentation
-- **Data Visualization**: ROI forecasting charts and confidence metrics
-- **Production Ready**: Optimized model with proper error handling
+Next.js + TailwindCSS (frontend), FastAPI (backend API), XGBoost/Gradient Boosting (model), Docker (backend containerization)
+
+## Key technical decisions
+
+- **Binary classification over regression**: predicting exact ROI percentage from 514 samples would be noisy and overconfident; framing it as High vs. Not-High ROI (≥145.5% threshold) produces a model that's honest about its precision.
+- **Kept the historical model analysis instead of deleting it** ([docs/MODEL_ANALYSIS.md](docs/MODEL_ANALYSIS.md)) — documents hitting a 68.8% accuracy ceiling on an earlier 462-sample dataset and what changed to get to 76.7% on 514 samples, rather than presenting only the final number.
+- **Editorial, not SaaS-dashboard, UI direction** ([docs/DESIGN.md](docs/DESIGN.md)) — designed to read like a research artifact a decision-maker would trust, not another generic analytics dashboard.
+
+## Results
+
+76.70% accuracy, 76.74% AUC-ROC, 75.5% average confidence on the production binary classifier (514-sample dataset).
+
+## Live
+
+Frontend: **https://ai-roi-eight.vercel.app/**
+
+Backend API runs locally (Render deploy config is in the repo — `render.yaml` — but isn't currently running a live instance). See Quick Start below to run it.
 
 ##  Project Structure
 

@@ -11,9 +11,7 @@ This directory contains detailed documentation for the AI ROI Prediction Tool.
 - **[DESIGN.md](DESIGN.md)** - System architecture, design decisions, and technical specifications
 
 ### Data & Research
-- **[CASE_STUDIES_USAGE_GUIDE.md](CASE_STUDIES_USAGE_GUIDE.md)** - Guide for using case study data
 - **[CASE_STUDY_RESEARCH_SUMMARY.md](CASE_STUDY_RESEARCH_SUMMARY.md)** - Summary of research findings from case studies
-- **[DATA_GENERATION.md](DATA_GENERATION.md)** - Documentation on data generation and scraping processes
 
 ## 🚀 Quick Links
 
@@ -40,16 +38,13 @@ docs/
 ├── README.md                          # This file
 ├── MODEL_ANALYSIS.md                  # Model performance & optimization
 ├── DESIGN.md                          # Architecture & design
-├── CASE_STUDIES_USAGE_GUIDE.md       # Case study data guide
-├── CASE_STUDY_RESEARCH_SUMMARY.md    # Research findings
-└── DATA_GENERATION.md                 # Data generation docs
+└── CASE_STUDY_RESEARCH_SUMMARY.md    # Research findings
 ```
 
 ## 🔍 Finding Information
 
 - **Model Performance**: See [MODEL_ANALYSIS.md](MODEL_ANALYSIS.md)
 - **System Design**: See [DESIGN.md](DESIGN.md)
-- **Data Sources**: See [DATA_GENERATION.md](DATA_GENERATION.md)
 - **API Usage**: See main [README.md](../README.md#-usage)
 - **Setup Instructions**: See main [README.md](../README.md#-quick-start)
 
